@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-cd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  namespace: argo-cd  # Ensure this matches your Argo CD namespace
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/xalxnder/homelab.git
+    targetRevision: main  # Branch name
+    path: kubernetes-deployments/core/argo-cd # Path where your Helm chart is located
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
