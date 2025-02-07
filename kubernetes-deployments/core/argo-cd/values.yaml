@@ -21,10 +21,10 @@ argocd-apps:
       finalizers: &app-projects-finalizers
         - resources-finalizer.argocd.argoproj.io
       sourceRepos: &app-projects-source-repos
-        - '*'
+        - https://github.com/xalxnder/kubernetes-deployments.git
       destinations: &app-projects-destinations
-        - namespace: '*'
-          server: '*'
+        - namespace: default
+          server: https://kubernetes.default.svc
       clusterResourceWhitelist: &app-projects-cluster-resource-whitelist
         - group: '*'
           kind: '*'
