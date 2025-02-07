@@ -13,3 +13,28 @@ argo-cd:
     service:
       type: NodePort
       nodePort: 32080
+argocd-apps:
+  enabled: true
+  projects:
+    applications:
+      description: Generic project for applications
+      finalizers: &app-projects-finalizers
+        - resources-finalizer.argocd.argoproj.io
+      sourceRepos: &app-projects-source-repos
+        - '*'
+      destinations: &app-projects-destinations
+        - namespace: '*'
+          server: '*'
+      clusterResourceWhitelist: &app-projects-cluster-resource-whitelist
+        - group: '*'
+          kind: '*'
+      namespaceResourceWhitelist: &app-projects-ns-resource-whitelist
+        - group: '*'
+          kind: '*'
+    core:
+      description: Project for core services
+      finalizers: *app-projects-finalizers
+      sourceRepos: *app-projects-source-repos
+      destinations: *app-projects-destinations
+      clusterResourceWhitelist: *app-projects-cluster-resource-whitelist
+      namespaceResourceWhitelist: *app-projects-ns-resource-whitelist
