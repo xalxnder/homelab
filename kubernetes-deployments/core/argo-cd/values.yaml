@@ -18,8 +18,8 @@ argocd-apps:
   projects:
     applications:
       description: Generic project for applications
-      finalizers: &app-projects-finalizers
-        - resources-finalizer.argocd.argoproj.io
+        #finalizers: &app-projects-finalizers
+        #- resources-finalizer.argocd.argoproj.io
       sourceRepos: &app-projects-source-repos
         - https://github.com/xalxnder/homelab.git
       destinations: &app-projects-destinations
@@ -35,7 +35,7 @@ argocd-apps:
           kind: '*'
     core:
       description: Project for core services
-      finalizers: *app-projects-finalizers
+        #finalizers: *app-projects-finalizers
       sourceRepos: *app-projects-source-repos
       destinations: *app-projects-destinations
       clusterResourceWhitelist: *app-projects-cluster-resource-whitelist
