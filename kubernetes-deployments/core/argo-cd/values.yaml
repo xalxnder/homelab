@@ -43,7 +43,7 @@ argocd-apps:
       generators:
         - git:
             repoURL: https://github.com/xalxnder/homelab.git
-            revision: main
+            revision: HEAD
             directories:
               - path: kubernetes-deployments/applications/*  # ✅ Automatically discover apps in `apps/`
       template:
@@ -53,7 +53,7 @@ argocd-apps:
           project: applications
           source:
             repoURL: https://github.com/xalxnder/homelab.git
-            targetRevision: main
+            targetRevision: HEAD
             path: '{{ .path.path }}'  # Dynamically set app path
             helm: &appsets-helm
               valueFiles:
@@ -78,7 +78,7 @@ argocd-apps:
       generators:
         - git:
             repoURL: https://github.com/xalxnder/homelab.git
-            revision: main
+            revision: HEAD
             directories:
               - path: kubernetes-deployments/core/*  # ✅ Automatically discover apps in `apps/`
       template:
@@ -88,7 +88,7 @@ argocd-apps:
           project: core
           source:
             repoURL: https://github.com/xalxnder/homelab.git
-            targetRevision: main
+            targetRevision: HEAD
             path: '{{.path.path }}'  # Dynamically set app path
             helm: *appsets-helm
           destination:
