@@ -49,7 +49,7 @@ argocd-apps:
               repoURL: https://github.com/xalxnder/homelab.git
               revision: main
               directories:
-                - path: kubernetes-deployments/applications/*  # ✅ Automatically discover apps in `apps/`
+                - path: kubernetes-deployments/*  # ✅ Automatically discover apps in `apps/`
         template:
           metadata:
             name: '{{path.basename}}'
