@@ -4,7 +4,7 @@ argo-cd:
   notifications:
     enabled: false
   applicationSet:
-    enabled: false
+    enabled: true
   server:
     extraArgs:
       - --insecure
@@ -40,3 +40,29 @@ argocd-apps:
       destinations: *app-projects-destinations
       clusterResourceWhitelist: *app-projects-cluster-resource-whitelist
       namespaceResourceWhitelist: *app-projects-ns-resource-whitelist
+  applicationSet:  # ✅ Add ApplicationSet configuration
+    enabled: true
+    sets:
+      apps:
+        generators:
+          - git:
+              repoURL: https://github.com/xalxnder/homelab.git
+              revision: main
+              directories:
+                - path: kubernetes-deployments/applications/*  # ✅ Automatically discover apps in `apps/`
+        template:
+          metadata:
+            name: '{{path.basename}}'
+          spec:
+            project: applications
+            source:
+              repoURL: https://github.com/xalxnder/homelab.git
+              targetRevision: main
+              path: apps/{{path.basename}}  # Dynamically set app path
+            destination:
+              server: https://kubernetes.default.svc
+              namespace: default
+            syncPolicy:
+              automated:
+                prune: true
+                selfHeal: true
