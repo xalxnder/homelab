@@ -28,7 +28,7 @@ argocd-apps:
         metadata:
           name: '{{base.path.path }}'
         spec:
-          project: default
+          project: core
           source:
             repoURL: https://github.com/xalxnder/homelab.git
             targetRevision: HEAD
