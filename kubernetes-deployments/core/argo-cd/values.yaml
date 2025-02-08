@@ -90,7 +90,9 @@ argocd-apps:
             repoURL: https://github.com/xalxnder/homelab.git
             targetRevision: HEAD
             path: '{{.path.path }}'  
-            helm: *appsets-helm
+            helm: &appsets-helm
+              valueFiles:
+                - values.yaml
           destination:
             server: https://kubernetes.default.svc
             namespace: default
