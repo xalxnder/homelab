@@ -39,40 +39,40 @@ argocd-apps:
       clusterResourceWhitelist: *app-projects-cluster-resource-whitelist
       namespaceResourceWhitelist: *app-projects-ns-resource-whitelist
   applicationsets:  # ✅ Add ApplicationSet configuration
-    applications:
-      generators:
-        - git:
-            repoURL: https://github.com/xalxnder/homelab.git
-            revision: HEAD
-            directories:
-              - path: kubernetes-deployments/applications/*  # ✅ Automatically discover apps in `apps/`
-      template:
-        metadata:
-          name: '{{ base .path.path }}'
-        spec:
-          project: applications
-          source:
-            repoURL: https://github.com/xalxnder/homelab.git
-            targetRevision: HEAD
-            path: '{{ .path.path }}'  # Dynamically set app path
-            helm: &appsets-helm
-              valueFiles:
-                - values.yaml
-          destination:
-            server: https://kubernetes.default.svc
-            namespace: argo-cd
-          syncPolicy:
-            syncOptions: 
-              - ApplyOutOfSyncOnly=true
-              - CreateNamespace=true
-              - RespectIgnoreDifferences=true
-              - PruneLast=true
-            automated:
-              prune: false
-              selfHeal: true
-      syncPolicy:
-        preserveResourcesOnDeletion: true
-        applicationsSync: sync
+    # applications:
+    #   generators:
+    #     - git:
+    #         repoURL: https://github.com/xalxnder/homelab.git
+    #         revision: HEAD
+    #         directories:
+    #           - path: kubernetes-deployments/applications/*  # ✅ Automatically discover apps in `apps/`
+    #   template:
+    #     metadata:
+    #       name: '{{ base .path.path }}'
+    #     spec:
+    #       project: applications
+    #       source:
+    #         repoURL: https://github.com/xalxnder/homelab.git
+    #         targetRevision: HEAD
+    #         path: '{{ .path.path }}'  # Dynamically set app path
+    #         helm: &appsets-helm
+    #           valueFiles:
+    #             - values.yaml
+    #       destination:
+    #         server: https://kubernetes.default.svc
+    #         namespace: argo-cd
+    #       syncPolicy:
+    #         syncOptions: 
+    #           - ApplyOutOfSyncOnly=true
+    #           - CreateNamespace=true
+    #           - RespectIgnoreDifferences=true
+    #           - PruneLast=true
+    #         automated:
+    #           prune: false
+    #           selfHeal: true
+    #   syncPolicy:
+    #     preserveResourcesOnDeletion: true
+    #     applicationsSync: sync
     core:
       goTemplate: true
       generators:
