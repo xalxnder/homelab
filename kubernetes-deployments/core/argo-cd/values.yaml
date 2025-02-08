@@ -23,10 +23,8 @@ argocd-apps:
       sourceRepos: &app-projects-source-repos
         - https://github.com/xalxnder/homelab.git
       destinations: &app-projects-destinations
-        - namespace: default
-          server: https://kubernetes.default.svc
-        - namespace: argo-cd
-          server: https://kubernetes.default.svc
+        - namespace: '*'
+          server: '*'
       clusterResourceWhitelist: &app-projects-cluster-resource-whitelist
         - group: '*'
           kind: '*'
@@ -41,28 +39,68 @@ argocd-apps:
       clusterResourceWhitelist: *app-projects-cluster-resource-whitelist
       namespaceResourceWhitelist: *app-projects-ns-resource-whitelist
   applicationSet:  # ✅ Add ApplicationSet configuration
-    enabled: true
-    sets:
-      apps:
-        generators:
-          - git:
-              repoURL: https://github.com/xalxnder/homelab.git
-              revision: main
-              directories:
-                - path: kubernetes-deployments/*  # ✅ Automatically discover apps in `apps/`
-        template:
-          metadata:
-            name: '{{path.basename}}'
-          spec:
-            project: applications
-            source:
-              repoURL: https://github.com/xalxnder/homelab.git
-              targetRevision: main
-              path: apps/{{path.basename}}  # Dynamically set app path
-            destination:
-              server: https://kubernetes.default.svc
-              namespace: default
-            syncPolicy:
-              automated:
-                prune: true
-                selfHeal: true
+    applications:
+      generators:
+        - git:
+            repoURL: https://github.com/xalxnder/homelab.git
+            revision: main
+            directories:
+              - path: kubernetes-deployments/applications/*  # ✅ Automatically discover apps in `apps/`
+      template:
+        metadata:
+          name: '{{ base .path.path }}'
+        spec:
+          project: applications
+          source:
+            repoURL: https://github.com/xalxnder/homelab.git
+            targetRevision: main
+            path: '{{ .path.path }}'  # Dynamically set app path
+            helm: &appsets-helm
+              valueFiles:
+                - values.yaml
+          destination:
+            server: https://kubernetes.default.svc
+            namespace: argo-cd
+          syncPolicy:
+            syncOptions: 
+              - ApplyOutOfSyncOnly=true
+              - CreateNamespace=true
+              - RespectIgnoreDifferences=true
+              - PruneLast=true
+            automated:
+              prune: false
+              selfHeal: true
+      syncPolicy:
+        preserveResourcesOnDeletion: true
+        applicationsSync: sync
+    core:
+      generators:
+        - git:
+            repoURL: https://github.com/xalxnder/homelab.git
+            revision: main
+            directories:
+              - path: kubernetes-deployments/core/*  # ✅ Automatically discover apps in `apps/`
+      template:
+        metadata:
+          name: '{{ base .path.path }}'
+        spec:
+          project: core
+          source:
+            repoURL: https://github.com/xalxnder/homelab.git
+            targetRevision: main
+            path: '{{ .path.path }}'  # Dynamically set app path
+          destination:
+            server: https://kubernetes.default.svc
+            namespace: default
+          syncPolicy:
+            syncOptions: 
+              - ApplyOutOfSyncOnly=true
+              - CreateNamespace=true
+              - RespectIgnoreDifferences=true
+              - PruneLast=true
+            automated:
+              prune: false
+              selfHeal: true
+      syncPolicy:
+        preserveResourcesOnDeletion: true
+        applicationsSync: sync
