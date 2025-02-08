@@ -74,6 +74,7 @@ argocd-apps:
         preserveResourcesOnDeletion: true
         applicationsSync: sync
     core:
+      goTemplate: true
       generators:
         - git:
             repoURL: https://github.com/xalxnder/homelab.git
@@ -82,13 +83,13 @@ argocd-apps:
               - path: kubernetes-deployments/core/*  # ✅ Automatically discover apps in `apps/`
       template:
         metadata:
-          name: '{{ base .path.path }}'
+          name: '{{base.path.path }}'
         spec:
           project: core
           source:
             repoURL: https://github.com/xalxnder/homelab.git
             targetRevision: main
-            path: '{{ .path.path }}'  # Dynamically set app path
+            path: '{{.path.path }}'  # Dynamically set app path
             helm: *appsets-helm
           destination:
             server: https://kubernetes.default.svc
