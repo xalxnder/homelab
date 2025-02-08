@@ -7,7 +7,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/xalxnder/homelab.git.git
+    repoURL: https://github.com/xalxnder/homelab.git
     path: kubernetes-deployments/core/root-app/
     targetRevision: HEAD
   destination:
