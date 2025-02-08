@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-app
+  name: argo-cd
   namespace: argo-cd
 spec:
   project: core  # This must match the project name in values.yaml
