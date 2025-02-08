@@ -17,23 +17,6 @@ argocd-apps:
   enabled: true
   projects:
     core:
-      description: Generic project for applications
-      # finalizers: &app-projects-finalizers
-      #   - resources-finalizer.argocd.argoproj.io
-      sourceRepos: &app-projects-source-repos
-        - https://github.com/xalxnder/homelab.git
-      destinations: &app-projects-destinations
-        - namespace: default
-          server: https://kubernetes.default.svc
-        - namespace: argo-cd
-          server: https://kubernetes.default.svc
-      clusterResourceWhitelist: &app-projects-cluster-resource-whitelist
-        - group: '*'
-          kind: '*'
-      namespaceResourceWhitelist: &app-projects-ns-resource-whitelist
-        - group: '*'
-          kind: '*'
-    core:
       goTemplate: true
       generators:
         - git:
