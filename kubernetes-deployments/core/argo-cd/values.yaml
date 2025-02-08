@@ -16,7 +16,7 @@ argo-cd:
 argocd-apps:
   enabled: true
   projects:
-    applications:
+    core:
       description: Generic project for applications
       finalizers: &app-projects-finalizers
         - resources-finalizer.argocd.argoproj.io
@@ -31,13 +31,13 @@ argocd-apps:
       namespaceResourceWhitelist: &app-projects-ns-resource-whitelist
         - group: '*'
           kind: '*'
-    core:
-      description: Project for core services
-      finalizers: *app-projects-finalizers
-      sourceRepos: *app-projects-source-repos
-      destinations: *app-projects-destinations
-      clusterResourceWhitelist: *app-projects-cluster-resource-whitelist
-      namespaceResourceWhitelist: *app-projects-ns-resource-whitelist
+    # core:
+    #   description: Project for core services
+    #   finalizers: *app-projects-finalizers
+    #   sourceRepos: *app-projects-source-repos
+    #   destinations: *app-projects-destinations
+    #   clusterResourceWhitelist: *app-projects-cluster-resource-whitelist
+    #   namespaceResourceWhitelist: *app-projects-ns-resource-whitelist
   applicationsets:  # ✅ Add ApplicationSet configuration
     # applications:
     #   generators:
