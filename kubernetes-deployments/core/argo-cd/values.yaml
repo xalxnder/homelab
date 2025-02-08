@@ -38,7 +38,7 @@ argocd-apps:
       destinations: *app-projects-destinations
       clusterResourceWhitelist: *app-projects-cluster-resource-whitelist
       namespaceResourceWhitelist: *app-projects-ns-resource-whitelist
-  applicationSet:  # ✅ Add ApplicationSet configuration
+  applicationsets:  # ✅ Add ApplicationSet configuration
     applications:
       generators:
         - git:
