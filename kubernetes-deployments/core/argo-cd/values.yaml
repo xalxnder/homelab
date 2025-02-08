@@ -89,6 +89,7 @@ argocd-apps:
             repoURL: https://github.com/xalxnder/homelab.git
             targetRevision: main
             path: '{{ .path.path }}'  # Dynamically set app path
+            helm: *appsets-helm
           destination:
             server: https://kubernetes.default.svc
             namespace: default
