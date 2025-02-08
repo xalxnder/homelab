@@ -1,10 +1,11 @@
 argo-cd:
+  enabled: true
   dex:
     enabled: false
   notifications:
     enabled: false
   applicationSet:
-    enabled: false
+    enabled: true
   server:
     extraArgs:
       - --insecure
@@ -13,3 +14,40 @@ argo-cd:
     service:
       type: NodePort
       nodePort: 32080
+applicationsets:
+  core:
+    goTemplate: true
+    generators:
+      - git:
+          repoURL: https://github.com/xalxnder/homelab.git
+          revision: HEAD
+          directories:
+            - path: kubernetes-deployments/core/*
+    template:
+      metadata:
+        name: '{{path.basename}}'
+        labels: {}
+      spec:
+        project: default
+        source:
+          repoURL: https://github.com/xalxnder/homelab.git
+          targetRevision: HEAD
+          path: "{{ .path.path }}"
+          helm: &appsets-helm
+            valueFiles:
+              - values.yaml
+        destination: &appsets-destination
+          server: https://kubernetes.default.svc
+          namespace: "{{ base .path.path }}"
+        revisionHistoryLimit: 5
+        syncPolicy:
+          syncOptions: &appsets-sync-options
+            - ApplyOutOfSyncOnly=true
+            - CreateNamespace=true
+            - RespectIgnoreDifferences=true
+            - PruneLast=true
+        ignoreDifferences: []
+    syncPolicy:
+      preserveResourcesOnDeletion: true
+      applicationsSync: sync
+
