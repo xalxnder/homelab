@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: core-applications
+  namespace: argo-cd
+spec:
+  goTemplate: true
+  generators:
+    - git:
+        repoURL: https://github.com/xalxnder/homelab.git
+        revision: HEAD
+        directories:
+          - path: kubernetes-deployments/core/*
+  template:
+    metadata:
+      name: "{{ base .path.path }}"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/xalxnder/homelab.git
+        targetRevision: HEAD
+        path: "{{ .path.path }}"
+        helm:
+          valueFiles:
+            - values.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{ .path.basename }}"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+          - ApplyOutOfSyncOnly=true
+          - RespectIgnoreDifferences=true
