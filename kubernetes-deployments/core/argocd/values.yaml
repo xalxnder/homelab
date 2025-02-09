@@ -16,7 +16,7 @@ argo-cd:
         memory: 48Mi
     extraArgs:
       - --insecure
-  namespaceOverride: "argo-cd"
+  namespaceOverride: "argocd"
   server:
     service:
       type: NodePort
