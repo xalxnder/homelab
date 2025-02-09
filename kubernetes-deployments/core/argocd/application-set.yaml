@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: core-applications
-  namespace: argo-cd
+  namespace: argocd
 spec:
   goTemplate: true
   generators:
