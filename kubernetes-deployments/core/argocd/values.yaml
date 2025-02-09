@@ -21,7 +21,10 @@ argo-cd:
     service:
       type: NodePort
       nodePort: 32080
-applicationsets:
+
+argocd-apps:
+  enabled: true
+  applicationsets:
   core:
     goTemplate: true
     generators:
