@@ -3,7 +3,7 @@ description: Chart for Homepage
 icon: https://github.com/gethomepage/homepage/blob/main/public/mstile-150x150.png
 name: homepage
 version: 2.0.1
-appVersion: v0.9.6
+appVersion: v0.10.9
 sources:
   - https://github.com/jameswynn/helm-charts/charts/homepage
   - https://github.com/gethomepage/homepage/
