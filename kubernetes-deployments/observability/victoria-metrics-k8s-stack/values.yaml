@@ -7,9 +7,9 @@ victoria-metrics-k8s-stack:
   experimentalDashboardsEnabled: true
 
   grafana:
-    admin:
-      userKey: username
-      passwordKey: password
+    # admin:
+    #   userKey: username
+    #   passwordKey: password
     persistence:
       enabled: false
       size: 2Gi
