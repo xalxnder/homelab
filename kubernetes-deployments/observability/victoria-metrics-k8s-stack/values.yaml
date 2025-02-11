@@ -1,0 +1,29 @@
+victoria-metrics-k8s-stack:
+  enabled: true
+  fullnameOverride: vm-k8s-stack
+  defaultRules:
+    create: false
+  defaultDashboardsEnabled: true
+  experimentalDashboardsEnabled: true
+
+  vmsingle:
+    spec:
+      storage:
+        resources:
+          requests:
+            storage: 5Gi
+
+  grafana:
+    admin:
+      existingSecret: grafana-admin-credentials
+      userKey: username
+      passwordKey: password
+    persistence:
+      enabled: true
+      size: 1Gi
+    ingress:
+      enabled: false
+      annotations:
+    service:
+      type: NodePort
+      nodePort: 32081
