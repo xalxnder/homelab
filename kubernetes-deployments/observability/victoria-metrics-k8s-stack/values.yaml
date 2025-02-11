@@ -5,6 +5,9 @@ victoria-metrics-k8s-stack:
     create: false
   defaultDashboardsEnabled: true
   experimentalDashboardsEnabled: true
+  persistence:
+    enabled: false
+    size: 2Gi
 
   grafana:
     # admin:
