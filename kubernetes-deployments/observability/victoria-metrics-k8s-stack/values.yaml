@@ -19,7 +19,7 @@ victoria-metrics-k8s-stack:
       userKey: username
       passwordKey: password
     persistence:
-      enabled: true
+      enabled: false
       size: 1Gi
     ingress:
       enabled: false
