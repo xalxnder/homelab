@@ -57,6 +57,9 @@ argocd-apps:
             namespace: "{{ .path.basename }}"
           revisionHistoryLimit: 5
           syncPolicy:
+            automated:
+              prune: true
+              selfHeal: true
             syncOptions: &appsets-sync-options
               - ApplyOutOfSyncOnly=true
               - CreateNamespace=true
