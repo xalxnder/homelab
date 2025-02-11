@@ -1,7 +1,6 @@
 image:
   repository: ghcr.io/gethomepage/homepage
   # tag: v0.6.0
-
 fullnameOverride: homepage
 
 # Enable RBAC. RBAC is necessary to use Kubernetes integration
