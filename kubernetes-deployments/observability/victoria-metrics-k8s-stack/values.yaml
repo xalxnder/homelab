@@ -8,7 +8,6 @@ victoria-metrics-k8s-stack:
 
   grafana:
     admin:
-      existingSecret: grafana-admin-credentials
       userKey: username
       passwordKey: password
     persistence:
