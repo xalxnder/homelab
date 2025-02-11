@@ -6,13 +6,6 @@ victoria-metrics-k8s-stack:
   defaultDashboardsEnabled: true
   experimentalDashboardsEnabled: true
 
-  vmsingle:
-    spec:
-      storage:
-        resources:
-          requests:
-            storage: 5Gi
-
   grafana:
     admin:
       existingSecret: grafana-admin-credentials
