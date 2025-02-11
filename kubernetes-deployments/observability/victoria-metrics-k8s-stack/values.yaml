@@ -20,7 +20,7 @@ victoria-metrics-k8s-stack:
       passwordKey: password
     persistence:
       enabled: false
-      size: 1Gi
+      size: 2Gi
     ingress:
       enabled: false
       annotations:
