@@ -10,7 +10,6 @@ victoria-metrics-k8s-stack:
     size: 2Gi
 
   vmsingle:
-    enabled: false
     spec:
       storage:
         resources:
