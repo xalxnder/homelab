@@ -9,6 +9,13 @@ victoria-metrics-k8s-stack:
     enabled: false
     size: 2Gi
 
+  vmsingle:
+    spec:
+      storage:
+        resources:
+          requests:
+            storage: 5Gi
+
   grafana:
     # admin:
     #   userKey: username
