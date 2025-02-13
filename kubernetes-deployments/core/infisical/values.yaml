@@ -137,3 +137,5 @@ redis:
 
   # -- Redis deployment type (e.g., standalone or cluster)
   architecture: standalone
+  volumePermissions:
+    enabled: true
