@@ -78,7 +78,7 @@ ingress:
 
   nginx:
     # -- Enable NGINX-specific settings, if using NGINX ingress controller
-    enabled: true
+    enabled: false
 
   # -- Custom annotations for ingress resource
   annotations: {}
