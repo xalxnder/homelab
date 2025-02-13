@@ -67,72 +67,73 @@ infisical:
     requests:
       # -- CPU request for Infisical container
       cpu: 350m
-# ingress:
-#   # -- Enable or disable ingress configuration
-#   enabled: false
-#   # -- Hostname for ingress access, e.g., app.example.com
-#   hostName: ""
-#   # -- Specifies the ingress class, useful for multi-ingress setups
-#   ingressClassName: nginx
 
-#   nginx:
-#     # -- Enable NGINX-specific settings, if using NGINX ingress controller
-#     enabled: false
+ingress:
+  # -- Enable or disable ingress configuration
+  enabled: true
+  # -- Hostname for ingress access, e.g., app.example.com
+  hostName: ""
+  # -- Specifies the ingress class, useful for multi-ingress setups
+  ingressClassName: nginx
 
-#   # -- Custom annotations for ingress resource
-#   annotations: {}
-#   # -- TLS settings for HTTPS access
-#   tls:
-#     []
-#     # -- TLS secret name for HTTPS
-#     # - secretName: letsencrypt-prod
-#     # -- Domain name to associate with the TLS certificate
-#     #   hosts:
-#     #     - some.domain.com
+  nginx:
+    # -- Enable NGINX-specific settings, if using NGINX ingress controller
+    enabled: true
 
-# postgresql:
-#   # -- Enables an in-cluster PostgreSQL deployment. To achieve HA for Postgres, we recommend deploying https://github.com/zalando/postgres-operator instead.
-#   enabled: false
-#   # -- PostgreSQL resource name
-#   name: "postgresql"
-#   # -- Full name override for PostgreSQL resources
-#   fullnameOverride: "postgresql"
+  # -- Custom annotations for ingress resource
+  annotations: {}
+  # -- TLS settings for HTTPS access
+  tls:
+    []
+    # -- TLS secret name for HTTPS
+    # - secretName: letsencrypt-prod
+    # -- Domain name to associate with the TLS certificate
+    #   hosts:
+    #     - some.domain.com
 
-#   auth:
-#     # -- Database username for PostgreSQL
-#     username: infisical
-#     # -- Password for PostgreSQL database access
-#     password: root
-#     # -- Database name for Infisical
-#     database: infisicalDB
+postgresql:
+  # -- Enables an in-cluster PostgreSQL deployment. To achieve HA for Postgres, we recommend deploying https://github.com/zalando/postgres-operator instead.
+  enabled: true
+  # -- PostgreSQL resource name
+  name: "postgresql"
+  # -- Full name override for PostgreSQL resources
+  fullnameOverride: "postgresql"
 
-#   useExistingPostgresSecret:
-#     # -- Set to true if using an existing Kubernetes secret that contains PostgreSQL connection string
-#     enabled: false
-#     existingConnectionStringSecret:
-#       # -- Kubernetes secret name containing the PostgreSQL connection string
-#       name: ""
-#       # -- Key name in the Kubernetes secret that holds the connection string
-#       key: ""
+  auth:
+    # -- Database username for PostgreSQL
+    username: infisical
+    # -- Password for PostgreSQL database access
+    password: root
+    # -- Database name for Infisical
+    database: infisicalDB
 
-# redis:
-#   # -- Enables an in-cluster Redis deployment
-#   enabled: false
-#   # -- Redis resource name
-#   name: "redis"
-#   # -- Full name override for Redis resources
-#   fullnameOverride: "redis"
+  useExistingPostgresSecret:
+    # -- Set to true if using an existing Kubernetes secret that contains PostgreSQL connection string
+    enabled: false
+    existingConnectionStringSecret:
+      # -- Kubernetes secret name containing the PostgreSQL connection string
+      name: ""
+      # -- Key name in the Kubernetes secret that holds the connection string
+      key: ""
 
-#   cluster:
-#     # -- Clustered Redis deployment
-#     enabled: false
+redis:
+  # -- Enables an in-cluster Redis deployment
+  enabled: true
+  # -- Redis resource name
+  name: "redis"
+  # -- Full name override for Redis resources
+  fullnameOverride: "redis"
 
-#   # -- Requires a password for Redis authentication
-#   usePassword: true
+  cluster:
+    # -- Clustered Redis deployment
+    enabled: false
 
-#   auth:
-#     # -- Redis password
-#     password: "mysecretpassword"
+  # -- Requires a password for Redis authentication
+  usePassword: true
 
-#   # -- Redis deployment type (e.g., standalone or cluster)
-#   architecture: standalone
+  auth:
+    # -- Redis password
+    password: "mysecretpassword"
+
+  # -- Redis deployment type (e.g., standalone or cluster)
+  architecture: standalone
