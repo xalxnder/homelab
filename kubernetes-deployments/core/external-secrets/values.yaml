@@ -1,0 +1,10 @@
+external-secrets:
+  enabled: true
+  initialInstall: false
+  resources:
+    limits:
+      cpu: 50m
+      memory: 80Mi
+    requests:
+      cpu: 10m
+      memory: 40Mi
