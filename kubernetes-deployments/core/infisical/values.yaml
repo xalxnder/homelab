@@ -137,5 +137,8 @@ redis:
 
   # -- Redis deployment type (e.g., standalone or cluster)
   architecture: standalone
+  securityContext:
+    runAsUser: 0
+    fsGroup: 2000
   volumePermissions:
     enabled: true
