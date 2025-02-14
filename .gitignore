@@ -1,3 +1,4 @@
 *.tgz
 Chart.lock
+settings.json
 rendered/
