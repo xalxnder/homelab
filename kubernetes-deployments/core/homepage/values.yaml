@@ -27,7 +27,7 @@ service:
     ports:
       http:
         port: 80
-        # targetPort: 3000
+        targetPort: 3000
 
 controller:
   strategy: RollingUpdate
