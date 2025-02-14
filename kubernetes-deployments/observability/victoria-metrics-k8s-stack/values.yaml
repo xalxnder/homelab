@@ -27,5 +27,4 @@ victoria-metrics-k8s-stack:
       enabled: false
       annotations:
     service:
-      type: NodePort
-      nodePort: 32081
+      type: LoadBalancer
