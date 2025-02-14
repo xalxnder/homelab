@@ -26,8 +26,10 @@ argo-cd:
   namespaceOverride: "argocd"
   server:
     service:
-      type: NodePort
-      nodePort: 32080
+      type: LoadBalancer
+      ports:
+        http:
+          port: 80
 argocd-apps:
   enabled: true
   applicationsets:
