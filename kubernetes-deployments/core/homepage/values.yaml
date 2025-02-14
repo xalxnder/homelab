@@ -52,6 +52,8 @@ probes:
       periodSeconds: 5
       timeoutSeconds: 1
       failureThreshold: 30
+      tcpSocket:
+        port: 80
 
 # Enable the ingress to expose Homepage to the network.
 ingress:
