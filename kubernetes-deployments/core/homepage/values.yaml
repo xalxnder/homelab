@@ -106,7 +106,7 @@ ingress:
       gethomepage.dev/group: "A New Group"
       gethomepage.dev/icon: "homepage.png"
       traefik.ingress.kubernetes.io/router.entrypoints: web
-      traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
+      # traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
       # traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
       kubernetes.io/ingress.class: traefik
     ingressClassName: "traefik"
