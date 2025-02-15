@@ -58,3 +58,7 @@ redis:
   architecture: standalone
   volumePermissions:
     enabled: true
+  master:
+    persistence:
+      enabled: true
+      path: "/bitnami/postgresql/data"
