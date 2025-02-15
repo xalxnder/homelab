@@ -24,7 +24,7 @@ infisical:
     tag: "v0.46.2-postgres"
     pullPolicy: IfNotPresent
   serviceAccount:
-    create: true  # Ensure this is defined
+    create: false  # Ensure this is defined
 
   affinity: {}
 
