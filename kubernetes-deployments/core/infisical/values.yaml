@@ -45,6 +45,10 @@ postgresql:
     username: infisical
     password: root
     database: infisicalDB
+  primary:
+    persistence:
+      enabled: true
+      mountPath: "/postgres"
 
 redis:
   enabled: true
@@ -56,8 +60,6 @@ redis:
   auth:
     password: "mysecretpassword"
   architecture: standalone
-  volumePermissions:
-    enabled: true
   master:
     persistence:
       enabled: true
