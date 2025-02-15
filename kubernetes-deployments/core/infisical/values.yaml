@@ -10,17 +10,32 @@ infisical:
   deploymentAnnotations: {}
   replicaCount: 6
 
+  databaseSchemaMigrationJob:
+    image:
+      # -- Image repository for migration wait job
+      repository: ghcr.io/groundnuty/k8s-wait-for
+      # -- Image tag version
+      tag: no-root-v2.0
+      # -- Pulls image only if not present on the node
+      pullPolicy: IfNotPresent
+
   image:
     repository: infisical/infisical
     tag: "v0.46.2-postgres"
     pullPolicy: IfNotPresent
+  serviceAccount:
+    create: true  # Ensure this is defined
 
   affinity: {}
+
   kubeSecretRef: "infisical-secrets"
+
   service:
     annotations: {}
     type: LoadBalancer
-    nodePort: ""
+    annotations:
+      metallb.universe.tf/ip-allocated-from-pool: ip-pool
+      metallb.universe.tf/loadBalancerIPs: 192.168.1.70
 
   resources:
     limits:
@@ -29,7 +44,7 @@ infisical:
       cpu: 200m
 
 ingress:
-  enabled: true
+  enabled: false
   hostName: ""
   ingressClassName: traefik
   nginx:
@@ -49,6 +64,8 @@ postgresql:
     persistence:
       enabled: true
       mountPath: "/postgres"
+  useExistingPostgresSecret:
+    enabled: false  # or false, depending on your setup
 
 redis:
   enabled: true
