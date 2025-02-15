@@ -95,22 +95,26 @@ probes:
 # Enable the ingress to expose Homepage to the network.
 ingress:
   main:
-    enabled: false
+    enabled: true
     # labels:
     #   # This label will enable discover of this deployment in Homepage
     #   gethomepage.dev/enabled: "true"
-    # annotations:
-    #   # These annotations will configure how this deployment is shown in Homepage
-    #   gethomepage.dev/name: "Homepage"
-    #   gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
-    #   gethomepage.dev/group: "A New Group"
-    #   gethomepage.dev/icon: "homepage.png"
-    # ingressClassName: "nginx"
-    # hosts:
-    #   - host: &host "homepage.local"
-    #     paths:
-    #       - path: /
-    #         pathType: Prefix
+    annotations:
+      # These annotations will configure how this deployment is shown in Homepage
+      gethomepage.dev/name: "Homepage"
+      gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
+      gethomepage.dev/group: "A New Group"
+      gethomepage.dev/icon: "homepage.png"
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure
+      traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
+      traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
+      kubernetes.io/ingress.class: traefik
+    ingressClassName: "traefik"
+    hosts:
+    - host: &host "grafana.xalxnder.io"
+      paths:
+      - path: /
+        pathType: Prefix
     # tls:
     #   - hosts:
     #       - *host
