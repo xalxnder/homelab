@@ -8,7 +8,7 @@ infisical:
   fullnameOverride: ""
   podAnnotations: {}
   deploymentAnnotations: {}
-  replicaCount: 6
+  replicaCount: 1
 
   databaseSchemaMigrationJob:
     image:
