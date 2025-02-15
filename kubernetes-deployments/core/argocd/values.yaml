@@ -109,4 +109,42 @@ argocd-apps:
       syncPolicy:
         preserveResourcesOnDeletion: true
         applicationsSync: sync
+    applications:
+      goTemplate: true
+      generators:
+        - git:
+            repoURL: https://github.com/xalxnder/homelab.git
+            revision: HEAD
+            directories:
+              - path: kubernetes-deployments/applications/*
+      template:
+        metadata:
+          name: "{{ base .path.path }}"
+          labels: {}
+        spec:
+          project: default
+          source:
+            repoURL: https://github.com/xalxnder/homelab.git
+            targetRevision: HEAD
+            path: "{{ .path.path }}"
+            helm: &appsets-helm
+              valueFiles:
+                - values.yaml
+          destination: &appsets-destination
+            server: https://kubernetes.default.svc
+            namespace: "{{ .path.basename }}"
+          revisionHistoryLimit: 5
+          syncPolicy:
+            automated:
+              prune: true
+              selfHeal: true
+            syncOptions: &appsets-sync-options
+              - ApplyOutOfSyncOnly=true
+              - CreateNamespace=true
+              - RespectIgnoreDifferences=true
+              - PruneLast=true
+          ignoreDifferences: []
+      syncPolicy:
+        preserveResourcesOnDeletion: true
+        applicationsSync: sync
 
