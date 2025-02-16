@@ -10,7 +10,7 @@ infisical:
 
   image:
     repository: infisical/infisical
-    tag: "v0.46.2-postgres"
+    tag: "v0.46.3-postgres"
     pullPolicy: IfNotPresent
   serviceAccount:
     create: true  # Ensure this is defined
