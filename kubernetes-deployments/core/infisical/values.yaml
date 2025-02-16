@@ -71,4 +71,4 @@ redis:
   master:
     persistence:
       enabled: true
-      path: "/data/redis"
+      path: "/bitnami/postgresql/data"
