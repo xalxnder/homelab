@@ -69,4 +69,4 @@ redis:
   master:
     persistence:
       enabled: true
-      path: "/data"
+      path: "/data/redis"
