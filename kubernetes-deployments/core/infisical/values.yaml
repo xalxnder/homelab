@@ -55,7 +55,7 @@ postgresql:
   primary:
     persistence:
       enabled: true
-      mountPath: "/postgres"
+      mountPath: "/bitnami/postgresql/data"
   useExistingPostgresSecret:
     enabled: false  # or false, depending on your setup
 
