@@ -66,6 +66,8 @@ redis:
   auth:
     password: "mysecretpassword"
   architecture: standalone
+  volumePermissions:
+    enabled: true
   master:
     persistence:
       enabled: true
