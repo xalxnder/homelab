@@ -1,23 +1,12 @@
-nameOverride: "infisical"
-fullnameOverride: "infisical"
-
 infisical:
   enabled: true
   name: infisical
   autoDatabaseSchemaMigration: true
-  fullnameOverride: ""
+  fullnameOverride: "infisical"
   podAnnotations: {}
   deploymentAnnotations: {}
   replicaCount: 1
-
-  databaseSchemaMigrationJob:
-    image:
-      # -- Image repository for migration wait job
-      repository: ghcr.io/groundnuty/k8s-wait-for
-      # -- Image tag version
-      tag: no-root-v2.0
-      # -- Pulls image only if not present on the node
-      pullPolicy: IfNotPresent
+  autoDatabaseSchemaMigration: false
 
   image:
     repository: infisical/infisical
@@ -32,10 +21,10 @@ infisical:
 
   service:
     annotations: {}
-    type: LoadBalancer
-    annotations:
-      metallb.universe.tf/ip-allocated-from-pool: ip-pool
-      metallb.universe.tf/loadBalancerIPs: 192.168.1.70
+    type: NodePort
+    # annotations:
+    #   metallb.universe.tf/ip-allocated-from-pool: ip-pool
+    #   metallb.universe.tf/loadBalancerIPs: 192.168.1.70
 
   resources:
     limits:
@@ -80,4 +69,4 @@ redis:
   master:
     persistence:
       enabled: true
-      path: "/bitnami/postgresql/data"
+      path: "/data"
