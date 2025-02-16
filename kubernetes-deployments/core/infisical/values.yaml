@@ -50,6 +50,8 @@ postgresql:
     username: infisical
     password: root
     database: infisicalDB
+  volumePermissions:
+    enabled: true
   primary:
     persistence:
       enabled: true
