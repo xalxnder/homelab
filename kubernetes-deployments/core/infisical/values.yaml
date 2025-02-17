@@ -20,11 +20,8 @@ infisical:
 
   service:
     annotations: {}
-    type: LoadBalancer
-    # nodePort: 31632
-    # annotations:
-    #   metallb.universe.tf/ip-allocated-from-pool: ip-pool
-    #   metallb.universe.tf/loadBalancerIPs: 192.168.1.70
+    type: NodePort
+    nodePort: 31632
 
   resources:
     limits:
