@@ -56,7 +56,7 @@ postgresql:
     persistence:
       enabled: true
       existingClaim: "infisical-postgres-pvc"
-      mountPath: "/bitnami/postgresql/data"
+      mountPath: "/bitnami/postgresql"
   useExistingPostgresSecret:
     enabled: false  # or false, depending on your setup
 
