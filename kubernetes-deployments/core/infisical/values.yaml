@@ -28,7 +28,8 @@ infisical:
 
   service:
     annotations: {}
-    type: LoadBalancer
+    type: NodePort
+    nodePort: 31632
 
   resources:
     limits:
