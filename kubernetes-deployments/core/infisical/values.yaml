@@ -5,7 +5,7 @@ infisical:
   podAnnotations: {}
   deploymentAnnotations: {}
   replicaCount: 1
-  autoDatabaseSchemaMigration: true
+  autoDatabaseSchemaMigration: false
   databaseSchemaMigrationJob:
     image:
       # -- Image repository for migration wait job
