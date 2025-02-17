@@ -55,7 +55,8 @@ postgresql:
   primary:
     persistence:
       enabled: true
-      mountPath: "/bitnami/postgresql-test/data"
+      existingClaim: "infisical-postgres-pvc"
+      mountPath: "/bitnami/postgresql/data"
   useExistingPostgresSecret:
     enabled: false  # or false, depending on your setup
 
@@ -74,4 +75,5 @@ redis:
   master:
     persistence:
       enabled: true
-      path: "/bitnami/postgresql/data"
+      existingClaim: "infisical-redis-pvc"
+      path: "/redis"
