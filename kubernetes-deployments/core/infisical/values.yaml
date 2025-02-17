@@ -6,6 +6,14 @@ infisical:
   deploymentAnnotations: {}
   replicaCount: 1
   autoDatabaseSchemaMigration: false
+  databaseSchemaMigrationJob:
+    image:
+      # -- Image repository for migration wait job
+      repository: ghcr.io/groundnuty/k8s-wait-for
+      # -- Image tag version
+      tag: no-root-v2.0
+      # -- Pulls image only if not present on the node
+      pullPolicy: IfNotPresent
 
   image:
     repository: infisical/infisical
@@ -20,8 +28,7 @@ infisical:
 
   service:
     annotations: {}
-    type: NodePort
-    nodePort: 31632
+    type: LoadBalancer
 
   resources:
     limits:
