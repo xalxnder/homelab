@@ -6,14 +6,14 @@ infisical:
   podAnnotations: {}
   deploymentAnnotations: {}
   replicaCount: 1
-  autoDatabaseSchemaMigration: false
+  # autoDatabaseSchemaMigration: false
 
   image:
     repository: infisical/infisical
     tag: "v0.111.0-postgres"
     pullPolicy: IfNotPresent
   serviceAccount:
-    create: true  # Ensure this is defined
+    create: true # Ensure this is defined
 
   affinity: {}
 
@@ -58,7 +58,7 @@ postgresql:
       existingClaim: "infisical-postgres-pvc"
       mountPath: "/bitnami/postgresql"
   useExistingPostgresSecret:
-    enabled: false  # or false, depending on your setup
+    enabled: false # or false, depending on your setup
 
 redis:
   enabled: true
