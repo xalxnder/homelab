@@ -50,7 +50,7 @@ spec:
         readinessProbe:
           httpGet:
             path: /api/status
-            port: 8080
+            port: 31632
           initialDelaySeconds: 30
           periodSeconds: 5
         ports: 
