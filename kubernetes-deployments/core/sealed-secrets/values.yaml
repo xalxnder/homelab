@@ -180,7 +180,10 @@ rbac:
   namespacedRolesName: "secrets-unsealer"
   ## @param rbac.labels Extra labels to be added to RBAC resources
   ##
-  labels: {}
+  labels:
+    app.kubernetes.io/version: "0.28.0"
+    app.kubernetes.io/name: sealed-secrets
+
   ## @param rbac.pspEnabled PodSecurityPolicy
   ##
   pspEnabled: false
