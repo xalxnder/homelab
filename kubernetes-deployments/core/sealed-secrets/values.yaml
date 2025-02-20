@@ -1,4 +1,4 @@
-sealed-secrtes:
+sealed-secrets:
   enabled: true
   fullnameOverride: sealed-secrets
   resources:
