@@ -150,7 +150,7 @@ serviceAccount:
   annotations: {}
   ## @param serviceAccount.create Specifies whether a ServiceAccount should be created
   ##
-  create: true
+  create: false
   ## @param serviceAccount.labels Extra labels to be added to the ServiceAccount
   ##
   labels:
