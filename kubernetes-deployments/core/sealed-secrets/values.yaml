@@ -165,10 +165,10 @@ serviceAccount:
 rbac:
   ## @param rbac.create Specifies whether RBAC resources should be created
   ##
-  create: true
+  create: false
   ## @param rbac.clusterRole Specifies whether the Cluster Role resource should be created
   ##
-  clusterRole: true
+  clusterRole: false
   ## @param rbac.clusterRoleName Specifies the name for the Cluster Role resource
   ##
   clusterRoleName: "secrets-unsealer"
