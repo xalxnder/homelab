@@ -153,7 +153,9 @@ serviceAccount:
   create: true
   ## @param serviceAccount.labels Extra labels to be added to the ServiceAccount
   ##
-  labels: {}
+  labels:
+    app.kubernetes.io/version: "0.28.0"
+    app.kubernetes.io/name: sealed-secrets
   ## @param serviceAccount.name The name of the ServiceAccount to use.
   ## If not set and create is true, a name is generated using the sealed-secrets.fullname template
   ##
