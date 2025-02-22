@@ -1,5 +1,5 @@
 external-dns:
-  enabled: false
+  enabled: true
   fullnameOverride: external-dns
   provider: pihole
   policy: upsert-only
