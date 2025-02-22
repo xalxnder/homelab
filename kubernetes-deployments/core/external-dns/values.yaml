@@ -1,0 +1,43 @@
+external-dns:
+  fullnameOverride: external-dns
+  provider: pihole
+  policy: upsert-only
+  registry: noop
+  env:
+  - name: EXTERNAL_DNS_PIHOLE_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: pihole-pass
+        key: password
+  extraArgs:
+  - --pihole-server=192.168.1.76
+  resources:
+    limits:
+      cpu: 50m
+      memory: 96Mi
+    requests:
+      cpu: 10m
+      memory: 32Mi
+  provider: pihole
+  policy: upsert-only
+  registry: noop
+  env:
+  - name: EXTERNAL_DNS_PIHOLE_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: pihole-passw
+        key: password
+  extraArgs:
+  - --pihole-server=http://pihole-web.pihole
+  resources:
+    limits:
+      cpu: 50m
+      memory: 96Mi
+    requests:
+      cpu: 10m
+      memory: 32Mi
+  serviceAccount:
+    create: false
+    name: external-dns
+  rbac:
+    create: false
