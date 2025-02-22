@@ -40,7 +40,7 @@ traefik:
   ingressRoute:
     dashboard:
       enabled: true
-        matchRule: Host(`traefik.xlab.io`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+      matchRule: Host(`traefik.xlab.io`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
       services:
       - name: api@internal
         kind: TraefikService
