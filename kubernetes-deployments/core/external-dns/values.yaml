@@ -589,7 +589,7 @@ ns1:
 pihole:
   ## @param pihole.server When using the Pi-hole provider, specify The address of the Pi-hole web server
   ##
-  server: "192.168.1.76"
+  server: "http://192.168.1.76"
   ## @param pihole.tlsSkipVerify When using the Pi-hole provider, specify wheter to skip verification of any TLS certificates served by the Pi-hole web server
   ##
   tlsSkipVerify: ""
