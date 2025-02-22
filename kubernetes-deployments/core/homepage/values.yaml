@@ -111,7 +111,7 @@ ingress:
       kubernetes.io/ingress.class: traefik
     ingressClassName: "traefik"
     hosts:
-    - host: &host "homepage.xalexander.io"
+    - host: &host "homepage.xlab.io"
       paths:
       - path: /
         pathType: Prefix
