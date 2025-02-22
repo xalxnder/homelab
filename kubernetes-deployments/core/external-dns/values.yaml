@@ -13,7 +13,7 @@ external-dns:
         key: EXTERNAL_DNS_PIHOLE_PASSWORD
   extraArgs:
   - --pihole-server=http://192.168.1.76
-  - --pihole-tls-skip-verify=true
+  - --pihole-tls-skip-verify
   resources:
     limits:
       cpu: 50m
