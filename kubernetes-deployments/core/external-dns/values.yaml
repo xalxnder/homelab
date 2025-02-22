@@ -1,6 +1,7 @@
 external-dns:
   enabled: true
   fullnameOverride: external-dns
+  provider: pihole
   policy: upsert-only
   registry: noop
   logLevel: debug
@@ -13,7 +14,6 @@ external-dns:
   extraArgs:
   - --pihole-server=http://192.168.1.76
   - --pihole-tls-skip-verify
-  - --provider=pihole
   resources:
     limits:
       cpu: 50m
