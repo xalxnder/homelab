@@ -40,6 +40,9 @@ argo-cd:
         # traefik.ingress.kubernetes.io/router.tls: "true"
       ingressClassName: "traefik"
       hostname: &domain argocd.xlab.io
+      paths:
+        - path: /
+          pathType: Prefix
   namespaceOverride: "argocd"
   # server:
   #   service:
