@@ -21,6 +21,11 @@ argo-cd:
       requests:
         cpu: 25m
         memory: 48Mi
+    service:
+      type: LoadBalancer
+      ports:
+        http:
+          port: 80
     ingress:
       enabled: true
       annotations:
@@ -36,12 +41,12 @@ argo-cd:
     extraArgs:
       - --insecure
   namespaceOverride: "argocd"
-  server:
-    service:
-      type: LoadBalancer
-      ports:
-        http:
-          port: 80
+  # server:
+  #   service:
+  #     type: LoadBalancer
+  #     ports:
+  #       http:
+  #         port: 80
 argocd-apps:
   enabled: true
   applicationsets:
