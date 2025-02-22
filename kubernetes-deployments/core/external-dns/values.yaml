@@ -11,7 +11,7 @@ external-dns:
         name: pihole-pass
         key: password
   extraArgs:
-  - --pihole-server=192.168.1.76
+  - --pihole-server=http://192.168.1.76
   resources:
     limits:
       cpu: 50m
