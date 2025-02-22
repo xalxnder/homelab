@@ -17,7 +17,7 @@ pihole:
     annotations:
       metallb.universe.tf/ip-allocated-from-pool: ip-pool
       metallb.universe.tf/loadBalancerIPs: 192.168.1.76
-      external-dns.alpha.kubernetes.io/hostname: pihole.local
+      external-dns.alpha.kubernetes.io/hostname: pihole.lan
     https:
       enabled: false
 
