@@ -29,7 +29,7 @@ argo-cd:
     ingress:
       enabled: true
       annotations:
-        external-dns.alpha.kubernetes.io/alias: "true"
+        # external-dns.alpha.kubernetes.io/alias: "true"
         # ingress.kubernetes.io/protocol: http
         kubernetes.io/ingress.class: traefik
         traefik.ingress.kubernetes.io/router.entrypoints: web
