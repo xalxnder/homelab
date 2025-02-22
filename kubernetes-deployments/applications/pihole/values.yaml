@@ -1,4 +1,5 @@
 pihole:
+  enabled: true
   fullnameOverride: pihole
 
   serviceDns:
