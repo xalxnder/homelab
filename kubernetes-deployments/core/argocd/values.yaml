@@ -26,16 +26,16 @@ argo-cd:
       ports:
         http:
           port: 80
-    ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: traefik
-        traefik.ingress.kubernetes.io/router.entrypoints: web
+    # ingress:
+    #   enabled: true
+    #   annotations:
+    #     kubernetes.io/ingress.class: traefik
+    #     traefik.ingress.kubernetes.io/router.entrypoints: web
         # traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
         # traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
         # traefik.ingress.kubernetes.io/router.tls: "true"
-      ingressClassName: "traefik"
-      hostname: &domain argocd.xlab.io
+      # ingressClassName: "traefik"
+      # hostname: &domain argocd.xlab.io
     extraArgs:
       - --insecure
   namespaceOverride: "argocd"
