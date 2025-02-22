@@ -24,8 +24,6 @@ serviceAccount:
 service:
   main:
     type: LoadBalancer
-    annotations:
-      external-dns.alpha.kubernetes.io/hostname: homepage.ruesworld
     ports:
       http:
         port: 80
@@ -113,7 +111,7 @@ ingress:
       kubernetes.io/ingress.class: traefik
     ingressClassName: "traefik"
     hosts:
-    - host: &host "homepage.xalxnder.io"
+    - host: &host "homepage.xalexander.io"
       paths:
       - path: /
         pathType: Prefix
