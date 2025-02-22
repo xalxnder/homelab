@@ -24,6 +24,8 @@ serviceAccount:
 service:
   main:
     type: LoadBalancer
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: homepage.ruesworld
     ports:
       http:
         port: 80
