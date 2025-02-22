@@ -30,10 +30,10 @@ argo-cd:
       enabled: true
       annotations:
         external-dns.alpha.kubernetes.io/alias: "true"
-        ingress.kubernetes.io/protocol: http
+        # ingress.kubernetes.io/protocol: http
         kubernetes.io/ingress.class: traefik
         traefik.ingress.kubernetes.io/router.entrypoints: web
-        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        # traefik.ingress.kubernetes.io/router.entrypoints: websecure
         # traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
         # traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
         # traefik.ingress.kubernetes.io/router.tls: "true"
