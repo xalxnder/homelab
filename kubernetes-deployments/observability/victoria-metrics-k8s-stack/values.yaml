@@ -24,7 +24,12 @@ victoria-metrics-k8s-stack:
       enabled: false
       size: 2Gi
     ingress:
-      enabled: false
+      enabled: true
       annotations:
-    service:
-      type: LoadBalancer
+        ingress.kubernetes.io/protocol: http
+        kubernetes.io/ingress.class: traefik
+        traefik.ingress.kubernetes.io/router.entrypoints: web
+      hosts:
+        - &domain grafana.xlab.io
+    # service:
+    #   type: LoadBalancer
