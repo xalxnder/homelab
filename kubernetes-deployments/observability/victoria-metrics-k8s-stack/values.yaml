@@ -28,7 +28,7 @@ victoria-metrics-k8s-stack:
       annotations:
         ingress.kubernetes.io/protocol: http
         kubernetes.io/ingress.class: traefik
-        traefik.ingress.kubernetes.io/router.entrypoints: web
+        traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
       hosts:
         - &domain grafana.xlab.io
     # service:
