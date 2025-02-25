@@ -10,7 +10,6 @@ pihole:
     annotations:
       metallb.universe.tf/ip-allocated-from-pool: ip-pool
       metallb.universe.tf/loadBalancerIPs: 192.168.1.77
-      external-dns.alpha.kubernetes.io/hostname: pihole.xlab.io
 
   serviceDhcp:
     enabled: false
@@ -36,7 +35,7 @@ pihole:
       # traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
       traefik.ingress.kubernetes.io/router.tls: "true"
     hosts:
-    - *web-domain
+      - *web-domain
     # tls:
     # - hosts:
     #   - *web-domain
