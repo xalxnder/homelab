@@ -1,6 +1,8 @@
 pihole:
   enabled: true
   fullnameOverride: pihole
+  virtualHost: &web-domain pihole.xlab.io
+
 
   serviceDns:
     mixedService: true
@@ -8,6 +10,7 @@ pihole:
     annotations:
       metallb.universe.tf/ip-allocated-from-pool: ip-pool
       metallb.universe.tf/loadBalancerIPs: 192.168.1.77
+      external-dns.alpha.kubernetes.io/hostname: pihole.xlab.io
 
   serviceDhcp:
     enabled: false
@@ -20,24 +23,24 @@ pihole:
     https:
       enabled: false
 
-  # ingress:
-  #   enabled: true
-  #   annotations:
-  #     cert-manager.io/cluster-issuer: lets-encrypt-production
-  #     ingress.kubernetes.io/force-ssl-redirect: "true"
-  #     ingress.kubernetes.io/protocol: http
-  #     kubernetes.io/ingress.class: traefik
-  #     kubernetes.io/tls-acme: "true"
-  #     traefik.ingress.kubernetes.io/router.entrypoints: websecure
-  #     traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
-  #     traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
-  #     traefik.ingress.kubernetes.io/router.tls: "true"
-  #   hosts:
-  #   - *web-domain
-  #   tls:
-  #   - hosts:
-  #     - *web-domain
-  #     secretName: tls-secret
+  ingress:
+    enabled: true
+    annotations:
+      # cert-manager.io/cluster-issuer: lets-encrypt-production
+      ingress.kubernetes.io/force-ssl-redirect: "false"
+      ingress.kubernetes.io/protocol: http
+      kubernetes.io/ingress.class: traefik
+      # kubernetes.io/tls-acme: "true"
+      traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
+      # traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
+      # traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
+      traefik.ingress.kubernetes.io/router.tls: "true"
+    hosts:
+    - *web-domain
+    # tls:
+    # - hosts:
+    #   - *web-domain
+    #   secretName: tls-secret
 
   podDnsConfig:
     enabled: true
