@@ -123,7 +123,7 @@ homepage:
       # All the config files for Homepage can be specified under their relevant config block.
   config:
     # To use an existing ConfigMap uncomment this line and specify the name
-    useExistingConfigMap: existing-homepage-configmap
+    useExistingConfigMap: homepage
     
   persistence:
     logs:
