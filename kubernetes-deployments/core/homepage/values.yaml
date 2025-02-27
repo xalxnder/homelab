@@ -145,7 +145,7 @@ config:
   widgets:
   - resources:
       # change backend to 'kubernetes' to use Kubernetes integration. Requires RBAC.
-      backend: resources
+      backend: kubernetes
       expanded: true
       cpu: true
       memory: true
@@ -205,10 +205,10 @@ persistence:
     type: emptyDir
     mountPath: /app/config/logs
 
-# resources:
-#   requests:
-#     memory: 10Mi
-#     cpu: 10m
-#   limits:
-#     memory: 200Mi
-#     cpu: 500m
+resources:
+  requests:
+    memory: 10Mi
+    cpu: 10m
+  limits:
+    memory: 200Mi
+    cpu: 500m
