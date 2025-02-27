@@ -125,7 +125,7 @@ config:
   bookmarks:
   - Developer:
     - Github:
-      - abbr: GH
+      - abbr: XA
         href: https://github.com/
   services:
     - Applications:
