@@ -130,6 +130,7 @@ config:
   services:
   - Applications:
     - Pi-Hole:
+        icon: matrix-light.png
         href: http://pihole.xlab.io
         description: Pi-Hole Admin
 
