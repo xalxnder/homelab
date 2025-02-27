@@ -4,7 +4,7 @@ image:
 fullnameOverride: homepage
 
 # Enable RBAC. RBAC is necessary to use Kubernetes integration
-enableRbac: false
+enableRbac: true
 
 extraClusterRoles:
   # - apiGroups:
@@ -17,9 +17,9 @@ extraClusterRoles:
 serviceAccount:
   # Specify a different service account name. When blank it will default to the release
   # name if *create* is enabled, otherwise it will refer to the default service account.
-  name: ""
+  name: homepage
   # Create service account. Needed when RBAC is enabled.
-  create: false
+  create: true
 
 service:
   main:
