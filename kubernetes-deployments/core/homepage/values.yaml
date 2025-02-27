@@ -128,10 +128,10 @@ config:
       - abbr: GH
         href: https://github.com/
   services:
-  - My First Group:
-    - My First Service:
-        href: http://localhost/
-        description: Homepage is awesome
+  - Applications:
+    - Pi-Hole:
+        href: http://pihole.xlab.io
+        description: Pi-Hole Admin
 
   - My Second Group:
     - My Second Service:
