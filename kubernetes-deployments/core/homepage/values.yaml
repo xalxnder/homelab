@@ -123,10 +123,10 @@ config:
   # To use an existing ConfigMap uncomment this line and specify the name
   # useExistingConfigMap: existing-homepage-configmap
   bookmarks:
-    - Developer:
-      - Github:
-        - abbr: GH
-          href: https://github.com/
+  - Developer:
+    - Github:
+      - abbr: GH
+        href: https://github.com/
   services:
     - Applications:
       - Pi-Hole:
@@ -153,7 +153,7 @@ config:
         cpu: true
         memory: true
     - search:
-        provider: google
+        provider: duckduckgo
         target: _blank
     ## Uncomment to enable Kubernetes integration
     - kubernetes:
@@ -171,7 +171,36 @@ config:
   kubernetes:
     # change mode to 'cluster' to use RBAC service account
     mode: cluster
+  docker:
   settings:
+
+    # -- Main environment variables. Template enabled.
+    # Syntax options:
+    # A) TZ: UTC
+    # B) PASSWD: '{{ .Release.Name }}'
+    # C) PASSWD:
+    #      configMapKeyRef:
+    #        name: config-map-name
+    #        key: key-name
+    # D) PASSWD:
+    #      valueFrom:
+    #        secretKeyRef:
+    #          name: secret-name
+    #          key: key-name
+    #      ...
+    # E) - name: TZ
+    #      value: UTC
+    # F) - name: TZ
+    #      value: '{{ .Release.Name }}'
+env:
+
+# To include environment variables from other configs or other secrets for use in
+# Homepage's variable substitutions. Refer to them here.
+# envFrom:
+#   - secretRef:
+#       name: my-secret
+#   - configMapRef:
+#       name: my-configmap
 
 persistence:
   logs:
