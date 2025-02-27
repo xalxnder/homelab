@@ -128,18 +128,20 @@ config:
       - abbr: GH
         href: https://github.com/
   services:
-  - Applications:
-    - Pi-Hole:
-        icon: matrix-light.png
-        href: http://pihole.xlab.io
-        description: Pi-Hole Admin
+    - Applications:
+      - Pi-Hole:
+          icon: matrix-light.png
+          href: http://pihole.xlab.io
+          description: Pi-Hole Admin
+          namespace: pihole
+          app: pihole
 
-  - My Second Group:
-    - My Second Service:
-        href: http://localhost/
-        description: Homepage is the best
+    - My Second Group:
+      - My Second Service:
+          href: http://localhost/
+          description: Homepage is the best
 
-  - My Third Group:
+    - My Third Group:
     - My Third Service:
         href: http://localhost/
         description: Homepage is 😎
