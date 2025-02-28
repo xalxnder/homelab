@@ -27,8 +27,7 @@ homepage:
       type: LoadBalancer
       ports:
         http:
-          port: 80
-          targetPort: 3000
+          port: 3000
 
   controller:
     annotations: {}
@@ -108,8 +107,6 @@ homepage:
         gethomepage.dev/group: "A New Group"
         gethomepage.dev/icon: "homepage.png"
         traefik.ingress.kubernetes.io/router.entrypoints: web
-        # traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
-        # traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
         kubernetes.io/ingress.class: traefik
       ingressClassName: "traefik"
       hosts:
@@ -117,9 +114,6 @@ homepage:
         paths:
         - path: /
           pathType: Prefix
-      tls:
-      - hosts:
-        - *host
       # All the config files for Homepage can be specified under their relevant config block.
   config:
     bookmarks:
