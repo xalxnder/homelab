@@ -107,6 +107,11 @@ homepage:
         paths:
         - path: /
           pathType: Prefix
+          backend:
+            service: 
+              name: homepage
+              port:
+                number: 3000
       # All the config files for Homepage can be specified under their relevant config block.
   config:
     bookmarks:
