@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: homepage-conifg
+  name: homepage-config
   namespace: homepage
   labels:
     app.kubernetes.io/instance: homepage
