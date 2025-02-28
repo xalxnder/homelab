@@ -123,15 +123,15 @@ homepage:
       # All the config files for Homepage can be specified under their relevant config block.
   config:
     # To use an existing ConfigMap uncomment this line and specify the name
-    useExistingConfigMap: homepage
+    useExistingConfigMap: homepage-config
     
   persistence:
-    config:
-      enabled: true
-      type: configMap
-      name: homepage
-      globalMounts:
-        - path: /app/config
+    # config:
+    #   enabled: true
+    #   type: configMap
+    #   name: homepage
+    #   globalMounts:
+    #     - path: /app/config
     logs:
       enabled: true
       type: emptyDir
