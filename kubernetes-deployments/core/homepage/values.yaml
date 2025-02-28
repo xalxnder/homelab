@@ -122,8 +122,46 @@ homepage:
         - *host
       # All the config files for Homepage can be specified under their relevant config block.
   config:
-    # To use an existing ConfigMap uncomment this line and specify the name
-    useExistingConfigMap: homepage-config
+    bookmarks:
+      - Developer:
+          - Github:
+              - abbr: XA
+                href: https://github.com/
+    services:
+      - Apps:
+          - PiHOLE:
+              href: http://localhost/
+              description: Homepage is awesome
+
+      - My Second Group:
+          - My Second Service:
+              href: http://localhost/
+              description: Homepage is the best
+
+      - My Third Group:
+          - My Third Service:
+              href: http://localhost/
+              description: Homepage is 😎
+    widgets:
+      # show the kubernetes widget, with the cluster summary and individual nodes
+      - kubernetes:
+          cluster:
+            show: true
+            cpu: true
+            memory: true
+            showLabel: true
+            label: "cluster"
+          nodes:
+            show: true
+            cpu: true
+            memory: true
+            showLabel: true
+      - search:
+          provider: google
+          target: _blank
+    kubernetes:
+      mode: cluster
+    settings:
     
   persistence:
     # config:
