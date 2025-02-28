@@ -22,6 +22,14 @@ homepage:
     # Create service account. Needed when RBAC is enabled.
     create: true
 
+  service:
+    main:
+      type: LoadBalancer
+      ports:
+        http:
+          port: 80
+          targetPort: 3000
+
   controller:
     annotations: {}
     strategy: RollingUpdate
