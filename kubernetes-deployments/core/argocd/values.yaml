@@ -1,8 +1,8 @@
 argo-cd:
   enabled: true
-  # configs:
-  #   params:
-  #     server.insecure: "true"
+  configs:
+    params:
+      server.insecure: "true"
   dex:
     enabled: false
   notifications:
@@ -24,32 +24,26 @@ argo-cd:
       requests:
         cpu: 25m
         memory: 48Mi
-    service:
-      type: LoadBalancer
-      ports:
-        http:
-          port: 80
+    # service:
+    #   type: LoadBalancer
+    #   ports:
+    #     http:
+    #       port: 80
     ingress:
-      enabled: false
+      enabled: true
+      ingressClassName: "traefik"
+      hostname: argocd.xlab.io
       annotations:
         kubernetes.io/ingress.class: traefik
-        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.entrypoints: web
         # traefik.ingress.kubernetes.io/router.entrypoints: websecure
         # traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
         # traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
         # traefik.ingress.kubernetes.io/router.tls: "true"
-      ingressClassName: "traefik"
-      hostname: &domain argocd.xlab.io
       paths:
         - path: /
           pathType: Prefix
   namespaceOverride: "argocd"
-  # server:
-  #   service:
-  #     type: LoadBalancer
-  #     ports:
-  #       http:
-  #         port: 80
 argocd-apps:
   enabled: true
   applicationsets:
