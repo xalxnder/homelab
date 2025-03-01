@@ -27,7 +27,7 @@ homepage:
       controller: main
       ports:
         http:
-          port: 3000
+          port: 80
 
   controller:
     annotations: {}
