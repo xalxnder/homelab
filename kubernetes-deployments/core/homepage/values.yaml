@@ -22,13 +22,13 @@ homepage:
     # Create service account. Needed when RBAC is enabled.
     create: true
 
-  service:
-    main:
-      type: LoadBalancer
-      ports:
-        http:
-          port: 80
-          targetPort: 3000
+  # service:
+  #   main:
+  #     type: LoadBalancer
+  #     ports:
+  #       http:
+  #         port: 80
+  #         targetPort: 3000
 
   controller:
     annotations: {}
@@ -109,7 +109,7 @@ homepage:
         gethomepage.dev/icon: "homepage.png"
         traefik.ingress.kubernetes.io/router.entrypoints: web
         kubernetes.io/ingress.class: traefik
-      ingressClassName: "traefik"
+      # ingressClassName: "traefik"
       hosts:
       - host: &host "homepage.xlab.io"
         paths:
