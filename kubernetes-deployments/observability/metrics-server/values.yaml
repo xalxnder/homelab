@@ -12,3 +12,6 @@ metrics-server:
     annotations: {}
     labels: {}
   
+  args:
+  - --kubelet-insecure-tls
+  
