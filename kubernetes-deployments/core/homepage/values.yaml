@@ -101,13 +101,17 @@ homepage:
         # This label will enable discover of this deployment in Homepage
         gethomepage.dev/enabled: "true"
       annotations:
+        cert-manager.io/cluster-issuer: lets-encrypt-xlab
         # These annotations will configure how this deployment is shown in Homepage
         gethomepage.dev/name: "Homepagee"
         gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
         gethomepage.dev/group: "A New Group"
         gethomepage.dev/icon: "homepage.png"
-        traefik.ingress.kubernetes.io/router.entrypoints: web
+        traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
         kubernetes.io/ingress.class: traefik
+        traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
+        traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
+        traefik.ingress.kubernetes.io/router.tls: "true"
       # ingressClassName: "traefik"
       hosts:
       - host: &host "homepage.xlab.io"
@@ -122,6 +126,12 @@ homepage:
           service:
             identifier: main
             port: 3000
+      tls:
+        - hosts:
+            - *host
+
+
+
           
       # All the config files for Homepage can be specified under their relevant config block.
   config:
