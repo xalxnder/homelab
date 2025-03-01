@@ -132,7 +132,8 @@ homepage:
                 href: https://github.com/
     services:
       - Apps:
-          - PiHOLE:
+          - Pi-Hole:
+              icon: pi-hole.png
               href: http://localhost/
               description: Homepage is awesome
 
