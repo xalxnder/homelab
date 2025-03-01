@@ -134,18 +134,20 @@ homepage:
       - Apps:
           - Pi-Hole:
               icon: pi-hole.png
-              href: http://localhost/
-              description: Homepage is awesome
+              href: http://homepage.xlab.io/
+              description: Pi-Hole
 
       - Core:
-          - My Second Service:
+          - ArgoCD:
               href: http://localhost/
               description: Homepage is the best
+              icon: argo-cd.png
 
-      - My Third Group:
+      - Observability:
           - My Third Service:
-              href: http://localhost/
-              description: Homepage is 😎
+              href: http://grafana.xlab.io/
+              description: Monitoring
+              icon: grafana.png
     widgets:
       # show the kubernetes widget, with the cluster summary and individual nodes
       - kubernetes:
