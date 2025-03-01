@@ -139,7 +139,7 @@ homepage:
 
       - Core:
           - ArgoCD:
-              href: http://localhost/
+              href: http://argocd.xlab.io/
               description: Homepage is the best
               icon: argo-cd.png
 
