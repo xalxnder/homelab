@@ -144,7 +144,7 @@ homepage:
               icon: argo-cd.png
 
       - Observability:
-          - My Third Service:
+          - Grafana:
               href: http://grafana.xlab.io/
               description: Monitoring
               icon: grafana.png
