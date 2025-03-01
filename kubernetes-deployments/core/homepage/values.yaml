@@ -117,7 +117,7 @@ homepage:
           service:
             identifier: main
             port: 3000
-        - path: /api/
+        - path: /api
           pathType: Prefix
           service:
             identifier: main
