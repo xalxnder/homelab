@@ -20,7 +20,7 @@ traefik:
   logs:
     general:
       # -- Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
-      level: ERROR
+      level: DEBUG
   metrics:
     prometheus: null
   securityContext:
