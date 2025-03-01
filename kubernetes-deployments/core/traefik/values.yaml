@@ -40,18 +40,18 @@ traefik:
       # external-dns.alpha.kubernetes.io/hostname: xlab.io
   ingressRoute:
     dashboard:
-      enabled: true
-      matchRule: (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
-      services:
-      - name: api@internal
-        kind: TraefikService
+      # enabled: true
+      # matchRule: (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+      # services:
+      # - name: api@internal
+      #   kind: TraefikService
       # -- Specify the allowed entrypoints to use for the dashboard ingress route, (e.g. traefik, web, websecure).
       # By default, it's using traefik entrypoint, which is not exposed.
       # /!\ Do not expose your dashboard without any protection over the internet /!\
-      entryPoints: [ "websecure", "web" ]
+      # entryPoints: [ "websecure", "web" ]
       # -- Additional ingressRoute middlewares (e.g. for authentication)
-      middlewares: []
+      # middlewares: []
       # -- TLS options (e.g. secret containing certificate)
-      tls: {}
+      # tls: {}
 
 # ingressDomain: traefik.xlab.io
