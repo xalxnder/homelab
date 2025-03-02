@@ -21,6 +21,12 @@ spec:
       name: xlab-issuer-account-key
     # Add a single challenge solver, HTTP01 using nginx
     solvers:
-    - http01:
-        ingress:
-          ingressClassName: traefik
+    - dns01:
+        cloudflare:
+          email: xalexander51@gmail.com
+          apiTokenSecretRef:
+            name: cloudflare-token-secret
+            key: cloudflare-token
+      selector:
+        dnsZones:
+          - "xalab.io"
