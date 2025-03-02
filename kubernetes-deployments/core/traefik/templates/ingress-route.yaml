@@ -1,19 +1,21 @@
-apiVersion: traefik.io/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: traefik-dashboard
   namespace: traefik
-  annotations: 
+  annotations:
+    ingress.kubernetes.io/protocol: http
     kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
-  entryPoints:
-    - web
-  routes:
-    - match: Host(`traefik.xlab.io`)
-      kind: Rule
-      # middlewares:
-      #   - name: traefik-dashboard-basicauth
-      #     namespace: traefik
-      services:
-        - name: api@internal
-          kind: TraefikService
+  rules:
+  - host: traefik.xlab.io
+    http:
+      paths:
+      - backend:
+          service:
+            name: traefik-dashboard
+            port:
+              number: 9000
+        path: /
+        pathType: Prefix
