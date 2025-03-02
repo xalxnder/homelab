@@ -1,11 +1,11 @@
 cert-manager:
   installCRDs: true
-dns01RecursiveNameservers: "10.104.55.56:53"
-dns01RecursiveNameserversOnly: true
-podDnsPolicy: "None"
-podDnsConfig:
-  nameservers:
-    - "10.104.55.56"
+  dns01RecursiveNameservers: "10.104.55.56:53"
+  dns01RecursiveNameserversOnly: true
+  podDnsPolicy: "None"
+  podDnsConfig:
+    nameservers:
+      - "10.104.55.56"
 
   enableCertificateOwnerRef: true
   prometheus:
