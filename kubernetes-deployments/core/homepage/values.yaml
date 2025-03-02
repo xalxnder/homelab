@@ -114,7 +114,7 @@ homepage:
         traefik.ingress.kubernetes.io/router.tls: "true"
       # ingressClassName: "traefik"
       hosts:
-      - host: &host "homepage.xlab.io"
+      - host: &host "homepage.xalab.io"
         paths:
         - path: /
           pathType: Prefix
