@@ -26,10 +26,16 @@ victoria-metrics-k8s-stack:
     ingress:
       enabled: true
       annotations:
-        ingress.kubernetes.io/protocol: http
+        cert-manager.io/cluster-issuer: lets-encrypt-xlab
+        # ingress.kubernetes.io/protocol: http
         kubernetes.io/ingress.class: traefik
-        traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"
       hosts:
-        - &domain grafana.xlab.io
+        - &host grafana.xalab.io
+      tls:
+        - hosts:
+            - *host
+          secretName: tls-secret
     # service:
     #   type: LoadBalancer
