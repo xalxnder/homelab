@@ -10,7 +10,6 @@ traefik:
   - --api.insecure
   - --ping=true
   - --serversTransport.insecureSkipVerify=true
-  - --entryPoints.traefik.address=:9000
   resources:
     requests:
       cpu: 125m
