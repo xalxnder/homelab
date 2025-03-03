@@ -11,4 +11,4 @@ spec:
     targetPort: 9000
   selector:
     app.kubernetes.io/name: traefik
-  type: NodePort
+  type: ClusterIP
