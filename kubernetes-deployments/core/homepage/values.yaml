@@ -109,10 +109,8 @@ homepage:
         gethomepage.dev/icon: "homepage.png"
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         kubernetes.io/ingress.class: traefik
-        # traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
-        traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
         traefik.ingress.kubernetes.io/router.tls: "true"
-      # ingressClassName: "traefik"
+      ingressClassName: "traefik"
       hosts:
       - host: &host "homepage.xalab.io"
         paths:
