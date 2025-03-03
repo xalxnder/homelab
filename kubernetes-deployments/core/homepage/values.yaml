@@ -101,7 +101,7 @@ homepage:
         # This label will enable discover of this deployment in Homepage
         gethomepage.dev/enabled: "true"
       annotations:
-        cert-manager.io/cluster-issuer: lets-encrypt-xlab
+        cert-manager.io/cluster-issuer: lets-encrypt-production
         # These annotations will configure how this deployment is shown in Homepage
         gethomepage.dev/name: "Homepagee"
         gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
@@ -127,7 +127,7 @@ homepage:
       tls:
         - hosts:
             - *host
-          secretName: tls-secret
+          secretName: lets-encrypt-production
 
 
 
