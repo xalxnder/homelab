@@ -6,9 +6,9 @@ metadata:
 spec:
   ports:
   - name: http
-    port: 8080
+    port: 9000
     protocol: TCP
-    targetPort: 8080
+    targetPort: 9000
   selector:
     app.kubernetes.io/name: traefik
   type: ClusterIP

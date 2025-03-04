@@ -18,7 +18,7 @@ spec:
           service:
             name: traefik-dashboard
             port:
-              number: 8080
+              number: 9000
         path: /
         pathType: Prefix
   tls:

@@ -7,9 +7,10 @@ traefik:
   - name: TZ
     value: America/New_York
   additionalArguments:
-  - --api.insecure
+  - --api.insecure=false
   - --ping=true
   - --serversTransport.insecureSkipVerify=true
+  - --entrypoints.traefik.address=:9000/tcp
   resources:
     requests:
       cpu: 125m
