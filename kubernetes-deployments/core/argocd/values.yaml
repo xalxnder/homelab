@@ -35,7 +35,7 @@ argo-cd:
       hostname: &host argocd.xalab.io
       annotations:
         kubernetes.io/ingress.class: traefik
-        cert-manager.io/cluster-issuer: lets-encrypt-xlab
+        cert-manager.io/cluster-issuer: lets-encrypt-production
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.tls: "true"
       tls:
