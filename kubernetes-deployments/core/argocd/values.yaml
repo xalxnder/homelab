@@ -32,14 +32,16 @@ argo-cd:
     ingress:
       enabled: true
       ingressClassName: "traefik"
-      hostname: argocd.xlab.io
+      hostname: &host argocd.xalab.io
       annotations:
         kubernetes.io/ingress.class: traefik
-        traefik.ingress.kubernetes.io/router.entrypoints: web
-        # traefik.ingress.kubernetes.io/router.entrypoints: websecure
-        # traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
-        # traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
-        # traefik.ingress.kubernetes.io/router.tls: "true"
+        cert-manager.io/cluster-issuer: lets-encrypt-xlab
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"
+      tls:
+        - secretName: tls-secret
+          hosts:
+            - *host
       paths:
         - path: /
           pathType: Prefix
