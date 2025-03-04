@@ -1,6 +1,9 @@
 traefik:
   enabled: true
   fullnameOverride: traefik
+  ports:
+    traefik:
+      port: 9000
   deployment:
     replicas: 1
   env:
@@ -10,7 +13,6 @@ traefik:
   - --api.insecure=false
   - --ping=true
   - --serversTransport.insecureSkipVerify=true
-  - --entryPoints.traefik.address=:9000/tcp
   resources:
     requests:
       cpu: 125m
