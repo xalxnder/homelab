@@ -4,7 +4,7 @@ metadata:
   name: traefik-dashboard
   namespace: traefik
   annotations:
-    cert-manager.io/cluster-issuer: lets-encrypt-xlab
+    cert-manager.io/cluster-issuer: lets-encrypt-production
     ingress.kubernetes.io/protocol: http
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
