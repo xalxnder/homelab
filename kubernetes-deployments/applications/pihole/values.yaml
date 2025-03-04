@@ -25,7 +25,7 @@ pihole:
   ingress:
     enabled: true
     annotations:
-      cert-manager.io/cluster-issuer: lets-encrypt-xlab
+      cert-manager.io/cluster-issuer: lets-encrypt-production
       kubernetes.io/ingress.class: traefik
       traefik.ingress.kubernetes.io/router.entrypoints: websecure
       traefik.ingress.kubernetes.io/router.tls: "true"
