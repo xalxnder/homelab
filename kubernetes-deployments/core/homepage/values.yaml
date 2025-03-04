@@ -137,25 +137,25 @@ homepage:
     bookmarks:
       - Developer:
           - Github:
-              - abbr: XA
+              - icon: github-light.png
                 href: https://github.com/
     services:
       - Apps:
           - Pi-Hole:
               icon: pi-hole.png
-              href: http://homepage.xlab.io/
-              description: Pi-Hole
+              href: http://pihole.xalab.io/
+              description: Network-wide ad blocking and tracking protection
 
       - Core:
           - ArgoCD:
-              href: http://argocd.xlab.io/
-              description: Homepage is the best
+              href: http://argocd.xalab.io/
+              description: Declarative GitOps continuous delivery for Kubernetes
               icon: argo-cd.png
 
       - Observability:
           - Grafana:
-              href: http://grafana.xlab.io/
-              description: Monitoring
+              href: http://grafana.xalab.io/
+              description: Real-time metrics visualization and monitoring
               icon: grafana.png
     widgets:
       # show the kubernetes widget, with the cluster summary and individual nodes
