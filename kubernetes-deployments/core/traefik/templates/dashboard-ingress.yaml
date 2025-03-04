@@ -4,12 +4,14 @@ metadata:
   name: traefik-dashboard
   namespace: traefik
   annotations:
+    cert-manager.io/cluster-issuer: lets-encrypt-xlab
     ingress.kubernetes.io/protocol: http
     kubernetes.io/ingress.class: traefik
-    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-  - host: traefik.xlab.io
+  - host: &host traefik.xalab.io
     http:
       paths:
       - backend:
@@ -19,3 +21,7 @@ spec:
               number: 8080
         path: /
         pathType: Prefix
+  tls:
+    - hosts:
+      - *host
+      secretName: tls-secret
