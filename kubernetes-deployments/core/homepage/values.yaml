@@ -143,18 +143,18 @@ homepage:
       - Apps:
           - Pi-Hole:
               icon: pi-hole.png
-              href: http://pihole.xalab.io/
+              href: https://pihole.xalab.io/
               description: Network-wide ad blocking and tracking protection
 
       - Core:
           - ArgoCD:
-              href: http://argocd.xalab.io/
+              href: https://argocd.xalab.io/
               description: Declarative GitOps continuous delivery for Kubernetes
               icon: argo-cd.png
 
       - Observability:
           - Grafana:
-              href: http://grafana.xalab.io/
+              href: https://grafana.xalab.io/
               description: Real-time metrics visualization and monitoring
               icon: grafana.png
     widgets:
