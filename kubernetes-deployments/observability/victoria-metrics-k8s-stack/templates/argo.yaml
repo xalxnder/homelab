@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argo-dashboard
+  labels:
+    grafana_dashboard: "1"
+data:
+  argo.json: |
+{{ .Files.Get "files/dashboards/argo.json" | indent 4 }}
