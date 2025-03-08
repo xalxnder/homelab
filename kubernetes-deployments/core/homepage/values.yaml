@@ -112,26 +112,23 @@ homepage:
         traefik.ingress.kubernetes.io/router.tls: "true"
       ingressClassName: "traefik"
       hosts:
-      - host: &host "homepage.xalab.io"
-        paths:
-        - path: /
-          pathType: Prefix
-          service:
-            identifier: main
-            port: 3000
-        - path: /api
-          pathType: Prefix
-          service:
-            identifier: main
-            port: 3000
+        - host: &host "homepage.xalab.io"
+          paths:
+            - path: /
+              pathType: Prefix
+              service:
+                identifier: main
+                port: 3000
+            - path: /api
+              pathType: Prefix
+              service:
+                identifier: main
+                port: 3000
       tls:
         - hosts:
             - *host
           secretName: lets-encrypt-production
 
-
-
-          
       # All the config files for Homepage can be specified under their relevant config block.
   config:
     bookmarks:
@@ -177,7 +174,7 @@ homepage:
     kubernetes:
       mode: cluster
     settings:
-    
+
   persistence:
     # config:
     #   enabled: true
@@ -197,3 +194,4 @@ homepage:
     limits:
       memory: 200Mi
       cpu: 500m
+
