@@ -28,7 +28,7 @@ victoria-metrics-k8s-stack:
         enabled: true
 
   persistence:
-    enabled: false
+    enabled: true
     size: 2Gi
   victoria-metrics-operator:
     enabled: true
