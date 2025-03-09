@@ -8,6 +8,11 @@ victoria-metrics-k8s-stack:
   persistence:
     enabled: false
     size: 2Gi
+  victoria-metrics-operator:
+    enabled: true
+    admissionWebhooks:
+      enabled: false
+ 
 
   vmsingle:
     spec:
