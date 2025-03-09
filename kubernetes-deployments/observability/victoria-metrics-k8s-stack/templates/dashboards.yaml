@@ -8,5 +8,3 @@ metadata:
 data:
   argo.json: |
 {{ .Files.Get "files/dashboards/argo.json" | indent 4 }}
-  kubernetes-nodes.json: |
-{{ .Files.Get "files/dashboards/kubernetes-nodes.json" | indent 4 }}
