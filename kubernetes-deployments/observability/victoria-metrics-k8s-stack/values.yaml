@@ -19,7 +19,7 @@ victoria-metrics-k8s-stack:
     # -- Create dashboards as ConfigMap despite dependency it requires is not installed
     dashboards:
       victoriametrics-vmalert:
-        enabled: true
+        enabled: false
       victoriametrics-operator:
         enabled: true
       # -- In ArgoCD using client-side apply this dashboard reaches annotations size limit and causes k8s issues without server side apply
