@@ -14,15 +14,3 @@ cilium:
     limits:
       cpu: 1500m
       memory: 1250Mi
-  # socketLB:
-  #   enabled: true
-  #   hostNamespaceOnly: true
-  # externalIPs:
-  #   enabled: true
-  # nodePort:
-  #   enabled: true
-  # hostPort:
-  #   enabled: true
-  # l2announcements:
-  #   enabled: true
-
