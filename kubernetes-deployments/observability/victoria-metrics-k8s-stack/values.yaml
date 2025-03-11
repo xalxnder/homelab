@@ -48,7 +48,10 @@ victoria-metrics-k8s-stack:
     sidecar:
       dashboards:
         enabled: true
-        disableDelete: true
+        provider:
+          disableDelete: false
+          allowUiUpdates: true
+
     persistence:
       enabled: true
       type: pvc
