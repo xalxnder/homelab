@@ -42,10 +42,10 @@ victoria-metrics-k8s-stack:
             storage: 5Gi
 
   grafana:
-    # admin:
-    #   existingSecret: "vm-grafana-secret"
-    #   userKey: admin-user
-    #   passwordKey: admin-password
+    admin:
+      existingSecret: "vm-grafana-secret"
+      userKey: admin-user
+      passwordKey: admin-password
     persistence:
       enabled: true
       type: pvc
