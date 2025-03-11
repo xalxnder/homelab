@@ -27,12 +27,10 @@ victoria-metrics-k8s-stack:
       node-exporter-full:
         enabled: true
 
-  
   victoria-metrics-operator:
     enabled: true
     admissionWebhooks:
       enabled: false
- 
 
   vmsingle:
     spec:
@@ -42,16 +40,29 @@ victoria-metrics-k8s-stack:
             storage: 5Gi
 
   grafana:
+<<<<<<< HEAD
     admin:
       existingSecret: "vm-grafana-secret"
       userKey: admin-user
       passwordKey: admin-password
+=======
+    # admin:
+    #   existingSecret: "vm-grafana-secret"
+    #   userKey: admin-user
+    #   passwordKey: admin-password
+    enabled: true
+
+    sidecar:
+      dashboards:
+        enabled: true
+        disableDelete: true
+>>>>>>> 571a1fa2ba47c7cc96e80f2b339eb3417a5efcaf
     persistence:
       enabled: true
       type: pvc
       size: 2Gi
       accessModes:
-      - ReadWriteOnce
+        - ReadWriteOnce
     ingress:
       enabled: true
       annotations:
