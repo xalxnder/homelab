@@ -4,7 +4,7 @@ homepage:
     tag: v1.0.2
   fullnameOverride: homepage
   env:
-    HOMEPAGE_ALLOWED_HOSTS: homepage.xalab.io:3000
+    HOMEPAGE_ALLOWED_HOSTS: homepage.xalab.io
 
   # Enable RBAC. RBAC is necessary to use Kubernetes integration
   enableRbac: true
