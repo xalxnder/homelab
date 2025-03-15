@@ -195,5 +195,5 @@ homepage:
       cpu: 10m
     limits:
       memory: 200Mi
-      cpu: 500m
+      cpu: 501m
 
