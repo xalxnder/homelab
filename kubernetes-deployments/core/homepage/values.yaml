@@ -164,6 +164,11 @@ homepage:
               href: https://grafana.xalab.io/
               description: Real-time metrics visualization and monitoring
               icon: grafana.png
+      - Infrastructure:
+          - Proxmox:
+              href: https://proxmox.xalab.io:8006
+              description: Virtualization platform for VMs and containers.
+              icon: proxmox-light.png
     widgets:
       # show the kubernetes widget, with the cluster summary and individual nodes
       - kubernetes:
