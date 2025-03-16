@@ -137,7 +137,7 @@ homepage:
       - Developer:
           - Github:
               - icon: github-light.png
-                href: https://github.com/
+                href: https://github.com/xalxnder
     services:
       - Apps:
           - Pi-Hole:
@@ -150,6 +150,14 @@ homepage:
               href: https://argocd.xalab.io/
               description: Declarative GitOps continuous delivery for Kubernetes
               icon: argo-cd.png
+          - Traefik:
+              href: https://traefik.xalab.io/
+              description: Reverse proxy 
+              icon: traefik-proxy.png
+          - Hubble: 
+              href: https://hubble.xalab.io/
+              description: Network observability
+              icon: cilium.png
 
       - Observability:
           - Grafana:
