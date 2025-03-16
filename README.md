@@ -34,7 +34,7 @@ My homelab runs on a mix of physical and virtual machines. Here’s a breakdown 
 
 ## 🏗️ Architecture
 
-My homelab architecture is centered around:
+My homelab is built on Proxmox, where I run a 4-node Kubernetes cluster responsible for managing my services. Application deployments are managed with ArgoCD, enabling GitOps-driven workflows and continuous delivery. 
 
 A detailed diagram of my architecture will be added soon!
 
