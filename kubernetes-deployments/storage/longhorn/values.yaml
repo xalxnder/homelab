@@ -1,33 +1,33 @@
 longhorn:
   preUpgradeChecker:
   # -- Setting that allows Longhorn to perform pre-upgrade checks. Disable this setting when installing Longhorn using Argo CD or other GitOps solutions.
-  jobEnabled: false
-  # -- Setting that allows Longhorn to perform upgrade version checks after starting the Longhorn Manager DaemonSet Pods. Disabling this setting also disables `preUpgradeChecker.jobEnabled`. Longhorn recommends keeping this setting enabled.
-  upgradeVersionCheck: false
+    jobEnabled: false
+    # -- Setting that allows Longhorn to perform upgrade version checks after starting the Longhorn Manager DaemonSet Pods. Disabling this setting also disables `preUpgradeChecker.jobEnabled`. Longhorn recommends keeping this setting enabled.
+    upgradeVersionCheck: false
 
   longhornUI:
   # -- Replica count for Longhorn UI.
-  replicas: 2
-  # -- PriorityClass for Longhorn UI.
-  priorityClass: longhorn-critical
-  # -- Toleration for Longhorn UI on nodes allowed to run Longhorn components.
-  tolerations: []
-  ## If you want to set tolerations for Longhorn UI Deployment, delete the `[]` in the line above
-  ## and uncomment this example block
-  # - key: "key"
-  #   operator: "Equal"
-  #   value: "value"
-  #   effect: "NoSchedule"
-  # -- Node selector for Longhorn UI. Specify the nodes allowed to run Longhorn UI.
-  nodeSelector: {}
-  ## If you want to set node selector for Longhorn UI Deployment, delete the `{}` in the line above
-  ## and uncomment this example block
-  #  label-key1: "label-value1"
-  #  label-key2: "label-value2"
+    replicas: 2
+    # -- PriorityClass for Longhorn UI.
+    priorityClass: longhorn-critical
+    # -- Toleration for Longhorn UI on nodes allowed to run Longhorn components.
+    tolerations: []
+    ## If you want to set tolerations for Longhorn UI Deployment, delete the `[]` in the line above
+    ## and uncomment this example block
+    # - key: "key"
+    #   operator: "Equal"
+    #   value: "value"
+    #   effect: "NoSchedule"
+    # -- Node selector for Longhorn UI. Specify the nodes allowed to run Longhorn UI.
+    nodeSelector: {}
+    ## If you want to set node selector for Longhorn UI Deployment, delete the `{}` in the line above
+    ## and uncomment this example block
+    #  label-key1: "label-value1"
+    #  label-key2: "label-value2"
   ingress:
     enabled: true
     ingressClassName: "traefik"
-    host: &host longhorn.xalab.io
+    host: longhorn.xalab.io
     annotations:
       kubernetes.io/ingress.class: traefik
       cert-manager.io/cluster-issuer: lets-encrypt-production
