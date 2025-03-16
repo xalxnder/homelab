@@ -192,6 +192,10 @@ homepage:
     kubernetes:
       mode: cluster
     settings:
+    layout:
+      bookmarks:
+        style: row
+        columns: 3
 
   persistence:
     # config:
