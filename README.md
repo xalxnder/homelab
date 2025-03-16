@@ -1,22 +1,18 @@
-# 🏠 Welcome to My Homelab
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/2a3ecaca-8b5c-4c1b-88f6-93e6e8509715" alt="Homelab Architecture">
+  <img src="https://github.com/user-attachments/assets/00d1bbd1-30f7-4ab0-a4c1-97fd6e2f75be" width="128" height="128"alt="Homelab Architecture">
 </div>
 
 Welcome to my homelab repository! This is my ever-evolving personal infrastructure, designed to sharpen my DevSecOps skills, experiment with new technologies, and serve as a "living resume." If you're interested in self-hosting, Kubernetes, or home server setups, you're in the right place!
 
----
 
 ## 🤔 Why?
 
 I built this homelab for several reasons:
-- **Hands-on Learning:** The best way to learn is by doing. I use my lab to experiment with Kubernetes, automation, and security practices.
+- **Hands-on Learning:** I've tried wathing tutoriasl, reading , you name it. I learn best by doing. By having a goals and working towrads that goal. The best way to learn is by doing. I use my lab to experiment with Kubernetes, automation, and security practices.
 - **Infrastructure as Code:** Everything is managed with declarative configurations and automation tools.
-- **Self-Hosting:** I enjoy running my own services, from media servers to internal tools, with full control over my data.
 - **Career Growth:** This homelab is a testament to my ability to design, deploy, and maintain infrastructure in a real-world environment.
 
----
 
 ## 🚀 Is Kubernetes Overkill for a Homelab?
 
@@ -27,18 +23,16 @@ Some may argue that Kubernetes is excessive for a homelab, but I see it as an op
 
 While K8s has a learning curve, I believe the benefits outweigh the complexity, making it a valuable addition to my homelab.
 
----
 
 ## 🔧 Hardware
 
 My homelab runs on a mix of physical and virtual machines. Here’s a breakdown of my setup:
 
-| Component | Details |
-|-----------|---------|
-| **Beelink Mini PC** | Running Rocky Linux 9, hosting various services |
-| **Proxmox Server** | Virtualization backbone for running VMs and containers |
-| **Networking** | Tailscale for secure remote access, Traefik for reverse proxy |
-| **Storage** | Self-hosted NAS for persistent data |
+| Component                 | Processor          | Memory       | Storage       |
+|---------------------------|--------------------|-------------|--------------|
+| **Beelink EQ13 Pro Mini PC** | Intel Core i9 12900HK | 16GB | 512GB  |
+| **Beelink GTi12 Mini PC**  | Intel Alder Lake- N200 | 64GB   | 1TB  |
+
 
 As I expand my homelab, I continue refining my hardware choices for performance, efficiency, and reliability.
 
