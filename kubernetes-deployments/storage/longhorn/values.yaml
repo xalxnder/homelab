@@ -34,4 +34,6 @@ longhorn:
       traefik.ingress.kubernetes.io/router.entrypoints: websecure
       traefik.ingress.kubernetes.io/router.tls: "true"
     path: /
+    pathType: Prefix
+    tls: true
     tlsSecret: tls-secret
