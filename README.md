@@ -3,7 +3,7 @@
   <img src="https://github.com/user-attachments/assets/00d1bbd1-30f7-4ab0-a4c1-97fd6e2f75be" width="128" height="128"alt="Homelab Architecture">
 </div>
 
-Welcome to my homelab repository! This is my ever-evolving personal infrastructure, designed to sharpen my DevSecOps skills, experiment with new technologies, and serve as a "living resume." If you're interested in self-hosting, Kubernetes, or home server setups, you're in the right place!
+Welcome to my homelab repository! This is my ever-evolving personal infrastructure, designed to sharpen my DevSecOps skills, and experiment with new technologies.
 
 
 ## 🤔 Why?
