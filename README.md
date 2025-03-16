@@ -35,12 +35,6 @@ My homelab runs on a mix of physical and virtual machines. Here’s a breakdown 
 ## 🏗️ Architecture
 
 My homelab architecture is centered around:
-- **Kubernetes Cluster** (Deployed via kubeadm)
-- **Docker & Containerized Services**
-- **Traefik Reverse Proxy** for ingress routing
-- **Monitoring & Logging Stack** (Prometheus, Grafana, Loki)
-- **CI/CD Pipelines** for automated deployments
-- **Self-Hosted Apps** like Plex, Dashy, and more
 
 A detailed diagram of my architecture will be added soon!
 
@@ -51,8 +45,8 @@ A detailed diagram of my architecture will be added soon!
 If you have any questions, want to discuss homelabs, or share tips, feel free to reach out!
 
 - **GitHub Issues:** Open an issue in this repo.
-- **Email:** [your email here]
-- **LinkedIn:** [your LinkedIn here]
+- [Email](mailto:xalexander51@gmail.com)
+- [Linkedin](https://www.linkedin.com/in/xalexander/)
 
 Happy self-hosting! 🚀
 
