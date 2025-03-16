@@ -48,5 +48,3 @@ If you have any questions, want to discuss homelabs, or share tips, feel free to
 - [Email](mailto:xalexander51@gmail.com)
 - [Linkedin](https://www.linkedin.com/in/xalexander/)
 
-Happy self-hosting! 🚀
-
