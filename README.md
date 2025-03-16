@@ -1,5 +1,9 @@
 # 🏠 Welcome to My Homelab
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2a3ecaca-8b5c-4c1b-88f6-93e6e8509715" alt="Homelab Architecture">
+</div>
+
 Welcome to my homelab repository! This is my ever-evolving personal infrastructure, designed to sharpen my DevSecOps skills, experiment with new technologies, and serve as a "living resume." If you're interested in self-hosting, Kubernetes, or home server setups, you're in the right place!
 
 ---
