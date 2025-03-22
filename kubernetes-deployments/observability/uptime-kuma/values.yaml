@@ -23,4 +23,8 @@ uptime-kuma:
   dnsConfig:
     nameservers:
       - 192.168.1.77
+    searches:
+          - xalab.io
+  dnsPolicy: "None"  # Override cluster DNS
+
   
