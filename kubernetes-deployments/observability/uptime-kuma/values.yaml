@@ -1,0 +1,21 @@
+uptime-kuma:
+
+  useDeploy: true
+
+  ingress:
+    enabled: true
+    className: "traefik"
+    annotations:
+      cert-manager.io/cluster-issuer: lets-encrypt-xalab
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure
+      traefik.ingress.kubernetes.io/router.tls: "true"
+    hosts:
+      - host: uptime.xalab.io
+        paths:
+          - path: /
+            pathType: Prefix
+
+    tls:
+      - secretName: lets-encrypt-xlab
+        hosts:
+          - uptime.xalab.io
