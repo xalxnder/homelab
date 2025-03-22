@@ -16,6 +16,6 @@ uptime-kuma:
             pathType: Prefix
 
     tls:
-      - secretName: lets-encrypt-xlab
+      - secretName: tls-secret
         hosts:
           - uptime.xalab.io
