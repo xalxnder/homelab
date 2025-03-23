@@ -166,6 +166,9 @@ homepage:
               href: https://grafana.xalab.io/
               description: Real-time metrics visualization and monitoring
               icon: grafana.png
+          - Uptime Kuma:
+              href: https://uptime.xalab.io/
+              icon: uptime-kuma.png
       - Infrastructure:
           - Proxmox:
               href: https://proxmox.xalab.io:8006
