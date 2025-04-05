@@ -1,7 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    "schedule:daily"
   ],
-  "ignoreDeps": ["external-secrets"]
+  "ignoreDeps": ["external-secrets"], 
+  "timezone": "America/New_York"
 }
