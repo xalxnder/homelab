@@ -170,7 +170,7 @@ homepage:
           - Uptime Kuma:
               href: https://uptime.xalab.io/
               icon: uptime-kuma.png
-      - Bookmarks:
+      - Test:
           - Github:
               icon: github-light.png
               href: https://github.com/xalxnder
