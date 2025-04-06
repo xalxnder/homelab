@@ -132,14 +132,14 @@ homepage:
 
       # All the config files for Homepage can be specified under their relevant config block.
   config:
-    bookmarks:
-      - Bookmarks:
-          - Github:
-              - icon: github-light.png
-                href: https://github.com/xalxnder
-          - Router:
-              - icon: verizon.png
-                href: https://router.xalab.io
+    #bookmarks:
+    # - Bookmarks:
+    #     - Github:
+    #         - icon: github-light.png
+    #           href: https://github.com/xalxnder
+    #     - Router:
+    #         - icon: verizon.png
+    #           href: https://router.xalab.io
     services:
       - Core:
           - Pi-Hole:
@@ -170,6 +170,13 @@ homepage:
           - Uptime Kuma:
               href: https://uptime.xalab.io/
               icon: uptime-kuma.png
+      - Bookmarks:
+          - Github:
+              - icon: github-light.png
+                href: https://github.com/xalxnder
+          - Router:
+              - icon: verizon.png
+                href: https://router.xalab.io
     widgets:
       # show the kubernetes widget, with the cluster summary and individual nodes
       - kubernetes:
