@@ -141,26 +141,27 @@ homepage:
               - icon: verizon.png
                 href: https://router.xalab.io
     services:
-      - Apps:
+      - Core:
           - Pi-Hole:
               icon: pi-hole.png
               href: https://pihole.xalab.io/
               description: Network-wide ad blocking and tracking protection
-
-      - Core:
           - ArgoCD:
               href: https://argocd.xalab.io/
               description: Declarative GitOps continuous delivery for Kubernetes
               icon: argo-cd.png
           - Traefik:
               href: https://traefik.xalab.io/
-              description: Reverse proxy 
+              description: Reverse proxy
               icon: traefik-proxy.png
-          - Hubble: 
+          - Hubble:
               href: https://hubble.xalab.io/
               description: Network observability
               icon: cilium.png
-
+          - Proxmox:
+              href: https://proxmox.xalab.io:8006
+              description: Virtualization platform for VMs and containers.
+              icon: proxmox-light.png
       - Observability:
           - Grafana:
               href: https://grafana.xalab.io/
@@ -169,11 +170,6 @@ homepage:
           - Uptime Kuma:
               href: https://uptime.xalab.io/
               icon: uptime-kuma.png
-      - Infrastructure:
-          - Proxmox:
-              href: https://proxmox.xalab.io:8006
-              description: Virtualization platform for VMs and containers.
-              icon: proxmox-light.png
     widgets:
       # show the kubernetes widget, with the cluster summary and individual nodes
       - kubernetes:
@@ -218,4 +214,3 @@ homepage:
     limits:
       memory: 200Mi
       cpu: 501m
-
