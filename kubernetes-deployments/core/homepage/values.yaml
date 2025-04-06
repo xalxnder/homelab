@@ -132,14 +132,7 @@ homepage:
 
       # All the config files for Homepage can be specified under their relevant config block.
   config:
-    #bookmarks:
-    # - Bookmarks:
-    #     - Github:
-    #         - icon: github-light.png
-    #           href: https://github.com/xalxnder
-    #     - Router:
-    #         - icon: verizon.png
-    #           href: https://router.xalab.io
+    bookmarks: []
     services:
       - Core:
           - Pi-Hole:
