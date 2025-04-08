@@ -170,6 +170,9 @@ homepage:
           - Router:
               icon: verizon.png
               href: https://router.xalab.io
+          - Renovate:
+              icon: renovate.png
+              href: https://developer.mend.io/github/xalxnder/homelab
     widgets:
       # show the kubernetes widget, with the cluster summary and individual nodes
       - kubernetes:
