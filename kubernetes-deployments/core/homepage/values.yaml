@@ -166,7 +166,7 @@ homepage:
       - Bookmarks:
           - Github:
               icon: github-light.png
-              href: https://github.com/xalxnder
+              href: https://github.com/xalxnder/homelab
           - Router:
               icon: verizon.png
               href: https://router.xalab.io
