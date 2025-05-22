@@ -155,6 +155,10 @@ homepage:
               href: https://proxmox.xalab.io:8006
               description: Virtualization platform for VMs and containers.
               icon: proxmox-light.png
+          - Longhorn:
+              href: https://longhorn.xalab.io
+              description: Cloud-Native persistent block storage
+              icon: longhorn.png
       - Observability:
           - Grafana:
               href: https://grafana.xalab.io/
