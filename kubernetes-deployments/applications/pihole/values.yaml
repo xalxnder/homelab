@@ -45,7 +45,7 @@ pihole:
   persistentVolumeClaim:
     enabled: true
     size: 2Gi
-    storageClass: longhorn
+    # storageClass: longhorn
     subPath: pihole
 
   resources:
