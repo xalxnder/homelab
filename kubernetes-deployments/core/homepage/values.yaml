@@ -211,8 +211,9 @@ homepage:
     #     - path: /app/config
     logs:
       enabled: true
-      type: emptyDir
-      mountPath: /app/config/logs
+      type: pvc
+      accessMode: ReadWriteMany
+      size: 2Gi
 
   resources:
     requests:
