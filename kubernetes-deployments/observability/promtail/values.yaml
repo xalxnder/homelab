@@ -21,6 +21,8 @@ promtail:
     # Must be reference in `config.file` to configure `server.log_level`
     # See default config in `values.yaml`
     logLevel: info
+    clients:
+      - url: http://vlogs.xalab.io:9428/insert/promtail
     # -- The log format of the Promtail server
     # Must be reference in `config.file` to configure `server.log_format`
     # Valid formats: `logfmt, json`
