@@ -1,0 +1,68 @@
+victoria-logs-single:
+  enabled: true
+  fullnameOverride: victoria-logs
+  server:
+    enabled: true
+    persistentVolume:
+      # -- Create/use Persistent Volume Claim for server component. Use empty dir if set to false
+      enabled: true
+      size: 15Gi
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
+      requests:
+        cpu: 500m
+        memory: 512Mi
+    service:
+      # -- Service annotations
+      annotations: {}
+      # -- Service labels
+      labels: {}
+      # -- Service ClusterIP
+      clusterIP: None
+      # -- Service external IPs. Details are [here]( https://kubernetes.io/docs/concepts/services-networking/service/#external-ips)
+      externalIPs: []
+      # -- Service load balancer IP
+      loadBalancerIP: ""
+      # -- Load balancer source range
+      loadBalancerSourceRanges: []
+      # -- Target port
+      targetPort: http
+      # -- Service port
+      servicePort: 9428
+      # -- Node port
+      # nodePort: 30000
+      # -- Service type
+      type: ClusterIP
+
+
+    ingress:
+      # -- Enable deployment of ingress for server component
+      enabled: true
+
+      # -- Ingress annotations
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        cert-manager.io/cluster-issuer: lets-encrypt-production
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"
+
+      # -- Array of host objects
+      hosts:
+        - name: vlogs.xalab.io
+          path:
+            - /
+          port: http
+
+      # -- Array of TLS objects
+      tls:
+        - secretName: tls-secret
+          hosts:
+            - vlogs.xalab.io
+
+      # -- Ingress controller class name
+      ingressClassName: "traefik"
+
+      # -- Ingress path type
+      pathType: Prefix
