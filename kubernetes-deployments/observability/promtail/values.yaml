@@ -22,7 +22,7 @@ promtail:
     # See default config in `values.yaml`
     logLevel: info
     clients:
-      - url: http://victoria-logs-server.victoria-logs-server.svc:9428/insert/loki/api/v1/push
+      - url: http://victoria-logs-server.victoria-logs.svc.cluster.local:9428/insert/loki/api/v1/push
     # -- The log format of the Promtail server
     # Must be reference in `config.file` to configure `server.log_format`
     # Valid formats: `logfmt, json`
