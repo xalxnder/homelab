@@ -3,6 +3,15 @@ promtail:
   fullnameOverride: promtail
   daemonset:
     enabled: true
+
+  resources: {}
+    limits:
+      cpu: 200m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
   config:
   # -- Enable Promtail config from Helm chart
   # Set `configmap.enabled: true` and this to `false` to manage your own Promtail config
