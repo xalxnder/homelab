@@ -1,0 +1,8 @@
+apiVersion: v2
+name: victoria-logs-single
+version: 0.9.8
+dependencies:
+  - name: victoria-logs-single
+    version: 0.9.8
+    repository: https://victoriametrics.github.io/helm-charts/
+    condition: vlogs.enabled

@@ -1,0 +1,45 @@
+vlogs:
+  enabled: true
+  fullnameOverride: victoria-logs
+  
+  persistentVolume:
+    # -- Create/use Persistent Volume Claim for server component. Use empty dir if set to false
+    enabled: true
+    size: 15Gi
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 500m
+      memory: 512Mi
+
+  ingress:
+    # -- Enable deployment of ingress for server component
+    enabled: true
+
+    # -- Ingress annotations
+    annotations:
+      kubernetes.io/ingress.class: traefik
+      cert-manager.io/cluster-issuer: lets-encrypt-production
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure
+      traefik.ingress.kubernetes.io/router.tls: "true"
+
+    # -- Array of host objects
+    hosts:
+      - name: vlogs.xalab.io
+        path:
+          - /
+        port: http
+
+    # -- Array of TLS objects
+    tls:
+      - secretName: tls-secret
+        hosts:
+          - vlogs.xalab.io
+
+    # -- Ingress controller class name
+    ingressClassName: "traefik"
+
+    # -- Ingress path type
+    pathType: Prefix
