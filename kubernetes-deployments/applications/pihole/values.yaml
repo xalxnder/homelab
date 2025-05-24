@@ -46,7 +46,7 @@ pihole:
     enabled: true
     size: 2Gi
     subPath: pihole
-    
+
   extraEnvVars:
    FTLCONF_dns_listeningMode: 'all'
 
@@ -58,5 +58,6 @@ pihole:
       cpu: 250m
       memory: 64Mi
   admin:
+    enabled: true
     existingSecret: "pihole-pass"
     passwordKey: "password"
