@@ -6,7 +6,7 @@ victoria-logs-single:
     persistentVolume:
       # -- Create/use Persistent Volume Claim for server component. Use empty dir if set to false
       enabled: true
-      size: 15Gi
+      size: 10Gi
     resources:
       limits:
         cpu: 500m
