@@ -46,6 +46,9 @@ pihole:
     enabled: true
     size: 2Gi
     subPath: pihole
+    
+  extraEnvVars:
+   FTLCONF_dns_listeningMode: 'all'
 
   resources:
     limits:
