@@ -20,7 +20,7 @@ infisical-standalone:
     # -- Specifies the ingress class, useful for multi-ingress setups
     ingressClassName: traefik
     nginx:
-      enabled: true
+      enabled: false
     annotations:
       kubernetes.io/ingress.class: traefik
       cert-manager.io/cluster-issuer: lets-encrypt-production
