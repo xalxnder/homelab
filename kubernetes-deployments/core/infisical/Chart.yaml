@@ -13,4 +13,3 @@ dependencies:
     version: 1.5.0
     repository: https://dl.cloudsmith.io/public/infisical/helm-charts/helm/charts/
     condition: infisical.enabled
-  
