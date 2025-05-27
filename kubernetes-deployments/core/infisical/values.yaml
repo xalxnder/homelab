@@ -52,7 +52,7 @@ infisical-standalone:
 
 
     # -- Number of pod replicas for high availability
-    replicaCount: 2
+    replicaCount: 1
 
     
 
