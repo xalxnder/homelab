@@ -1,6 +1,7 @@
 external-secrets:
   enabled: true
-  initialInstall: false
+  installCRDs: true
+
   resources:
     limits:
       cpu: 50m
