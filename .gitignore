@@ -4,3 +4,4 @@ settings.json
 rendered/
 charts
 test*
+secret.*
