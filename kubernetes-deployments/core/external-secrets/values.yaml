@@ -9,3 +9,6 @@ external-secrets:
     requests:
       cpu: 10m
       memory: 40Mi
+  dnsConfig:
+    nameservers:
+      - 192.168.1.77
