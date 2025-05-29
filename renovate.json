@@ -4,6 +4,5 @@
     "config:recommended",
     "schedule:daily"
   ],
-  "ignoreDeps": ["external-secrets"], 
   "timezone": "America/New_York"
 }
