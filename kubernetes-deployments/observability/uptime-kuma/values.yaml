@@ -1,6 +1,6 @@
 uptime-kuma:
 
-  useDeploy: true
+  useDeploy: false
 
   ingress:
     enabled: true
