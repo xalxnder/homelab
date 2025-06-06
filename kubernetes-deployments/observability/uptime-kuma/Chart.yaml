@@ -1,9 +1,0 @@
-apiVersion: v2
-name: uptime-kuma
-description: A self-hosted Monitoring tool like "Uptime-Robot".
-appVersion: 1.23.13
-version: 2.21.2
-dependencies:
-  - name: uptime-kuma
-    repository: https://dirsigler.github.io/uptime-kuma-helm
-    version: 2.21.3
