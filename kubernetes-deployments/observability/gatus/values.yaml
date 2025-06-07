@@ -34,12 +34,12 @@ gatus:
   - name: TEST
     valueFrom:
       secretKeyRef:
-        name: slack-webhook-url 
-        key: slack-webhook-url 
+        name: slack_webhook_url 
+        key: slack_webhook_url 
   config:
     alerting:
       slack:
-        webhook-url:  "{{`$slack-webhook-url`}}"
+        webhook-url:  "{{`$slack_webhook_url`}}"
     endpoints:
       - name: cert-manager
         url: http://cert-manager.cert-manager.svc.cluster.local:9402/metrics
