@@ -33,7 +33,7 @@ gatus:
   env:
   - name: TEST
     valueFrom:
-      secretRef:
+      secretKeyRef:
         name: slack-webhook-url 
         key: slack-webhook-url 
   config:
