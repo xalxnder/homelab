@@ -34,7 +34,7 @@ gatus:
   config:
     alerting:
       slack:
-        webhook-url: $slack-webhook-url
+        webhook-url:  "{{`$slack-webhook-url`}}"
     endpoints:
       - name: cert-manager
         url: http://cert-manager.cert-manager.svc.cluster.local:9402/metrics
