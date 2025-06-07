@@ -1,5 +1,5 @@
 gatus:
-  enabled: false
+  enabled: true
   fullnameOverride: gatus
   persistence:
     enabled: true
