@@ -27,13 +27,16 @@ gatus:
       - secretName: tls-secret
         hosts:
           - uptime.xalab.io
+ 
+
+
   env:
   - name: TEST
     valueFrom:
-      secretKeyRef:
+      secretRef:
         name: slack-webhook-url 
         key: slack-webhook-url 
-
+  config:
     alerting:
       slack:
         webhook-url:  "{{`$slack-webhook-url`}}"
