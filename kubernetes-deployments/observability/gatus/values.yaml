@@ -28,7 +28,6 @@ gatus:
         hosts:
           - uptime.xalab.io
 
-  secrets: true
   envFrom:
     - secretRef:
         name: slack-webhook-url
