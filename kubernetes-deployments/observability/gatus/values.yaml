@@ -28,8 +28,14 @@ gatus:
         hosts:
           - uptime.xalab.io
 
-  
+  secrets: true
+  envFrom:
+    - secretRef:
+        name: slack-webhook-url
   config:
+    alerting:
+      slack:
+        webhook-url: $slack-webhook-url
     endpoints:
       - name: cert-manager
         url: http://cert-manager.cert-manager.svc.cluster.local:9402/metrics
