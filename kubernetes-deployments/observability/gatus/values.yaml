@@ -1,0 +1,29 @@
+gatus:
+  enabled: true
+  fullnameOverride: gatus
+  persistence:
+    enabled: true
+    size: 500m
+  ingress:
+    enabled: true
+    # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
+    # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
+    # ingressClassName: nginx
+    # Values can be templated
+    annotations:
+      kubernetes.io/ingress.class: traefik
+      cert-manager.io/cluster-issuer: lets-encrypt-production
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure
+      traefik.ingress.kubernetes.io/router.tls: "true"
+    labels: {}
+    path: /
+    # pathType is only for k8s >= 1.1=
+    pathType: Prefix
+    hosts:
+      - uptime.xalab.io
+    # Extra paths to prepend to every host configuration, requires `ingress.hosts` to have one or more host entries.
+    # Useful when configuring [custom actions with AWS ALB Ingress Controller](https://kubernetes-sigs.github.io/aws-alb-ingress-controller/guide/ingress/annotation/#actions).
+    tls: 
+      - secretName: tls-secret
+        hosts:
+          - uptime.xalab.io
