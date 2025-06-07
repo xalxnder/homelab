@@ -4,6 +4,10 @@ longhorn:
     jobEnabled: false
     # -- Setting that allows Longhorn to perform upgrade version checks after starting the Longhorn Manager DaemonSet Pods. Disabling this setting also disables `preUpgradeChecker.jobEnabled`. Longhorn recommends keeping this setting enabled.
     upgradeVersionCheck: false
+    
+  defaultSettings:
+    concurrentAutomaticEngineUpgradePerNodeLimit: 1
+
 
   longhornUI:
   # -- Replica count for Longhorn UI.
