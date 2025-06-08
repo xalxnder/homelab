@@ -164,7 +164,7 @@ homepage:
               href: https://grafana.xalab.io/
               description: Real-time metrics visualization and monitoring
               icon: grafana.png
-          - Uptime Kuma:
+          - Gatus:
               href: https://uptime.xalab.io/
               icon: gatus.png
       - Bookmarks:
