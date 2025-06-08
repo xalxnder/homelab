@@ -166,7 +166,7 @@ homepage:
               icon: grafana.png
           - Uptime Kuma:
               href: https://uptime.xalab.io/
-              icon: uptime-kuma.png
+              icon: gatus.png
       - Bookmarks:
           - Github:
               icon: github-light.png
