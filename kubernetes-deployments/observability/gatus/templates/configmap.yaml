@@ -13,7 +13,7 @@ data:
         url: http://cert-manager.cert-manager.svc.cluster.local:9402/metrics
         interval: 1m
         conditions:
-          - "[STATUS] == 202"
+          - "[STATUS] == 200"
         alerts:
           - type: slack
             description: "healthcheck failed 3 times in a row"
