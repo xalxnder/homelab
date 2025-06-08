@@ -27,4 +27,8 @@ gatus:
       - secretName: tls-secret
         hosts:
           - uptime.xalab.io
+  envFrom:
+  - secretRef:
+      name: slack
+
 

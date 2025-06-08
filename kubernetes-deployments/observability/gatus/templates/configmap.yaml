@@ -7,7 +7,7 @@ data:
   config.yaml: |
     alerting:
       slack:
-        webhook-url: "{{ .slack }}"
+        webhook-url: "${slack}"
     endpoints:
       - name: cert-manager
         url: http://cert-manager.cert-manager.svc.cluster.local:9402/metrics
