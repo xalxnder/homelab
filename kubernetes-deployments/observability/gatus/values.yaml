@@ -28,6 +28,7 @@ gatus:
         hosts:
           - uptime.xalab.io
 
-  config:
-    create: false
+  config: | 
+    {}
+
 
