@@ -39,7 +39,7 @@ gatus:
   extraVolumes:
     - name: gatus-config
       secret:
-        secretName: slack-webhook-url  # Must match ExternalSecret target.name
+        secretName: slack  # Must match ExternalSecret target.name
   config:
     endpoints:
       - name: cert-manager
