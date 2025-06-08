@@ -29,7 +29,7 @@ gatus:
           - uptime.xalab.io
 
   env:
-  GATUS_CONFIG_PATH: /config/config.yaml
+    GATUS_CONFIG_PATH: /config/config.yaml
 
   # extraVolumeMounts:
   #   - name: gatus-config
