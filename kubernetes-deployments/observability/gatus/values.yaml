@@ -31,21 +31,21 @@ gatus:
   env:
     GATUS_CONFIG_PATH: /config/config.yaml
 
-  # extraVolumeMounts:
-  #   - name: gatus-config
-  #     mountPath: /config
-  #     readOnly: true
+  extraVolumeMounts:
+    - name: gatus-config
+      mountPath: /config
+      readOnly: true
 
   # extraVolumes:
   #   - name: gatus-config
   #     secret:
   #       secretName: slack  # Must match ExternalSecret target.name
-  config:
-    endpoints:
-      - name: cert-manager
-        url: http://cert-manager.cert-manager.svc.cluster.local:9402/metrics
-        interval: 1m
-        conditions:
-          - "[STATUS] == 200"
+  # config:
+  #   endpoints:
+  #     - name: cert-manager
+  #       url: http://cert-manager.cert-manager.svc.cluster.local:9402/metrics
+  #       interval: 1m
+  #       conditions:
+  #         - "[STATUS] == 200"
 
 
