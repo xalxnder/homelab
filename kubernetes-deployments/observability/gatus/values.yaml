@@ -32,10 +32,10 @@ gatus:
     GATUS_CONFIG_PATH: /config/config.yaml
 
 
-  # extraVolumes:
-  #   - name: gatus-config
-  #     secret:
-  #       secretName: slack  # Must match ExternalSecret target.name
+  extraVolumes:
+    - name: gatus-config
+      secret:
+        secretName: slack  # Must match ExternalSecret target.name
   # config:
   #   endpoints:
   #     - name: cert-manager
