@@ -11,7 +11,7 @@ data:
     endpoints:
       - name: cert-manager
         url: http://cert-manager.cert-manager.svc.cluster.local
-        interval: 1m
+        interval: 30s
         conditions:
           - "[STATUS] == 200"
         alerts:
@@ -19,6 +19,6 @@ data:
             description: "healthcheck failed 3 times in a row"
             send-on-resolved: true
           - type: slack
-            failure-threshold: 5
+            failure-threshold: 2
             description: "healthcheck failed 5 times in a row"
             send-on-resolved: true
