@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gatus-config
+  namespace: gatus
+data:
+  config.yaml: |
+    alerting:
+      slack:
+        webhook-url: "{{ .slack_webhook_url }}"
+    endpoints:
+      - name: cert-manager
+        url: http://cert-manager.cert-manager.svc.cluster.local:9402/metrics
+        interval: 1m
+        conditions:
+          - "[STATUS] == 200"
