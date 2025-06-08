@@ -27,22 +27,25 @@ gatus:
       - secretName: tls-secret
         hosts:
           - uptime.xalab.io
- 
-
 
   env:
-  - name: TEST
-    valueFrom:
-      secretKeyRef:
-        name: slack-webhook-url 
-        key: SLACK_WEBHOOK_URL 
+  GATUS_CONFIG_PATH: /config/config.yaml
+
+  extraVolumeMounts:
+    - name: gatus-config
+      mountPath: /config
+      readOnly: true
+
+  extraVolumes:
+    - name: gatus-config
+      secret:
+        secretName: slack-webhook-url  # Must match ExternalSecret target.name
   config:
-    alerting:
-      slack:
-        webhook-url:  "{{`$SLACK_WEBHOOK_URL `}}"
     endpoints:
       - name: cert-manager
         url: http://cert-manager.cert-manager.svc.cluster.local:9402/metrics
         interval: 1m
         conditions:
           - "[STATUS] == 200"
+
+
