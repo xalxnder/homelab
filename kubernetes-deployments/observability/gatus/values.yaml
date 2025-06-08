@@ -31,10 +31,6 @@ gatus:
   env:
     GATUS_CONFIG_PATH: /config/config.yaml
 
-  extraVolumeMounts:
-    - name: gatus-config
-      mountPath: /config
-      readOnly: true
 
   # extraVolumes:
   #   - name: gatus-config
