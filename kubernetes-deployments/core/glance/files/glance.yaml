@@ -7,6 +7,12 @@ pages:
         widgets:
           - type: calendar
             first-day-of-week: monday
+            
+          - type: repository
+            repository: xalxnder/homelab
+            pull-requests-limit: 5
+            issues-limit: -1
+            commits-limit: 3
 
           - type: rss
             limit: 10
@@ -17,6 +23,7 @@ pages:
                 title: selfh.st
                 limit: 4
             
+
       - size: full
         widgets:
           - type: videos
