@@ -97,7 +97,6 @@ glance:
         kubernetes.io/tls-acme: "true"
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.middlewares: traefik-default-security@kubernetescrd
-        traefik.ingress.kubernetes.io/router.tls.options: traefik-default-tls@kubernetescrd
         traefik.ingress.kubernetes.io/router.tls: "true"
   persistence:
     config:
