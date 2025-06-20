@@ -17,7 +17,7 @@
               icon: $di:traefik.png
               url: https://traefik.xalab.io/
             - title: Hubble
-              icon: $di:cililum.png
+              icon: $di:cilium.png
               url: https://argocd.xalab.io/
             - title: Proxmox
               icon: $di:proxmox.png
