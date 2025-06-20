@@ -25,11 +25,6 @@ pages:
 
       - size: full
         widgets:
-          - type: group
-            widgets:
-              - type: hacker-news
-              - type: lobsters
-
           - type: videos
             channels:
               - UCoZQiN0o7f36H7PaW4fVhFw # Retro Game Corps
