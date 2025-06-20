@@ -11,7 +11,7 @@
               icon: $di:argo-cd.png
               url: https://argocd.xalab.io/
             - title: Pi-Hole
-              icon: $di:argo-cd.png
+              icon: $di:pi-hole.png
               url: https://pihole.xalab.io/
             - title: Traefik
               icon: $di:traefik.png
@@ -29,7 +29,7 @@
               icon: $di:grafana.png
               url: https://grafana.xalab.io/
             - title: Gatus
-              icon: $di:longhorn.png
+              icon: $di:gatus.png
               url: https://gatus.xalab.io/
             - title: Router
               icon: $di:verizon.png
