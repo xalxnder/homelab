@@ -1,0 +1,13 @@
+- type: group
+  title: Homelab Bookmark Groups
+  widgets:
+    - type: bookmarks
+      title: Applications
+      groups:
+        - title: General
+          color: 10 70 50
+          links:
+            - title: Argo
+              icon: $di:archivebox.png
+              url: https://argocd.xalab.io/
+         
