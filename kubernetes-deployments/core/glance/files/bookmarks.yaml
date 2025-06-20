@@ -4,10 +4,33 @@
     - type: bookmarks
       title: Applications
       groups:
-        - title: General
+        - title: Homelab
           color: 10 70 50
           links:
             - title: Argo
-              icon: $di:archivebox.png
+              icon: $di:argo-cd.png
               url: https://argocd.xalab.io/
-         
+            - title: Pi-Hole
+              icon: $di:argo-cd.png
+              url: https://pihole.xalab.io/
+            - title: Traefik
+              icon: $di:traefik.png
+              url: https://traefik.xalab.io/
+            - title: Hubble
+              icon: $di:cililum.png
+              url: https://argocd.xalab.io/
+            - title: Proxmox
+              icon: $di:proxmox.png
+              url: https://proxmox.xalab.io/
+            - title: Longhorn
+              icon: $di:longhorn.png
+              url: https://longhorn.xalab.io/
+            - title: Grafana
+              icon: $di:grafana.png
+              url: https://grafana.xalab.io/
+            - title: Gatus
+              icon: $di:longhorn.png
+              url: https://gatus.xalab.io/
+            - title: Router
+              icon: $di:verizon.png
+              url: https://router.xalab.io/
