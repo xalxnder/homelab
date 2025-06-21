@@ -15,38 +15,6 @@ alloy:
 
   alloy:
     configMap:
-      create: true
-      content: |
-        discovery.kubernetes "pod" {
-          role = "pod"
-        }
-
-        discovery.relabel "pod_logs" {
-          targets = discovery.kubernetes.pod.targets
-
-          rule {
-            source_labels = ["__meta_kubernetes_namespace"]
-            action = "replace"
-            target_label = "namespace"
-          }
-        loki.source.kubernetes "pod_logs" {
-          targets    = discovery.relabel.pod_logs.output
-          forward_to = [loki.process.pod_logs.receiver]
-        }
-
-        loki.process "pod_logs" {
-          stage.static_labels {
-            values = {
-              cluster = "kubernetes",
-            }
-          }
-          forward_to = [loki.write.default.receiver]
-        }
-
-
-          
-        loki.write "default" {
-          endpoint {
-            url = "http://victoria-logs-server.victoria-logs.svc.cluster.local:9558/insert/loki/api/v1/push"
-          }
-        }
+      create: false
+      name: alloy-config
+      key: config.alloy
