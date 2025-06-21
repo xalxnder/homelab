@@ -12,6 +12,11 @@ alloy:
     requests:
       cpu: 100m
       memory: 128Mi
+      
+  podSecurityContext:
+    sysctls:
+      - name: fs.inotify.max_user_watches
+        value: "524288"  # Recommended value
 
   alloy:
     configMap:
