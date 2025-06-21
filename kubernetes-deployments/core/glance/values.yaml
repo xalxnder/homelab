@@ -78,7 +78,7 @@ glance:
     glance:
       enabled: true
       hosts:
-        - host: &domain glance.xalab.io
+        - host: &domain homepage.xalab.io
           paths:
             - path: /
               pathType: Prefix
