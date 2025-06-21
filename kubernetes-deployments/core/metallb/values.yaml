@@ -8,7 +8,7 @@ metallb:
         cpu: 25m
         memory: 64Mi
       limits:
-        cpu: 100m
+        cpu: 500m
         memory: 100Mi
   speaker:
     resources:
@@ -16,7 +16,7 @@ metallb:
         cpu: 10m
         memory: 64Mi
       limits:
-        cpu: 100m
+        cpu: 500m
         memory: 100Mi
 
   addresses:
