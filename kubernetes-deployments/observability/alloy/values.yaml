@@ -108,7 +108,7 @@ alloy:
 
         loki.write "default" {
           endpoint {
-            url = "http://loki-gateway/loki/api/v1/push"
+            url = "http://victoria-logs-server.victoria-logs.svc.cluster.local:9428/insert/loki/api/v1/push"
           }
           external_labels = {}
         }
