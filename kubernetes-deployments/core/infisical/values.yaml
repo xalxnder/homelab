@@ -7,7 +7,7 @@ infisical-standalone:
       # -- Image repository for the Infisical service
       repository: infisical/infisical
       # -- Specific version tag of the Infisical image. View the latest version here https://hub.docker.com/r/infisical/infisical
-      tag: "v0.132.3-postgres"
+      tag: "v0.133.0-postgres"
       # -- Pulls image only if not already present on the node
       pullPolicy: IfNotPresent
       # -- Secret references for pulling the image, if needed
