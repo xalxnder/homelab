@@ -70,7 +70,7 @@ infisical-standalone:
     resources:
       limits:
         # -- Memory limit for Infisical container
-        memory: 600Mi
+        memory: 800Mi
       requests:
         # -- CPU request for Infisical container
         cpu: 350m
