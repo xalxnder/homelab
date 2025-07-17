@@ -82,7 +82,7 @@ rancher:
 
     tls:
       # options: rancher, letsEncrypt, secret
-      source: letsEncrypt
+      source: secret
       secretName: tls-secret
 
 
