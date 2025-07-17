@@ -24,27 +24,27 @@ argo-cd:
       requests:
         cpu: 25m
         memory: 48Mi
-    # service:
-    #   type: LoadBalancer
-    #   ports:
-    #     http:
-    #       port: 80
-    ingress:
-      enabled: true
-      ingressClassName: "traefik"
-      hostname: &host argocd.xalab.io
-      annotations:
-        kubernetes.io/ingress.class: traefik
-        cert-manager.io/cluster-issuer: lets-encrypt-production
-        traefik.ingress.kubernetes.io/router.entrypoints: websecure
-        traefik.ingress.kubernetes.io/router.tls: "true"
-      tls:
-        - secretName: tls-secret
-          hosts:
-            - *host
-      paths:
-        - path: /
-          pathType: Prefix
+    service:
+      type: LoadBalancer
+      ports:
+        http:
+          port: 80
+    # ingress:
+    #   enabled: true
+    #   ingressClassName: "traefik"
+    #   hostname: &host argocd.xalab.io
+    #   annotations:
+    #     kubernetes.io/ingress.class: traefik
+    #     cert-manager.io/cluster-issuer: lets-encrypt-production
+    #     traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    #     traefik.ingress.kubernetes.io/router.tls: "true"
+    #   tls:
+    #     - secretName: tls-secret
+    #       hosts:
+    #         - *host
+    #   paths:
+    #     - path: /
+    #       pathType: Prefix
   namespaceOverride: "argocd"
 argocd-apps:
   enabled: true
