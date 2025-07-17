@@ -36,7 +36,7 @@ traefik:
       externalTrafficPolicy: Local
     annotations:
       metallb.universe.tf/ip-allocated-from-pool: ip-pool
-      metallb.universe.tf/loadBalancerIPs: 192.168.1.78
+      metallb.universe.tf/loadBalancerIPs: 192.168.1.82
   ingressRoute:
     dashboard:
       enabled: false
