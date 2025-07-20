@@ -1,10 +1,12 @@
-{{- if .Values.alloy.configMap.create }}
+{{- with .Values.alloy.configMap }}
+  {{- if .create }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: alloy-config
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ $.Release.Namespace }}
 data:
-  {{ .Values.alloy.configMap.key }}: |
-{{ tpl .Values.alloy.configMap.content . | indent 4 }}
+  {{ .key }}: |
+{{ tpl .content $ | indent 4 }}
+  {{- end }}
 {{- end }}
