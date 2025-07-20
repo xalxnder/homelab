@@ -21,7 +21,5 @@ alloy:
   alloy:
     configMap:
       create: false
+      name: alloy-config
       key: config.alloy
-      content: |
-        {{ .Files.Get "config.alloy" }}
-      
