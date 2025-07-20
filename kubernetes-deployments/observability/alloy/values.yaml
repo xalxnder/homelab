@@ -20,6 +20,6 @@ alloy:
 
   alloy:
     configMap:
-      create: false
+      create: true
       name: alloy-config
       key: config.alloy
