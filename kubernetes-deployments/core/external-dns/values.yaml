@@ -5,6 +5,17 @@ external-dns:
   policy: upsert-only
   registry: noop
   logLevel: debug
+  rbac:
+    additionalPermissions:
+      - apiGroups: [""]
+        resources: ["endpoints"]
+        verbs: ["get", "list", "watch"]
+      - apiGroups: [""]
+        resources: ["services"]
+        verbs: ["get", "list", "watch"]
+      - apiGroups: ["networking.k8s.io"]
+        resources: ["ingresses"]
+        verbs: ["get", "list", "watch"]
   image:
     tag: v0.17.0
   env:
