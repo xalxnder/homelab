@@ -1,5 +1,5 @@
 pihole:
-  enabled: true
+  enabled: false
   fullnameOverride: pihole
   virtualHost: &web-domain pihole.xalab.io
 
