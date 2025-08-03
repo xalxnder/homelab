@@ -20,34 +20,21 @@ terminationGracePeriodSeconds: 30
 podAnnotations: {}
 #  cluster-autoscaler.kubernetes.io/safe-to-evict: "false"
 
-serviceType: "LoadBalancer"
+serviceType: "ClusterIP"
 
-prometheus:
-  service:
-    enabled: false
-    annotations:
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "9153"
-    selector: {}
-  monitor:
-    enabled: false
-    additionalLabels: {}
-    namespace: ""
-    interval: ""
-    selector: {}
 
-service:
-  loadBalancerIP: "192.168.1.79"
-  externalIPs: []
-  externalTrafficPolicy: ""
-  ipFamilyPolicy: ""
-# trafficDistribution: PreferClose
-  # The name of the Service
-  # If not set, a name is generated using the fullname template
-  name: "coredns"
-  # annotations: {}
-  # # Pod selector
-  # selector: {}
+# service:
+#   loadBalancerIP: "192.168.1.79"
+#   externalIPs: []
+#   externalTrafficPolicy: ""
+#   ipFamilyPolicy: ""
+# # trafficDistribution: PreferClose
+#   # The name of the Service
+#   # If not set, a name is generated using the fullname template
+#   name: "coredns"
+#   # annotations: {}
+#   # # Pod selector
+#   # selector: {}
 
 serviceAccount:
   create: false
