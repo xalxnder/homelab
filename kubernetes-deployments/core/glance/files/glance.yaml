@@ -1,0 +1,60 @@
+theme:
+  background-color: 240 21 15
+  contrast-multiplier: 1.2
+  primary-color: 217 92 83
+  positive-color: 115 54 76
+  negative-color: 347 70 65
+pages:
+  - name: Home
+    # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+    # hide-desktop-navigation: true
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+            first-day-of-week: monday
+            
+          - type: repository
+            repository: xalxnder/homelab
+            pull-requests-limit: 5
+            issues-limit: -1
+            commits-limit: 3
+
+          - type: rss
+            limit: 10
+            collapse-after: 3
+            cache: 12h
+            feeds:
+              - url: https://selfh.st/rss/
+                title: selfh.st
+                limit: 4
+            
+
+      - size: full
+        widgets:
+          - type: videos
+            channels:
+              - UCoZQiN0o7f36H7PaW4fVhFw # Retro Game Corps
+              - UCFIvZYZp70IIrytPaF1eJrA # Jon Makes Beats
+              - UCBJycsmduvYEL83R_U4JriQ # Marques Brownlee
+
+          - type: group
+            widgets:
+              - type: reddit
+                subreddit: selfhosted
+                show-thumbnails: true
+
+      - size: small
+        widgets:
+          - $include: bookmarks.yaml
+
+          - type: releases
+            cache: 1d
+            # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+            # read-only token from your Github account settings and use it here to increase the limit.
+            # token: ...
+            repositories:
+              - glanceapp/glance
+              - FreeTubeApp/FreeTube
+              - kubernetes/kubernetes
+              - semaphoreui/semaphore
