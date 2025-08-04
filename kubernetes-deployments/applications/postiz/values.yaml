@@ -1,0 +1,14 @@
+postiz:
+  enabled: true
+  global:
+    fullnameOverride: postiz
+  controllers:
+    postiz:
+      type: deployment
+      strategy: RollingUpdate
+      containers:
+        postiz:
+          image:
+            repository: ghcr.io/gitroomhq/postiz-app
+            tag: v1.65.1
+            pullPolicy: IfNotPresent
