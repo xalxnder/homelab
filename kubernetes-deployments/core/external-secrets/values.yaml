@@ -12,4 +12,4 @@ external-secrets:
   dnsPolicy: None
   dnsConfig:
     nameservers:
-      - 192.168.1.77
+      - 192.168.1.165
