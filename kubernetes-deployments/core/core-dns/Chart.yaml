@@ -3,6 +3,6 @@ name: coredns
 version: 1.12.2
 dependencies:
 - name: coredns
-  version: 1.43.0
+  version: 1.43.1
   repository: https://coredns.github.io/helm
   # condition: external-dns.enabled
