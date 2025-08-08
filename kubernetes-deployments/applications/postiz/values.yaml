@@ -53,10 +53,10 @@ postiz:
     postiz:
       controller: postiz
       ports:
-      http:
-        port: 4200   # Frontend
-      backend:
-        port: 3000   # Backend
+        http:
+          port: 4200   # Frontend
+        backend:
+          port: 3000   # Backend
 
   ingress:
     postiz:
