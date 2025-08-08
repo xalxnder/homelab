@@ -58,13 +58,15 @@ postiz:
           port: 5000
     postgresql:
       controller: postgresql
+      type: ClusterIP
       ports:
-        postgresql:
+        http:
           port: 5432
     redis:
       controller: redis
+      type: ClusterIP
       ports:
-        redis:
+        http:
           port: 6379
 
     
