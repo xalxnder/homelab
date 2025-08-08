@@ -9,6 +9,14 @@ postiz:
       containers:
         postiz:
           env:  
+               # Required frontend/backend URLs
+            FRONTEND_URL: "http://postiz:4200"                     # Pod/service name inside cluster
+            NEXT_PUBLIC_BACKEND_URL: "http://postiz:3000"          # External/public-facing backend URL
+            BACKEND_INTERNAL_URL: "http://postiz:3000"             # Internal API URL inside cluster
+            UPLOAD_DIRECTORY: ""
+            NEXT_PUBLIC_UPLOAD_STATIC_DIRECTORY: ""
+            NX_ADD_PLUGINS: "false"
+            IS_GENERAL: "true"
             DATABASE_URL: "postgresql://postiz:postiz-password@postgresql:5432/postiz"
             REDIS_URL: "redis://:postiz-redis-password@redis:6379"
           image:
@@ -45,8 +53,10 @@ postiz:
     postiz:
       controller: postiz
       ports:
-        http:
-          port: 80
+      http:
+        port: 4200   # Frontend
+      backend:
+        port: 3000   # Backend
 
   ingress:
     postiz:
@@ -64,7 +74,7 @@ postiz:
               pathType: Prefix
               service:
                 identifier: postiz
-                port: 80
+                port: 4200
       tls:
         - hosts:
             - postiz.xalab.io
