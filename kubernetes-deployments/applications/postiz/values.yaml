@@ -10,7 +10,7 @@ postiz:
         postiz:
           image:
             repository: ghcr.io/gitroomhq/postiz-app
-            tag: v1.65.1
+            tag: v1.65.7
             pullPolicy: IfNotPresent
   service:
     postiz:
