@@ -34,6 +34,7 @@ postiz:
             pullPolicy: IfNotPresent
           env:
             REDIS_PASSWORD: "postiz-redis-password"
+ 
     postgresql:
       type: deployment
       replicas: 1
@@ -48,12 +49,25 @@ postiz:
             POSTGRES_USER: "postiz"
             POSTGRES_PASSWORD: "postiz-password"
             POSTGRES_DB: "postiz"
+  
   service:
     postiz:
       controller: postiz
       ports:
         http:
           port: 5000
+    postgresql:
+      controller: postgresql
+      ports:
+        postgresql:
+          port: 5432
+    redis:
+      controller: redis
+      ports:
+        redis:
+          port: 6379
+
+    
   ingress:
     postiz:
       className: "traefik"
