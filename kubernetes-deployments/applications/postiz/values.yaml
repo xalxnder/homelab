@@ -53,10 +53,7 @@ postiz:
       controller: postiz
       ports:
         http:
-          port: 4200   # Frontend
-        backend:
-          port: 3000   # Backend
-
+          port: 80
   ingress:
     postiz:
       className: "traefik"
@@ -73,7 +70,7 @@ postiz:
               pathType: Prefix
               service:
                 identifier: postiz
-                port: 4200
+                port: 80
       tls:
         - hosts:
             - postiz.xalab.io
