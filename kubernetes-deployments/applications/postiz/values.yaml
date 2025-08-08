@@ -1,5 +1,5 @@
 postiz:
-  enabled: true
+  enabled: false
   global:
     fullnameOverride: postiz
   controllers:
