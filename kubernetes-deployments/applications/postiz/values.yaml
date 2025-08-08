@@ -90,6 +90,7 @@ postiz:
       tls:
         - hosts:
             - postiz.xalab.io
+          secretName: tls-secret
   secrets:
     postiz-secrets:
       stringData:
