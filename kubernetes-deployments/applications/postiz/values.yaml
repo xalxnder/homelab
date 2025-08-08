@@ -1,5 +1,5 @@
 postiz:
-  enabled: false
+  enabled: true
   global:
     fullnameOverride: postiz
   controllers:
@@ -9,7 +9,6 @@ postiz:
       containers:
         postiz:
           env:  
-               # Required frontend/backend URLs
             FRONTEND_URL: "http://postiz:4200"                     # Pod/service name inside cluster
             NEXT_PUBLIC_BACKEND_URL: "http://postiz:3000"          # External/public-facing backend URL
             BACKEND_INTERNAL_URL: "http://postiz:3000"             # Internal API URL inside cluster
