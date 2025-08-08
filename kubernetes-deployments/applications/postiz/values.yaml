@@ -9,8 +9,8 @@ postiz:
       containers:
         postiz:
           env:  
-            FRONTEND_URL: "http://postiz:4200"                     # Pod/service name inside cluster
-            NEXT_PUBLIC_BACKEND_URL: "http://postiz:3000"          # External/public-facing backend URL
+            FRONTEND_URL: "https://postiz.xalab.io"                     # Pod/service name inside cluster
+            NEXT_PUBLIC_BACKEND_URL: "https://postiz.xalab.io"          # External/public-facing backend URL
             BACKEND_INTERNAL_URL: "http://postiz:3000"             # Internal API URL inside cluster
             UPLOAD_DIRECTORY: ""
             NEXT_PUBLIC_UPLOAD_STATIC_DIRECTORY: ""
@@ -53,7 +53,7 @@ postiz:
       controller: postiz
       ports:
         http:
-          port: 80
+          port: 5000
   ingress:
     postiz:
       className: "traefik"
@@ -70,7 +70,7 @@ postiz:
               pathType: Prefix
               service:
                 identifier: postiz
-                port: 80
+                port: 5000
       tls:
         - hosts:
             - postiz.xalab.io
