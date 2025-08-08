@@ -8,6 +8,8 @@ postiz:
       strategy: RollingUpdate
       containers:
         postiz:
+          DATABASE_URL: "postgresql://postiz:postiz-password@postgresql:5432/postiz"
+          REDIS_URL: "redis://:postiz-redis-password@redis:6379"
           image:
             repository: ghcr.io/gitroomhq/postiz-app
             tag: v1.65.1
