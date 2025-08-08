@@ -12,12 +12,38 @@ postiz:
             repository: ghcr.io/gitroomhq/postiz-app
             tag: v1.65.1
             pullPolicy: IfNotPresent
+    redis:
+      type: deployment
+      replicas: 1
+      strategy: RollingUpdate
+      containers:
+        redis:
+          image:
+            repository: redis
+            tag: "7.2"
+            pullPolicy: IfNotPresent
+          env:
+            REDIS_PASSWORD: "postiz-redis-password"
+    postgresql:
+      type: deployment
+      replicas: 1
+      strategy: RollingUpdate
+      containers:
+        postgresql:
+          image:
+            repository: postgres
+            tag: "17.5"
+            pullPolicy: IfNotPresent
+          env:
+            POSTGRES_USER: "postiz"
+            POSTGRES_PASSWORD: "postiz-password"
+            POSTGRES_DB: "postiz"
   service:
     postiz:
       controller: postiz
       ports:
         http:
-          port: 5000
+          port: 80
 
   ingress:
     postiz:
@@ -35,7 +61,27 @@ postiz:
               pathType: Prefix
               service:
                 identifier: postiz
-                port: 5000
+                port: 80
       tls:
         - hosts:
             - postiz.xalab.io
+  secrets:
+    postiz-secrets:
+      stringData:
+        DATABASE_URL: ""
+        REDIS_URL: ""
+        JWT_SECRET: ""
+        X_API_KEY: ""
+        X_API_SECRET: ""
+        LINKEDIN_CLIENT_ID: ""
+        LINKEDIN_CLIENT_SECRET: ""
+        REDDIT_CLIENT_ID: ""
+        REDDIT_CLIENT_SECRET: ""
+        GITHUB_CLIENT_ID: ""
+        GITHUB_CLIENT_SECRET: ""
+        RESEND_API_KEY: ""
+        CLOUDFLARE_ACCOUNT_ID: ""
+        CLOUDFLARE_ACCESS_KEY: ""
+        CLOUDFLARE_SECRET_ACCESS_KEY: ""
+        CLOUDFLARE_BUCKETNAME: ""
+        CLOUDFLARE_BUCKET_URL: ""
