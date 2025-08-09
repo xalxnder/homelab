@@ -30,7 +30,7 @@ postiz:
         redis:
           image:
             repository: redis
-            tag: "7.2"
+            tag: "7.4"
             pullPolicy: IfNotPresent
           env:
             REDIS_PASSWORD: "postiz-redis-password"
