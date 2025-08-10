@@ -20,7 +20,7 @@ postiz:
             REDIS_URL: "redis://:postiz-redis-password@postiz-redis:6379"
           image:
             repository: ghcr.io/gitroomhq/postiz-app
-            tag: v1.65.1
+            tag: v2.5.3
             pullPolicy: IfNotPresent
     redis:
       type: deployment
