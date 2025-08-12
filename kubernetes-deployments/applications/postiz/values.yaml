@@ -22,17 +22,15 @@ postiz:
           - name: FRONTEND_URL
             value: "https://postiz.xalab.io"                     # Pod/service name inside cluster
           - name: NEXT_PUBLIC_BACKEND_URL
-            value: "https://postiz.xalab.io"          # External/public-facing backend URL
+            value: "https://postiz.xalab.io/api"          # External/public-facing backend URL
           - name: BACKEND_INTERNAL_URL
-            value: http://postiz:3000"             # Internal API URL inside cluster
+            value: "http://postiz:3000"             # Internal API URL inside cluster
+          - name: STORAGE_PROVIDER
+            value: "local"
           - name: UPLOAD_DIRECTORY
-            value: ""
-          - name: NEXT_PUBLIC_UPLOAD_STATIC_DIRECTORY
-            value: ""
-          - name: NX_ADD_PLUGINS
-            value: "false"
-          - name: IS_GENERAL
-            value: "true"
+            value: "/uploads"
+          - name: NEXT_PUBLIC_UPLOAD_DIRECTORY
+            value: "/uploads"
             
           image:
             repository: ghcr.io/gitroomhq/postiz-app
@@ -75,6 +73,19 @@ postiz:
             value: "postiz"
           - name: POSTGRES_DB
             value: "postiz"
+  
+  persistence:
+    uploads:
+      enabled: true
+      size: 2Gi
+      accessModes:
+        - ReadWriteOnce
+      storageClass: longhorn
+      globalMounts:
+        - path: /uploads
+          readOnly: false
+      retain: true
+
   
   service:
     postiz:
