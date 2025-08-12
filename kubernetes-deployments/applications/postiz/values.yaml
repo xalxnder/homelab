@@ -52,7 +52,7 @@ postiz:
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: REDIS_PASSWORD
+                  name: redis-password
                   key: REDIS_PASSWORD
 
     postgresql:
@@ -69,7 +69,7 @@ postiz:
           - name: POSTGRES_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: POSTGRES_PASSWORD
+                name: postgres-password
                 key: POSTGRES_PASSWORD
           - name: POSTGRES_USER
             value: "postiz"
