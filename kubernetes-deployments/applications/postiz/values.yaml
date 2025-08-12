@@ -47,6 +47,7 @@ postiz:
       strategy: RollingUpdate
       containers:
         redis:
+          command: ["redis-server", "--appendonly", "yes", "--requirepass", "$(REDIS_PASSWORD)"]
           image:
             repository: redis
             tag: "7.2"
