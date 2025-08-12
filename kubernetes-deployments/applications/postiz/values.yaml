@@ -81,9 +81,11 @@ postiz:
       size: 2Gi
       accessMode: ReadWriteOnce
       storageClass: longhorn
-      globalMounts:
-        - path: /uploads
-          readOnly: false
+      advancedMounts:
+        postiz:        # controller name
+          postiz:      # container name
+            - path: /uploads
+              readOnly: false
       retain: true
 
   
