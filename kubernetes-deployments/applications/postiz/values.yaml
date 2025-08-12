@@ -1,5 +1,5 @@
 postiz:
-  enabled: true
+  enabled: false
   global:
     fullnameOverride: postiz
   controllers:
@@ -8,16 +8,32 @@ postiz:
       strategy: RollingUpdate
       containers:
         postiz:
-          env:  
-            FRONTEND_URL: "https://postiz.xalab.io"                     # Pod/service name inside cluster
-            NEXT_PUBLIC_BACKEND_URL: "https://postiz.xalab.io"          # External/public-facing backend URL
-            BACKEND_INTERNAL_URL: "http://postiz:3000"             # Internal API URL inside cluster
-            UPLOAD_DIRECTORY: ""
-            NEXT_PUBLIC_UPLOAD_STATIC_DIRECTORY: ""
-            NX_ADD_PLUGINS: "false"
-            IS_GENERAL: "true"
-            DATABASE_URL: "postgresql://postiz:postiz-password@postiz-postgresql:5432/postiz"
-            REDIS_URL: "redis://:postiz-redis-password@postiz-redis:6379"
+          env:
+          - name: REDIS_URL
+            valueFrom:
+              secretKeyRef:
+                name: REDIS_URL
+                key: REDIS_URL
+            name: DATABASE_URL
+            valueFrom:
+              secretKeyRef:
+                name: DATABASE_URL
+                key: DATABASE_URL
+          - name: FRONTEND_URL
+            value: "https://postiz.xalab.io"                     # Pod/service name inside cluster
+          - name: NEXT_PUBLIC_BACKEND_URL
+            value: "https://postiz.xalab.io"          # External/public-facing backend URL
+          - name: BACKEND_INTERNAL_URL
+            value: http://postiz:3000"             # Internal API URL inside cluster
+          - name: UPLOAD_DIRECTORY
+            value: ""
+          - name: NEXT_PUBLIC_UPLOAD_STATIC_DIRECTORY
+            value: ""
+          - name: NX_ADD_PLUGINS
+            value: "false"
+          - name: IS_GENERAL
+            value: "true"
+            
           image:
             repository: ghcr.io/gitroomhq/postiz-app
             tag: v1.65.1
@@ -33,8 +49,12 @@ postiz:
             tag: "7.2"
             pullPolicy: IfNotPresent
           env:
-            REDIS_PASSWORD: "postiz-redis-password"
- 
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: REDIS_PASSWORD
+                  key: REDIS_PASSWORD
+
     postgresql:
       type: deployment
       replicas: 1
@@ -46,9 +66,15 @@ postiz:
             tag: "17.5"
             pullPolicy: IfNotPresent
           env:
-            POSTGRES_USER: "postiz"
-            POSTGRES_PASSWORD: "postiz-password"
-            POSTGRES_DB: "postiz"
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: POSTGRES_PASSWORD
+                key: POSTGRES_PASSWORD
+          - name: POSTGRES_USER
+            value: "postiz"
+          - name: POSTGRES_DB
+            value: "postiz"
   
   service:
     postiz:
@@ -93,8 +119,6 @@ postiz:
   secrets:
     postiz-secrets:
       stringData:
-        DATABASE_URL: ""
-        REDIS_URL: ""
         JWT_SECRET: ""
         X_API_KEY: ""
         X_API_SECRET: ""
