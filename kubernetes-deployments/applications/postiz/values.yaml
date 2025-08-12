@@ -79,7 +79,7 @@ postiz:
       enabled: true
       type: persistentVolumeClaim
       size: 2Gi
-      accessModes: ReadWriteOnce
+      accessMode: ReadWriteOnce
       storageClass: longhorn
       globalMounts:
         - path: /uploads
