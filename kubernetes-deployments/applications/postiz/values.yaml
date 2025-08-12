@@ -19,6 +19,11 @@ postiz:
               secretKeyRef:
                 name: database-url
                 key: DATABASE_URL
+          - name: JWT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: jwt-secret
+                key: JWT_SECRET
           - name: FRONTEND_URL
             value: "https://postiz.xalab.io"                     # Pod/service name inside cluster
           - name: NEXT_PUBLIC_BACKEND_URL
@@ -132,7 +137,6 @@ postiz:
   secrets:
     postiz-secrets:
       stringData:
-        JWT_SECRET: ""
         X_API_KEY: ""
         X_API_SECRET: ""
         LINKEDIN_CLIENT_ID: ""
