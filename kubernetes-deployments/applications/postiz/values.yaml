@@ -27,12 +27,12 @@ postiz:
           - name: MASTODON_CLIENT_SECRET
             valueFrom:
               secretKeyRef:
-                name: mastodon_client_secret
+                name: mastodon-client-secret
                 key: MASTODON_CLIENT_SECRET
           - name: MASTODON_CLIENT_ID
             valueFrom:
               secretKeyRef:
-                name: mastodon_client_id
+                name: mastodon-client-id
                 key: MASTODON_CLIENT_ID
           - name: FRONTEND_URL
             value: "https://postiz.xalab.io"                     # Pod/service name inside cluster
