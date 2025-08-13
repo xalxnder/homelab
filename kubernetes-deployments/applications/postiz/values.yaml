@@ -24,6 +24,16 @@ postiz:
               secretKeyRef:
                 name: jwt-secret
                 key: JWT_SECRET
+          - name: MASTODON_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: mastodon_client_secret
+                key: MASTODON_CLIENT_SECRET
+          - name: MASTODON_CLIENT_ID
+            valueFrom:
+              secretKeyRef:
+                name: mastodon_client_id
+                key: MASTODON_CLIENT_ID
           - name: FRONTEND_URL
             value: "https://postiz.xalab.io"                     # Pod/service name inside cluster
           - name: NEXT_PUBLIC_BACKEND_URL
