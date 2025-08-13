@@ -36,6 +36,8 @@ postiz:
             value: "/uploads"
           - name: NEXT_PUBLIC_UPLOAD_DIRECTORY
             value: "/uploads"
+          - name: MASTODON_URL
+            value: "https://mastodon.social" 
             
           image:
             repository: ghcr.io/gitroomhq/postiz-app
