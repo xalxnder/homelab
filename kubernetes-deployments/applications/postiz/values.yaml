@@ -58,6 +58,8 @@ postiz:
             value: "/uploads"
           - name: MASTODON_URL
             value: "https://mastodon.social" 
+          - name: MAIN_URL
+            value: "https://postiz.xalab.io"
             
           image:
             repository: ghcr.io/gitroomhq/postiz-app
