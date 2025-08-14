@@ -34,16 +34,26 @@ postiz:
               secretKeyRef:
                 name: mastodon-client-id
                 key: MASTODON_CLIENT_ID
-          # - name: X_API_KEY
-          #   valueFrom:
-          #     secretKeyRef:
-          #       name: x-api-key
-          #       key: X_API_KEY
-          # - name: X_API_SECRET
-          #   valueFrom:
-          #     secretKeyRef:
-          #       name: x-api-secret
-          #       key: X_API_SECRET
+          - name: X_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: x-api-key
+                key: X_API_KEY
+          - name: X_API_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: x-api-secret
+                key: X_API_SECRET
+          - name: X_CLIENT
+            valueFrom:
+              secretKeyRef:
+                name: x-client
+                key: X_CLIENT
+          - name: X_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: x-secret
+                key: X_SECRET
           - name: FRONTEND_URL
             value: "https://postiz.xalab.io"                     # Pod/service name inside cluster
           - name: NEXT_PUBLIC_BACKEND_URL
