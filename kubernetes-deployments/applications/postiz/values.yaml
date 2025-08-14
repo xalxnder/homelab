@@ -162,6 +162,8 @@ postiz:
   secrets:
     postiz-secrets:
       stringData:
+        X_API_KEY: ""
+        X_API_SECRET: ""
         LINKEDIN_CLIENT_ID: ""
         LINKEDIN_CLIENT_SECRET: ""
         REDDIT_CLIENT_ID: ""
