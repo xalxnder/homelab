@@ -37,12 +37,12 @@ postiz:
           - name: X_API_KEY
             valueFrom:
               secretKeyRef:
-                name: x_api_key
+                name: x-api-key
                 key: X_API_KEY
           - name: X_API_SECRET
             valueFrom:
               secretKeyRef:
-                name: x_api_secret
+                name: x-api-secret
                 key: X_API_SECRET
           - name: FRONTEND_URL
             value: "https://postiz.xalab.io"                     # Pod/service name inside cluster
