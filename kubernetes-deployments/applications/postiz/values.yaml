@@ -60,6 +60,8 @@ postiz:
             value: "https://mastodon.social" 
           - name: MAIN_URL
             value: "https://postiz.xalab.io"
+          - name: IS_GENERAL
+            value: "true"
             
           image:
             repository: ghcr.io/gitroomhq/postiz-app
