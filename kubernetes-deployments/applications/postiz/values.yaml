@@ -10,10 +10,8 @@ postiz:
         postiz:
           resources:
             limits:
-              # cpu: '0.50'
               memory: 1gb
             requests:
-              # cpu: '0.50'
               memory: 256Mi
 
           env:
