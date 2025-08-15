@@ -10,7 +10,7 @@ postiz:
         postiz:
           resources:
             limits:
-              memory: 1gb
+              memory: 1Gi
             requests:
               memory: 256Mi
 
