@@ -3,6 +3,21 @@ argo-cd:
   configs:
     params:
       server.insecure: "true"
+    configs:
+      cm:
+        resource.customizations: |
+          external-secrets.io/ExternalSecret:
+            applyOptions:
+              serverSide: true
+          external-secrets.io/ClusterExternalSecret:
+            applyOptions:
+              serverSide: true
+          external-secrets.io/SecretStore:
+            applyOptions:
+              serverSide: true
+          external-secrets.io/ClusterSecretStore:
+            applyOptions:
+              serverSide: true
   dex:
     enabled: false
   notifications:
