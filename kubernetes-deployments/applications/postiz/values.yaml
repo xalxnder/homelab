@@ -11,8 +11,10 @@ postiz:
           resources:
             limits:
               memory: 1Gi
+              cpu: 1
             requests:
               memory: 256Mi
+              cpu: 250m
 
           env:
           - name: REDIS_URL
