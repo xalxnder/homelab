@@ -86,7 +86,7 @@ postiz:
           command: ["redis-server", "--appendonly", "yes", "--requirepass", "$(REDIS_PASSWORD)"]
           image:
             repository: redis
-            tag: "7.2"
+            tag: "8.2.0"
             pullPolicy: IfNotPresent
           env:
             - name: REDIS_PASSWORD
