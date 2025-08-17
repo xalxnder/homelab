@@ -97,7 +97,7 @@ postiz:
           - name: EMAIL_PORT 
             value: "587" # smtp port if you choose nodemailer
           - name: EMAIL_SECURE 
-            value: "true" # smtp secure if you choose nodemailer
+            value: "false" # smtp secure if you choose nodemailer
           - name: EMAIL_USER
             valueFrom:
               secretKeyRef:
