@@ -121,7 +121,7 @@ postiz:
         postgresql:
           image:
             repository: postgres
-            tag: "17.6"
+            tag: "17.5"
             pullPolicy: IfNotPresent
           env:
           - name: POSTGRES_PASSWORD
