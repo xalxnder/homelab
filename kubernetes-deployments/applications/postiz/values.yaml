@@ -90,6 +90,24 @@ postiz:
             value: "https://postiz.xalab.io"
           - name: IS_GENERAL
             value: "true"
+          - name: EMAIL_PROVIDER
+            value: nodemailer
+          - name: EMAIL_HOST 
+            value: "smtp.mailgun.org" # smtp host if you choose nodemailer
+          - name: EMAIL_PORT 
+            value: "587" # smtp port if you choose nodemailer
+          - name: EMAIL_SECURE 
+            value: "true" # smtp secure if you choose nodemailer
+          - name: EMAIL_USER
+            valueFrom:
+              secretKeyRef:
+                name: email-user
+                key: EMAIL_USER
+          - name: EMAIL_PASS
+            valueFrom:
+              secretKeyRef:
+                name: email-pass
+                key: EMAIL_PASS
             
           image:
             repository: ghcr.io/gitroomhq/postiz-app
