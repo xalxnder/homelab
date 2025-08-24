@@ -20,8 +20,6 @@ glance:
     glance:
       type: deployment
       strategy: RollingUpdate
-      annotations:
-        reloader.stakater.com/auto: "true"
       containers:
         glance:
           image: &glance-image
