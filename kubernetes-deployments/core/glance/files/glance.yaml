@@ -57,4 +57,3 @@ pages:
               - glanceapp/glance
               - FreeTubeApp/FreeTube
               - kubernetes/kubernetes
-              - semaphoreui/semaphore
