@@ -5,9 +5,10 @@ victoria-metrics-k8s-stack:
     create: false
   defaultDashboards:
     enabled: true
-    defaultTimezone: utc
+    defaultTimezone: etc
     labels: {}
-    annotations: {}
+    annotations:
+      argocd.argoproj.io/sync-options: ServerSideApply=true
     grafanaOperator:
       # -- Create dashboards as CRDs (requires grafana-operator to be installed)
       enabled: false
