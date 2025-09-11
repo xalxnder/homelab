@@ -3,6 +3,6 @@ name: traefik
 version: v3.3.3
 dependencies:
 - name: traefik
-  version: 37.1.0
+  version: 37.1.1
   repository: https://traefik.github.io/charts
   condition: traefik.enabled
