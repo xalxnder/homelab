@@ -3,6 +3,6 @@ name: gatus
 version: 1.2.0
 dependencies:
 - name: gatus
-  version: 1.4.0
+  version: 1.4.2
   repository: https://twin.github.io/helm-charts
   condition: gatus.enabled
