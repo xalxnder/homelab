@@ -8,6 +8,6 @@ sources:
 version: v1.102.1
 dependencies:
   - name: victoria-metrics-k8s-stack
-    version: 0.59.5
+    version: 0.60.1
     repository: https://victoriametrics.github.io/helm-charts/
     condition: victoria-metrics-k8s-stack.enabled
