@@ -4,7 +4,7 @@
 </div>
 
 Welcome to my homelab repository! This is my ever-evolving personal infrastructure, designed to sharpen my DevSecOps skills, and experiment with new technologies.
-
+.
 
 ## 🤔 Why?
 
