@@ -21,5 +21,18 @@
       "Confidence": "{{#if newVersion}}{{{confidence}}}{{/if}}"
     }
   },
+   "prBodyColumns": [
+    "Package",
+    "Type",
+    "Update",
+    "Change",
+    "Age",
+    "Adoption",
+    "Passing",
+    "Confidence",
+    "References",
+    "Package file",
+    "Pending"
+  ],
   "timezone": "America/New_York"
 }
