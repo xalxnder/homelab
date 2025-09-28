@@ -4,5 +4,22 @@
     "config:recommended",
     "schedule:daily"
   ],
+  "prBodyDefinitions": {
+    "default": {
+      "Package": "{{{depNameLinked}}}{{#if newName}}{{#unless (equals depName newName)}} → {{{newName}}}{{/unless}}{{/if}}",
+      "Type": "{{{depType}}}",
+      "Update": "{{{updateType}}}",
+      "Current value": "{{{currentValue}}}",
+      "New value": "{{{newValue}}}",
+      "Change": "{{{displayFrom}}} → {{{displayTo}}}",
+      "Pending": "{{{displayPending}}}",
+      "References": "{{{references}}}",
+      "Package file": "{{{packageFile}}}",
+      "Age": "{{#if newVersion}}{{{age}}}{{/if}}",
+      "Adoption": "{{#if newVersion}}{{{adoption}}}{{/if}}",
+      "Passing": "{{#if newVersion}}{{{passing}}}{{/if}}",
+      "Confidence": "{{#if newVersion}}{{{confidence}}}{{/if}}"
+    }
+  },
   "timezone": "America/New_York"
 }
