@@ -1,6 +1,5 @@
 *.tgz
 Chart.lock
-settings.json
 rendered/
 charts
 test*
