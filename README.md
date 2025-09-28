@@ -8,7 +8,7 @@ Welcome to my homelab repository! This is my ever-evolving personal infrastructu
 
 ## 🤔 Why?
 
-I started this homelab because I began a new job where Kubernetes was heavily used, and I needed to get up to speed quickly. I've tried watching tutorials, reading, and other methods, but I learn best by hands-on experience. Setting clear goals and working towards them allows me to build real-world skills while experimenting with Kubernetes, automation, and security practices. In addition my homelab allows me the freedom to tinker without the fear of taking something down in production. 😅
+I started this homelab because I began a new job where Kubernetes wdddas heavily used, and I needed to get up to speed quickly. I've tried watching tutorials, reading, and other methods, but I learn best by hands-on experience. Setting clear goals and working towards them allows me to build real-world skills while experimenting with Kubernetes, automation, and security practices. In addition my homelab allows me the freedom to tinker without the fear of taking something down in production. 😅
 
 
 ## 🚀 Is Kubernetes Overkill for a Homelab?
