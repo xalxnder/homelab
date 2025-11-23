@@ -21,7 +21,7 @@
               url: https://argocd.xalab.io/
             - title: Proxmox
               icon: $di:proxmox.png
-              url: https://proxmox.xalab.io/
+              url: https://proxmox.xalab.io:8006/
             - title: Longhorn
               icon: $di:longhorn.png
               url: https://longhorn.xalab.io/
