@@ -35,8 +35,8 @@ pages:
             collapse-after: 3
             cache: 12h
             feeds:
-              - url: https://selfh.st/rss/
-                title: selfh.st
+              - url: https://greatday.com/feed/dmfeed.xml
+                title: Motivation
                 limit: 4
 
 
