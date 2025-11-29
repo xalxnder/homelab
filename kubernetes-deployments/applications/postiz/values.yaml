@@ -168,6 +168,17 @@ postiz:
           postiz:      # container name
             - path: /uploads
               readOnly: false
+    database:
+      enabled: true
+      type: persistentVolumeClaim
+      size: 2Gi
+      accessMode: ReadWriteOnce
+      storageClass: longhorn
+      advancedMounts:
+        postgresql:        # controller name
+          postgresql:      # container name
+            - path: /var/lib/postgresql/data
+              readOnly: false
       retain: true
 
   
