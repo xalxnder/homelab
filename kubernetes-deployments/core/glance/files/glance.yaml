@@ -38,11 +38,6 @@ pages:
               - UCFIvZYZp70IIrytPaF1eJrA # Jon Makes Beats
               - UCBJycsmduvYEL83R_U4JriQ # Marques Brownlee
 
-          - type: group
-            widgets:
-              - type: reddit
-                subreddit: selfhosted
-                show-thumbnails: true
 
       - size: small
         widgets:
