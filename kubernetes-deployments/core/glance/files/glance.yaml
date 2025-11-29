@@ -14,22 +14,16 @@ pages:
           - type: calendar
             first-day-of-week: monday
             
+                  
+
+      - size: full
+        widgets:
           - type: repository
             repository: xalxnder/homelab
             pull-requests-limit: 5
             issues-limit: -1
             commits-limit: 3
-
-          
             
-
-      - size: full
-        widgets:
-          - type: videos
-            channels:
-              - UCoZQiN0o7f36H7PaW4fVhFw # Retro Game Corps
-              - UCFIvZYZp70IIrytPaF1eJrA # Jon Makes Beats
-              - UCBJycsmduvYEL83R_U4JriQ # Marques Brownlee
           - type: rss
             limit: 10
             collapse-after: 3
