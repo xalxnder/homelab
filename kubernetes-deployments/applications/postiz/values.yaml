@@ -155,6 +155,9 @@ postiz:
             value: "postiz"
           - name: POSTGRES_DB
             value: "postiz"
+          # ADD THIS
+          - name: PGDATA
+            value: "/var/lib/postgresql/data/pgdata"
   
   persistence:
     uploads:
