@@ -10,10 +10,10 @@ postiz:
         postiz:
           resources:
             limits:
-              memory: 2Gi
+              memory: 3Gi
               cpu: 2
             requests:
-              memory: 1Gi
+              memory: 2Gi
               cpu: 250m
 
           env:
