@@ -8,17 +8,17 @@ data:
     alerting:
       slack:
         webhook-url: "${slack}"
-    # endpoints:
-    #  - name: cert-manager
-    #    url: http://cert-manager.cert-manager.svc.cluster.local:9402/livez
-    #    interval: 1m
-    #    conditions:
-    #      - "[STATUS] == 200"
-    #    alerts:
-    #      - type: slack
-    #        description: "healthcheck failed 3 times in a row"
-    #        send-on-resolved: true
-    #      - type: slack
-    #        failure-threshold: 2
-    #        description: "healthcheck failed 2 times in a row"
-    #        send-on-resolved: true
+    endpoints:
+      - name: Test
+        url: https://google.com
+        interval: 1m
+        conditions:
+          - "[STATUS] == 200"
+        alerts:
+          - type: slack
+            description: "healthcheck failed 3 times in a row"
+            send-on-resolved: true
+          - type: slack
+            failure-threshold: 2
+            description: "healthcheck failed 2 times in a row"
+            send-on-resolved: true
