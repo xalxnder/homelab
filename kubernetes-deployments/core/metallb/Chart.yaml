@@ -3,6 +3,6 @@ name: metallb
 version: v0.14.8
 dependencies:
   - name: metallb
-    version: 0.15.2
+    version: 0.15.3
     repository: https://metallb.github.io/metallb
     condition: metallb.enabled
