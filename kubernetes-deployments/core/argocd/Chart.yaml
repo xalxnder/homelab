@@ -9,7 +9,7 @@ sources:
   - https://github.com/argoproj/argo-cd
 dependencies:
   - name: argo-cd
-    version: 9.1.9
+    version: 9.2.1
     repository: https://argoproj.github.io/argo-helm
     condition: argo-cd.enabled
 
