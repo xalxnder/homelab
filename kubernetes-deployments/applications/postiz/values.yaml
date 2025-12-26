@@ -115,7 +115,7 @@ postiz:
             
           image:
             repository: ghcr.io/gitroomhq/postiz-app
-            tag: v2.10.1
+            tag: v2.11.2
             pullPolicy: IfNotPresent
     redis:
       type: deployment
