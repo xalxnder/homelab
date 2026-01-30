@@ -1,6 +1,5 @@
 traefik:
   enabled: true
-  fullnameOverride: traefik
   deployment:
     replicas: 1
   env:
