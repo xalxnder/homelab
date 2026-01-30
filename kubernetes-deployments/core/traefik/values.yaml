@@ -1,5 +1,4 @@
 traefik:
-  enabled: true
   deployment:
     replicas: 1
   env:
