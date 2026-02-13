@@ -1,8 +1,10 @@
 longhorn:
   image:
     longhorn:
+      instanceManager:
+        tag: v1.11.0-hotfix-1
       manager:
-        tag: v1.10.1-hotfix-1
+        tag: v1.11.0-hotfix-1
 
   preUpgradeChecker:
   # -- Setting that allows Longhorn to perform pre-upgrade checks. Disable this setting when installing Longhorn using Argo CD or other GitOps solutions.
