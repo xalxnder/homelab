@@ -3,6 +3,6 @@ name: external-secrets
 version: v0.17.0
 dependencies:
   - name: external-secrets
-    version: 2.0.0
+    version: 2.0.1
     repository: https://charts.external-secrets.io
     condition: external-secrets.enabled
