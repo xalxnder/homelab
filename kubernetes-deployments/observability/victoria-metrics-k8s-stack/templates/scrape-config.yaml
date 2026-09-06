@@ -1,10 +1,58 @@
 apiVersion: operator.victoriametrics.com/v1beta1
 kind: VMScrapeConfig
 metadata:
-  name: vm-scrape-config
+  name: kubernetes-services
 spec:
+  kubernetesSDConfigs:
+    - role: endpoints
+
   relabelConfigs:
-  - action: replace
-    sourceLabels:
-    - __meta_kubernetes_node_name  # Use this if running in Kubernetes
-    targetLabel: instance  # This will replace IPs with node names
+    # Only scrape services explicitly marked for scraping
+    - action: keep
+      sourceLabels:
+        - __meta_kubernetes_service_annotation_prometheus_io_scrape
+      regex: "true"
+
+    # Use prometheus.io/path if supplied
+    - action: replace
+      sourceLabels:
+        - __meta_kubernetes_service_annotation_prometheus_io_path
+      targetLabel: __metrics_path__
+      regex: "(.+)"
+
+    # Use prometheus.io/scheme if supplied
+    - action: replace
+      sourceLabels:
+        - __meta_kubernetes_service_annotation_prometheus_io_scheme
+      targetLabel: __scheme__
+      regex: "(https?)"
+
+    # Set the scrape port from prometheus.io/port
+    - action: replace
+      sourceLabels:
+        - __address__
+        - __meta_kubernetes_service_annotation_prometheus_io_port
+      regex: "([^:]+)(?::\\d+)?;(\\d+)"
+      replacement: "$1:$2"
+      targetLabel: __address__
+
+    # Useful labels
+    - action: replace
+      sourceLabels:
+        - __meta_kubernetes_namespace
+      targetLabel: namespace
+
+    - action: replace
+      sourceLabels:
+        - __meta_kubernetes_service_name
+      targetLabel: service
+
+    - action: replace
+      sourceLabels:
+        - __meta_kubernetes_pod_name
+      targetLabel: pod
+
+    - action: replace
+      sourceLabels:
+        - __meta_kubernetes_pod_node_name
+      targetLabel: node
