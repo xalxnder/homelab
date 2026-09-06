@@ -15,10 +15,8 @@ traefik:
     limits:
       cpu: 250m
       memory: 384Mi
-  logs:
-    general:
-      # -- Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
-      level: DEBUG
+  log:
+    level: DEBUG
   metrics:
     prometheus: null
   securityContext:
