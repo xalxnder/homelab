@@ -28,7 +28,12 @@ argo-cd:
         memory: 48Mi
   server:
     metrics:
-        enabled: true
+      enabled: true
+      service:
+        annotations:
+          prometheus.io/scrape: "true"
+          prometheus.io/port: "8083"
+          prometheus.io/path: "/metrics"
     resources:
       limits:
         cpu: 250m
