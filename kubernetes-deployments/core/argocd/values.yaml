@@ -1,3 +1,6 @@
+global:
+  networkPolicy:
+    create: false
 argo-cd:
   enabled: true
   configs:
