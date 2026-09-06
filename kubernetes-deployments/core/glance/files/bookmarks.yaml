@@ -7,12 +7,15 @@
         - title: Homelab
           color: 10 70 50
           links:
+            - title: Inoreader
+              icon: $di:inoreader.png
+              url: https://inoreader.com
             - title: Argo
               icon: $di:argo-cd.png
               url: https://argocd.xalab.io/
             - title: Pi-Hole
               icon: $di:pi-hole.png
-              url: https://pihole.xalab.io/
+              url: https://pihole.xalab.io/admin/login
             - title: Traefik
               icon: $di:traefik.png
               url: https://traefik.xalab.io/
