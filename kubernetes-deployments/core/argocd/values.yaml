@@ -3,12 +3,19 @@ argo-cd:
   configs:
     params:
       server.insecure: "true"
+  controller:
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true  # Enables VictoriaMetrics/Prometheus Operator CRD discovery
   dex:
     enabled: false
   notifications:
     enabled: false
   applicationSet:
     enabled: true
+    metrics:
+      enabled: true
     resources:
       limits:
         cpu: 750m
@@ -24,6 +31,8 @@ argo-cd:
       requests:
         cpu: 25m
         memory: 48Mi
+      metrics:
+        enabled: true
     # service:
     #   type: LoadBalancer
     #   ports:
