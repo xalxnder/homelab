@@ -3,6 +3,7 @@ name: nexus
 version: 5.26.2
 appVersion: 3.96.4
 dependencies:
-  - name: nexus
+  - name: nexus3
+    alias: nexus
     repository: "oci://ghcr.io/stevehipwell/helm-charts"
     version: 5.26.2
