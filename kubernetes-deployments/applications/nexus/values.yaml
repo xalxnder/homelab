@@ -229,7 +229,7 @@ nexus:
     #       lastBlobUpdated: "1209600"
     #       lastDownloaded: "2419200"
     #       regex:
-    repos: []
+    repos:
       - name: dockerhub-proxy
         format: docker
         type: proxy
