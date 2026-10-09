@@ -43,5 +43,3 @@ traefik:
       expose:
         default: true
       protocol: TCP
-      tls:
-        enabled: true
