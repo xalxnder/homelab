@@ -37,7 +37,7 @@ traefik:
     dashboard:
       enabled: false
   ports:
-    nexus-docker-proxy:
+    nexus-proxy:
       port: 8082
       exposedPort: 8082
       expose:
