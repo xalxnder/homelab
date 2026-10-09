@@ -48,7 +48,7 @@ nexus:
     # @default -- See _values.yaml_
     additionalPorts:
       - port: 8082
-        name: docker-proxy-port
+        name: docker-proxy
         containerPort: 8082
       
     #   - port: 8083
