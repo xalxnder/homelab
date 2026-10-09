@@ -46,7 +46,7 @@ nexus:
     port: 8081
     # -- Additional ports to expose.
     # @default -- See _values.yaml_
-    additionalPorts: []
+    additionalPorts:
       - port: 8082
         name: docker-proxy-port
         containerPort: 8082
