@@ -152,7 +152,7 @@ nexus:
   chownDataDir: true
 
   rootPassword:
-    secret:
+    secret: nexus-password
     key: password
 
   config:
