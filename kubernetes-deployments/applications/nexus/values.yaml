@@ -47,11 +47,10 @@ nexus:
     # -- Additional ports to expose.
     # @default -- See _values.yaml_
     additionalPorts: []
-    #   - port: 8082
-    #     name: docker-group
-    #     containerPort: 8082
-    #     hosts:
-    #       - nexus-docker.local
+      - port: 8082
+        name: docker-proxy-port
+        containerPort: 8082
+      
     #   - port: 8083
     #     name: docker-hosted
     #     containerPort: 8083
@@ -95,8 +94,6 @@ nexus:
     retainDeleted: true
     # -- If `true`, keep `PersistentVolumeClaim` when the `StatefulSet` is scaled down.
     retainScaled: true
-
-
   # -- Resources for the default container.
   resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -208,17 +205,9 @@ nexus:
         - nx-anonymous
         - nx-metrics
     realms:
-      # -- If `true`, enable realms.
-      enabled: false
-      # -- List of realms to configure; can be empty or contain any of `NexusAuthenticatingRealm`, `LdapRealm`, `DockerToken`, `NpmToken`, `NuGetApiKey` or `rutauth-realm`.
-      values: []
-      #   - NexusAuthenticatingRealm
-      #   - LdapRealm
-      #   - DockerToken
-      #   - NpmToken
-      #   - NuGetApiKey
-      #   - rutauth-realm
-    # -- If `true`, provision with default blob store configuration.
+      enabled: true
+      values: 
+        - DockerToken
     createDefaultBlobStore: false
     # -- Blob store configuration; based on the REST API (API reference docs require an existing Nexus installation and can be found at **Administration** under _System_ → _API_).
     blobStores:
@@ -241,23 +230,22 @@ nexus:
     #       lastDownloaded: "2419200"
     #       regex:
     repos: []
-    #   - name: test-repo
-    #     format: raw
-    #     type: hosted
-    #     online: true
-    #     storage:
-    #       blobStoreName: default
-    #       strictContentTypeValidation: false
-    #       writePolicy: allow
-    #     cleanup:
-    #       policyNames:
-    #         - ExampleCleanup
-    #     bearerToken:
-    #       secret: test-repo
-    #       key: bearerToken
-    #     password:
-    #       secret: test-repo
-    #       key: password
+      - name: dockerhub-proxy
+        format: docker
+        type: proxy
+        online: true
+        storage:
+          blobStoreName: homelab
+          strictContentTypeValidation: false
+          writePolicy: allow
+        proxy:
+          remoteUrl: https://registry-1.docker.io
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+        docker:
+          v1Enabled: false
+          forceBasicAuth: false
+          httpPort: 8082
     # -- Privileges configuration; based on the REST API (API reference docs require an existing Nexus installation and can be found at **Administration** under _System_ → _API_).
     privileges: []
     #   - type: application
