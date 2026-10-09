@@ -71,8 +71,10 @@ nexus:
       - nexus.xalab.io
     path: /
     pathType: Prefix
-    tls: true
-    tlsSecret: tls-secret
+    tls:
+      - secretName: tls-secret
+        hosts:
+          - nexus.xalab.io
 
 
   # -- Number of replicas to create; modifying this requires the license to be configured.
