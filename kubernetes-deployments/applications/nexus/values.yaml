@@ -67,7 +67,8 @@ nexus:
       traefik.ingress.kubernetes.io/router.entrypoints: websecure
       traefik.ingress.kubernetes.io/router.tls: "true"
     ingressClassName: "traefik"
-    hosts: nexus.xalab.io
+    hosts: 
+      - nexus.xalab.io
     path: /
     pathType: Prefix
     tls: true
