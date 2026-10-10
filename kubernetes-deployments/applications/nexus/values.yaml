@@ -197,7 +197,7 @@ nexus:
 
     anonymous:
       # -- If `true`, enable anonymous access.
-      enabled: true
+      enabled: false
       # -- Roles for anonymous access.
       roles:
         - nx-anonymous
