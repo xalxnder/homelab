@@ -37,11 +37,11 @@ traefik:
     dashboard:
       enabled: false
   ports:
-  nexusdocker:
-    port: 8082
-    exposedPort: 8082
-    expose:
-      default: true
-    protocol: TCP
-    tls:
-      enabled: true
+    nexus-docker:
+      port: 8082
+      exposedPort: 8082
+      expose:
+        default: true
+      protocol: TCP
+      tls:
+        enabled: true
