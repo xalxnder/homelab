@@ -154,7 +154,7 @@ nexus:
         # -- Image repository for the config container.
         repository: docker.io/alpine/k8s
         # -- Image tag for config container, this will be omitted if set to `-`.
-        tag: 1.31.2
+        tag: 1.37.1
         # -- (string) Optional image digest for the config container.
         digest:
         # -- Image pull policy for config container.
