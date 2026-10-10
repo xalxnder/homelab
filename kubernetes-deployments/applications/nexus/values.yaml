@@ -226,21 +226,21 @@ nexus:
     #       lastDownloaded: "2419200"
     #       regex:
     repos:
-      - name: docker-group
-        format: docker
-        type: group
-        online: true
-        storage:
-          blobStoreName: homelab
-          strictContentTypeValidation: false
-        group:
-          memberNames:
-            - gcrio-proxy
-            - docker-proxy
-        docker:
-          v1Enabled: false
-          forceBasicAuth: false
-          httpPort: 8088 
+      # - name: docker-group
+      #   format: docker
+      #   type: group
+      #   online: true
+      #   storage:
+      #     blobStoreName: homelab
+      #     strictContentTypeValidation: false
+      #   group:
+      #     memberNames:
+      #       - gcrio-proxy
+      #       - docker-proxy
+      #   docker:
+      #     v1Enabled: false
+      #     forceBasicAuth: false
+      #     httpPort: 8088 
       - name: dockerhub-proxy
         format: docker
         type: proxy
