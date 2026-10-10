@@ -1,5 +1,7 @@
 
 nexus:
+  properties:
+    - nexus.auth.ratelimit.enabled=false
   image:
     # -- Image repository for the default container.
     repository: docker.io/sonatype/nexus3
