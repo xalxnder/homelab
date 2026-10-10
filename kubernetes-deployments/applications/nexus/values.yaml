@@ -127,6 +127,8 @@ nexus:
   # -- _Nexus3_ properties.
   properties:
     - nexus.auth.ratelimit.enabled=false
+    - nexus.h2.httpListenerEnabled=true
+    - nexus.h2.httpListenerPort=1234
   # - nexus.golang.hosted=true
 
   # -- _Nexus3_ store properties.
@@ -158,7 +160,7 @@ nexus:
 
   config:
     # -- If `true` & `rootPassword.secret` is set, enable the configuration Job.
-    enabled: true
+    enabled: false
     job:
       image:
         # -- Image repository for the config container.
