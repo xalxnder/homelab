@@ -262,7 +262,7 @@ nexus:
         docker:
           v1Enabled: false
           forceBasicAuth: false
-          httpPort: 8082
+          pathEnabled: true
         dockerProxy:
            indexType: HUB
       - name: gcrio-proxy
@@ -286,7 +286,8 @@ nexus:
         docker:
           v1Enabled: false
           forceBasicAuth: false
-          httpPort: 8083
+          pathEnabled: true
+
         dockerProxy:
            indexType: HUB
       - name: traefik-helm
