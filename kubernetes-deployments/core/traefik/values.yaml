@@ -36,10 +36,3 @@ traefik:
   ingressRoute:
     dashboard:
       enabled: false
-  ports:
-    nexus-proxy:
-      port: 8082
-      exposedPort: 8082
-      expose:
-        default: true
-      protocol: TCP
