@@ -1,5 +1,7 @@
 
 nexus:
+  properties:
+    - nexus.auth.ratelimit.enabled=false
   image:
     # -- Image repository for the default container.
     repository: docker.io/sonatype/nexus3
@@ -46,12 +48,11 @@ nexus:
     port: 8081
     # -- Additional ports to expose.
     # @default -- See _values.yaml_
-    additionalPorts: []
-    #   - port: 8082
-    #     name: docker-group
-    #     containerPort: 8082
-    #     hosts:
-    #       - nexus-docker.local
+    additionalPorts:
+      - port: 8082
+        name: docker-proxy
+        containerPort: 8082
+      
     #   - port: 8083
     #     name: docker-hosted
     #     containerPort: 8083
@@ -95,8 +96,6 @@ nexus:
     retainDeleted: true
     # -- If `true`, keep `PersistentVolumeClaim` when the `StatefulSet` is scaled down.
     retainScaled: true
-
-
   # -- Resources for the default container.
   resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -122,17 +121,6 @@ nexus:
       # -- Additional endpoint configuration for the `ServiceMonitor`.
       endpointConfig: {}
 
-
-
-  # -- _Nexus3_ properties.
-  properties:
-    - nexus.auth.ratelimit.enabled=false
-    - nexus.h2.httpListenerEnabled=true
-    - nexus.h2.httpListenerPort=1234
-  # - nexus.golang.hosted=true
-
-  # -- _Nexus3_ store properties.
-  storeProperties: []
 
   logback:
     # -- Maximum history for log files.
@@ -160,7 +148,7 @@ nexus:
 
   config:
     # -- If `true` & `rootPassword.secret` is set, enable the configuration Job.
-    enabled: false
+    enabled: true
     job:
       image:
         # -- Image repository for the config container.
@@ -211,17 +199,11 @@ nexus:
         - nx-anonymous
         - nx-metrics
     realms:
-      # -- If `true`, enable realms.
       enabled: false
-      # -- List of realms to configure; can be empty or contain any of `NexusAuthenticatingRealm`, `LdapRealm`, `DockerToken`, `NpmToken`, `NuGetApiKey` or `rutauth-realm`.
       values: []
-      #   - NexusAuthenticatingRealm
-      #   - LdapRealm
-      #   - DockerToken
-      #   - NpmToken
-      #   - NuGetApiKey
-      #   - rutauth-realm
-    # -- If `true`, provision with default blob store configuration.
+        # - DockerToken
+        # - NexusAuthenticatingRealm
+
     createDefaultBlobStore: false
     # -- Blob store configuration; based on the REST API (API reference docs require an existing Nexus installation and can be found at **Administration** under _System_ → _API_).
     blobStores:
@@ -243,24 +225,23 @@ nexus:
     #       lastBlobUpdated: "1209600"
     #       lastDownloaded: "2419200"
     #       regex:
-    repos: []
-    #   - name: test-repo
-    #     format: raw
-    #     type: hosted
-    #     online: true
-    #     storage:
-    #       blobStoreName: default
-    #       strictContentTypeValidation: false
-    #       writePolicy: allow
-    #     cleanup:
-    #       policyNames:
-    #         - ExampleCleanup
-    #     bearerToken:
-    #       secret: test-repo
-    #       key: bearerToken
-    #     password:
-    #       secret: test-repo
-    #       key: password
+    repos:
+      - name: dockerhub-proxy
+        format: docker
+        type: proxy
+        online: true
+        storage:
+          blobStoreName: homelab
+          strictContentTypeValidation: false
+          writePolicy: allow
+        proxy:
+          remoteUrl: https://registry-1.docker.io
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+        docker:
+          v1Enabled: false
+          forceBasicAuth: false
+          httpPort: 8082
     # -- Privileges configuration; based on the REST API (API reference docs require an existing Nexus installation and can be found at **Administration** under _System_ → _API_).
     privileges: []
     #   - type: application
