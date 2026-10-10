@@ -261,6 +261,9 @@ nexus:
         docker:
           v1Enabled: false
           forceBasicAuth: false
+          httpPort: null
+          httpsPort: null
+          subdomain: null
           pathEnabled: true
         dockerProxy:
            indexType: HUB
