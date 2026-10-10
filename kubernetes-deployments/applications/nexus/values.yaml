@@ -289,7 +289,7 @@ nexus:
           httpPort: 8083
         dockerProxy:
            indexType: HUB
-      - name: helm-proxy
+      - name: traefik-helm
         format: helm
         type: proxy
         online: true
@@ -298,7 +298,7 @@ nexus:
           strictContentTypeValidation: false
           writePolicy: allow
         proxy:
-          remoteUrl: https://gcr.io
+          remoteUrl: https://traefik.github.io/charts
           contentMaxAge: 1440
           metadataMaxAge: 1440
         negativeCache:
