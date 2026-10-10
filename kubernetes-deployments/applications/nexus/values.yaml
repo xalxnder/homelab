@@ -203,10 +203,10 @@ nexus:
         - nx-anonymous
         - nx-metrics
     realms:
-      enabled: true
+      enabled: false
       values:
         # - DockerToken
-        - NexusAuthenticatingRealm
+        # - NexusAuthenticatingRealm
 
     createDefaultBlobStore: false
     # -- Blob store configuration; based on the REST API (API reference docs require an existing Nexus installation and can be found at **Administration** under _System_ → _API_).
