@@ -312,7 +312,55 @@ nexus:
           forceBasicAuth: false
           httpPort: 8082
         dockerProxy:
-           indexType: HUB    
+           indexType: HUB
+      - name: argo-helm
+        format: helm
+        type: proxy
+        online: true
+        storage:
+          blobStoreName: homelab
+          strictContentTypeValidation: false
+          writePolicy: allow
+        proxy:
+          remoteUrl: https://argoproj.github.io/argo-helm
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+        negativeCache:
+          enabled: true
+          timeToLive: 1440
+        httpClient:
+          blocked: false
+          autoBlock: true
+        docker:
+          v1Enabled: false
+          forceBasicAuth: false
+          httpPort: 8082
+        dockerProxy:
+           indexType: HUB
+      - name: rancher-helm
+        format: helm
+        type: proxy
+        online: true
+        storage:
+          blobStoreName: homelab
+          strictContentTypeValidation: false
+          writePolicy: allow
+        proxy:
+          remoteUrl: https://releases.rancher.com/server-charts/stable
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+        negativeCache:
+          enabled: true
+          timeToLive: 1440
+        httpClient:
+          blocked: false
+          autoBlock: true
+        docker:
+          v1Enabled: false
+          forceBasicAuth: false
+          httpPort: 8082
+        dockerProxy:
+           indexType: HUB            
     # -- Privileges configuration; based on the REST API (API reference docs require an existing Nexus installation and can be found at **Administration** under _System_ → _API_).
     privileges: []
     #   - type: application
