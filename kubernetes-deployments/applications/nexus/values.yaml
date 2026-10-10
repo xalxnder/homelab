@@ -123,10 +123,6 @@ nexus:
 
 
 
-  # -- _Nexus3_ properties.
-  properties: []
-  # - nexus.golang.hosted=true
-
   # -- _Nexus3_ store properties.
   storeProperties: []
 
