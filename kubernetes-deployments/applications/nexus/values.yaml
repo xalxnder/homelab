@@ -286,7 +286,7 @@ nexus:
         docker:
           v1Enabled: false
           forceBasicAuth: false
-          httpPort: 8082
+          httpPort: 8083
         dockerProxy:
            indexType: HUB
       - name: helm-proxy
