@@ -52,7 +52,7 @@ nexus:
       - port: 8082
         name: docker-proxy
         containerPort: 8082
-      
+
     #   - port: 8083
     #     name: docker-hosted
     #     containerPort: 8083
@@ -68,7 +68,7 @@ nexus:
       traefik.ingress.kubernetes.io/router.entrypoints: websecure
       traefik.ingress.kubernetes.io/router.tls: "true"
     ingressClassName: "traefik"
-    hosts: 
+    hosts:
       - nexus.xalab.io
     path: /
     pathType: Prefix
@@ -109,7 +109,7 @@ nexus:
   #     cpu: 100m
   #     memory: 128Mi
 
- 
+
   metrics:
     # -- If `true`, enable metrics.
     enabled: false
@@ -133,7 +133,7 @@ nexus:
   # -- Env configuration for the _Nexus3_ container.
   install4jAddVmParams: -Xms1024m -Xmx1024m -XX:MaxDirectMemorySize=2048m
 
-  
+
   # -- List of plugins to install.
   plugins: []
   #   - name: nexus-repository-composer
@@ -213,7 +213,7 @@ nexus:
         softQuota:
           type: spaceRemainingQuota
           limit: 500
-    
+
     # -- Cleanup configuration.
     cleanup: []
     #   - name: ExampleCleanup
@@ -240,7 +240,7 @@ nexus:
       #   docker:
       #     v1Enabled: false
       #     forceBasicAuth: false
-      #     httpPort: 8088 
+      #     httpPort: 8088
       - name: dockerhub-proxy
         format: docker
         type: proxy
@@ -452,7 +452,7 @@ nexus:
           timeToLive: 1440
         httpClient:
           blocked: false
-          autoBlock: true            
+          autoBlock: true
     # -- Privileges configuration; based on the REST API (API reference docs require an existing Nexus installation and can be found at **Administration** under _System_ → _API_).
     privileges: []
     #   - type: application
