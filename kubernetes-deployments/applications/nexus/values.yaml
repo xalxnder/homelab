@@ -309,12 +309,6 @@ nexus:
         httpClient:
           blocked: false
           autoBlock: true
-        docker:
-          v1Enabled: false
-          forceBasicAuth: false
-          httpPort: 8082
-        dockerProxy:
-           indexType: HUB
       - name: argo-helm
         format: helm
         type: proxy
@@ -333,12 +327,6 @@ nexus:
         httpClient:
           blocked: false
           autoBlock: true
-        docker:
-          v1Enabled: false
-          forceBasicAuth: false
-          httpPort: 8082
-        dockerProxy:
-           indexType: HUB
       - name: rancher-helm
         format: helm
         type: proxy
@@ -357,12 +345,114 @@ nexus:
         httpClient:
           blocked: false
           autoBlock: true
-        docker:
-          v1Enabled: false
-          forceBasicAuth: false
-          httpPort: 8082
-        dockerProxy:
-           indexType: HUB            
+      - name: longhorn-helm
+        format: helm
+        type: proxy
+        online: true
+        storage:
+          blobStoreName: homelab
+          strictContentTypeValidation: false
+          writePolicy: allow
+        proxy:
+          remoteUrl: https://charts.longhorn.io
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+        negativeCache:
+          enabled: true
+          timeToLive: 1440
+        httpClient:
+          blocked: false
+          autoBlock: true
+      - name: metallb-helm
+        format: helm
+        type: proxy
+        online: true
+        storage:
+          blobStoreName: homelab
+          strictContentTypeValidation: false
+          writePolicy: allow
+        proxy:
+          remoteUrl: https://metallb.github.io/metallb
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+        negativeCache:
+          enabled: true
+          timeToLive: 1440
+        httpClient:
+          blocked: false
+          autoBlock: true
+      - name: metrics-server-helm
+        format: helm
+        type: proxy
+        online: true
+        storage:
+          blobStoreName: homelab
+          strictContentTypeValidation: false
+          writePolicy: allow
+        proxy:
+          remoteUrl: https://kubernetes-sigs.github.io/metrics-server/
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+        negativeCache:
+          enabled: true
+          timeToLive: 1440
+        httpClient:
+          blocked: false
+          autoBlock: true
+      - name: vm-helm
+        format: helm
+        type: proxy
+        online: true
+        storage:
+          blobStoreName: homelab
+          strictContentTypeValidation: false
+          writePolicy: allow
+        proxy:
+          remoteUrl: https://victoriametrics.github.io/helm-charts/
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+        negativeCache:
+          enabled: true
+          timeToLive: 1440
+        httpClient:
+          blocked: false
+          autoBlock: true
+      - name: external-secrets-helm
+        format: helm
+        type: proxy
+        online: true
+        storage:
+          blobStoreName: homelab
+          strictContentTypeValidation: false
+          writePolicy: allow
+        proxy:
+          remoteUrl: https://charts.external-secrets.io
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+        negativeCache:
+          enabled: true
+          timeToLive: 1440
+        httpClient:
+          blocked: false
+          autoBlock: true
+      - name: app-template
+        format: helm
+        type: proxy
+        online: true
+        storage:
+          blobStoreName: homelab
+          strictContentTypeValidation: false
+          writePolicy: allow
+        proxy:
+          remoteUrl: https://bjw-s-labs.github.io/helm-charts
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+        negativeCache:
+          enabled: true
+          timeToLive: 1440
+        httpClient:
+          blocked: false
+          autoBlock: true            
     # -- Privileges configuration; based on the REST API (API reference docs require an existing Nexus installation and can be found at **Administration** under _System_ → _API_).
     privileges: []
     #   - type: application
