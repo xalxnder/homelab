@@ -6,6 +6,12 @@ argo-cd:
   configs:
     params:
       server.insecure: "true"
+    repositories:
+      metrics-server-proxy:
+        name: metrics-server-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/metrics-server-helm/
+
   controller:
     metrics:
       enabled: true
@@ -41,7 +47,7 @@ argo-cd:
       requests:
         cpu: 25m
         memory: 48Mi
-      
+
     # service:
     #   type: LoadBalancer
     #   ports:
@@ -229,4 +235,3 @@ argocd-apps:
       syncPolicy:
         preserveResourcesOnDeletion: true
         applicationsSync: sync
-
