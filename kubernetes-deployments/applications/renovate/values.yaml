@@ -24,7 +24,13 @@ renovate:
           "xalxnder/homelab"
         ],
         "onboarding": false,
-        "requireConfig": "required"
+        "requireConfig": "required",
+        "hostRules": [
+                  {
+                    "matchHost": "https://nexus.xalab.io",
+                    "allowInternal": true
+                  }
+          ]
       }
 
   env:
