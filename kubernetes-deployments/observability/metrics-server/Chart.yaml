@@ -6,5 +6,5 @@ version: 3.12.2
 appVersion: 0.7.2
 dependencies:
   - name: metrics-server
-    repository: https://kubernetes-sigs.github.io/metrics-server/
+    repository: "@metrics-server-proxy"
     version: 3.14.0

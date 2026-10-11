@@ -5,5 +5,5 @@ version: 1.11.0
 appVersion: v1.11.0
 dependencies:
   - name: longhorn
-    repository: https://charts.longhorn.io
+    repository: "@longhorn-proxy"
     version: 1.11.0

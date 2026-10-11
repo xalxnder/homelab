@@ -4,5 +4,5 @@ version: 1.15.2
 dependencies:
 - name: external-dns
   version: 1.21.1
-  repository: https://kubernetes-sigs.github.io/external-dns/
+  repository: "@external-dns-proxy"
   condition: external-dns.enabled

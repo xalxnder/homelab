@@ -1,9 +1,51 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabledManagers": [
+    "helmv3"
+  ],
+  "ignoredPaths": [
+    "**/values*.yaml"
+  ],
+  "registryAliases": {
+    "rancher-proxy": "https://nexus.xalab.io/repository/rancher-helm/",
+    "argo-proxy": "https://nexus.xalab.io/repository/argo-helm/",
+    "cert-manager-proxy": "https://nexus.xalab.io/repository/cert-manager-helm/",
+    "cilium-proxy": "https://nexus.xalab.io/repository/cilium-helm/",
+    "external-dns-proxy": "https://nexus.xalab.io/repository/external-dns-helm/",
+    "external-secrets-proxy": "https://nexus.xalab.io/repository/external-secrets-helm/",
+    "longhorn-proxy": "https://nexus.xalab.io/repository/longhorn-helm/",
+    "metrics-server-proxy": "https://nexus.xalab.io/repository/metallb-helm/",
+    "traefik-proxy": "https://nexus.xalab.io/repository/traefik-helm/",
+    "victoria-metrics-proxy":"https://nexus.xalab.io/repository/vm-helm/",
+    "app-template-proxy":"https://nexus.xalab.io/repository/app-template/"
+  },
   "extends": [
     "config:recommended",
     "schedule:daily"
   ],
   "prBodyTemplate": "{{{table}}}{{{changelogs}}}",
-  "timezone": "America/New_York"
+  "timezone": "America/New_York",
+  "packageRules": [
+    {
+      "matchManagers": [
+        "helmv3"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "labels": [
+        "patch-updates"
+      ],
+      "commitMessageTopic": "{{depName}}",
+      "commitMessageExtra": "from {{currentVersion}} to {{#if isMajor}}v{{{newMajor}}}{{else}}{{#if isSingleVersion}}v{{{toVersion}}}{{else}}{{{newValue}}}{{/if}}{{/if}}"
+    },
+    {
+      "matchUpdateTypes": [
+        "major",
+        "minor"
+      ],
+      "enabled": false
+    }
+  ]
+
 }

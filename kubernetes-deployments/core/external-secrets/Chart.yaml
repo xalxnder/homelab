@@ -4,5 +4,5 @@ version: v0.17.0
 dependencies:
   - name: external-secrets
     version: 2.12.0
-    repository: https://charts.external-secrets.io
+    repository: "@external-secrets-proxy"
     condition: external-secrets.enabled

@@ -4,5 +4,5 @@ version: 0.8.4
 dependencies:
   - name: app-template
     version: 4.6.2
-    repository: https://bjw-s-labs.github.io/helm-charts
+    repository: "@app-template-proxy"
     alias: glance
