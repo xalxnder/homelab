@@ -2,45 +2,45 @@ renovate-bot:
 
 # Renovate Helm values.yaml
 
-cronjob:
-  # Every day at 2:00 AM Eastern
-  schedule: "0 2 * * *"
-  timeZone: "America/New_York"
-  concurrencyPolicy: Forbid
-  jobRestartPolicy: Never
-  successfulJobsHistoryLimit: 3
-  failedJobsHistoryLimit: 3
-  jobBackoffLimit: 1
+  cronjob:
+    # Every day at 2:00 AM Eastern
+    schedule: "0 2 * * *"
+    timeZone: "America/New_York"
+    concurrencyPolicy: Forbid
+    jobRestartPolicy: Never
+    successfulJobsHistoryLimit: 3
+    failedJobsHistoryLimit: 3
+    jobBackoffLimit: 1
 
-image:
-  registry: ghcr.io
-  repository: renovatebot/renovate
-  pullPolicy: IfNotPresent
+  image:
+    registry: ghcr.io
+    repository: renovatebot/renovate
+    pullPolicy: IfNotPresent
 
-# Existing Kubernetes Secret containing RENOVATE_TOKEN
-existingSecret: renovate-secret
+  # Existing Kubernetes Secret containing RENOVATE_TOKEN
+  existingSecret: renovate-secret
 
-renovate:
-  config: |
-    {
-      "platform": "github",
-      "repositories": [
-        "xalxnder/homelab"
-      ],
-      "onboarding": false,
-      "requireConfig": "required"
-    }
+  renovate:
+    config: |
+      {
+        "platform": "github",
+        "repositories": [
+          "xalxnder/homelab"
+        ],
+        "onboarding": false,
+        "requireConfig": "required"
+      }
 
-env:
-  LOG_LEVEL: info
+  env:
+    LOG_LEVEL: info
 
-resources:
-  requests:
-    cpu: 250m
-    memory: 512Mi
-  limits:
-    cpu: "2"
-    memory: 2Gi
+  resources:
+    requests:
+      cpu: 250m
+      memory: 512Mi
+    limits:
+      cpu: "2"
+      memory: 2Gi
 
-serviceAccount:
-  create: true
+  serviceAccount:
+    create: true
