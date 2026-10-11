@@ -11,6 +11,10 @@ argo-cd:
         name: metrics-server-proxy
         type: helm
         url: https://nexus.xalab.io/repository/metrics-server-helm/
+      argo-proxy:
+        name: argo-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/argo-helm/
 
   controller:
     metrics:
