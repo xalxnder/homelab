@@ -15,6 +15,10 @@ argo-cd:
         name: argo-proxy
         type: helm
         url: https://nexus.xalab.io/repository/argo-helm/
+      rancher-proxy:
+        name: rancher-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/rancher-helm/
 
   controller:
     metrics:
