@@ -3,7 +3,7 @@
   "enabledManagers": [
     "helmv3"
   ],
-  "ignoredPaths": [
+  "ignorePaths": [
     "**/values*.yaml"
   ],
   "registryAliases": {
