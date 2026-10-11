@@ -1,6 +1,6 @@
 apiVersion: v2
 description: Renovate
-name: renovate-bot
+name: renovate
 version: 46.352.2
 dependencies:
   - name: renovate

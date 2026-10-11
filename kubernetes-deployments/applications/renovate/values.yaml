@@ -1,5 +1,5 @@
 
-renovate-bot:
+renovate:
   cronjob:
     schedule: "0 2 * * *"
     timeZone: "America/New_York"
@@ -16,16 +16,15 @@ renovate-bot:
 
   existingSecret: renovate-secret
 
-  renovate:
-    config: |
-      {
-        "platform": "github",
-        "repositories": [
-          "xalxnder/homelab"
-        ],
-        "onboarding": false,
-        "requireConfig": "required"
-      }
+  config: |
+    {
+      "platform": "github",
+      "repositories": [
+        "xalxnder/homelab"
+      ],
+      "onboarding": false,
+      "requireConfig": "required"
+    }
 
   env:
     LOG_LEVEL: info
