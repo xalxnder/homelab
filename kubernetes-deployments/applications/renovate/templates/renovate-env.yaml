@@ -3,7 +3,7 @@
 apiVersion: external-secrets.io/v1
 kind: ExternalSecret
 metadata:
-  name: renovate-env
+  name: renovate-secret
   namespace: renovate
 spec:
   refreshInterval: 1h
