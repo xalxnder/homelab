@@ -1,9 +1,6 @@
+
 renovate-bot:
-
-# Renovate Helm values.yaml
-
   cronjob:
-    # Every day at 2:00 AM Eastern
     schedule: "0 2 * * *"
     timeZone: "America/New_York"
     concurrencyPolicy: Forbid
@@ -17,7 +14,6 @@ renovate-bot:
     repository: renovatebot/renovate
     pullPolicy: IfNotPresent
 
-  # Existing Kubernetes Secret containing RENOVATE_TOKEN
   existingSecret: renovate-secret
 
   renovate:
