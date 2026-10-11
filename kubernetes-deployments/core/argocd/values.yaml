@@ -6,66 +6,66 @@ argo-cd:
   configs:
     params:
       server.insecure: "true"
-      repositories:
-        rancher-proxy:
-          name: rancher-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/rancher-helm/
+    repositories:
+      rancher-proxy:
+        name: rancher-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/rancher-helm/
 
-        argo-proxy:
-          name: argo-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/argo-helm/
+      argo-proxy:
+        name: argo-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/argo-helm/
 
-        cert-manager-proxy:
-          name: cert-manager-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/cert-manager-helm/
+      cert-manager-proxy:
+        name: cert-manager-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/cert-manager-helm/
 
-        cilium-proxy:
-          name: cilium-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/cilium-helm/
+      cilium-proxy:
+        name: cilium-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/cilium-helm/
 
-        external-dns-proxy:
-          name: external-dns-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/external-dns-helm/
+      external-dns-proxy:
+        name: external-dns-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/external-dns-helm/
 
-        external-secrets-proxy:
-          name: external-secrets-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/external-secrets-helm/
+      external-secrets-proxy:
+        name: external-secrets-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/external-secrets-helm/
 
-        longhorn-proxy:
-          name: longhorn-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/longhorn-helm/
+      longhorn-proxy:
+        name: longhorn-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/longhorn-helm/
 
-        metallb-proxy:
-          name: metallb-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/metallb-helm/
+      metallb-proxy:
+        name: metallb-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/metallb-helm/
 
-        traefik-proxy:
-          name: traefik-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/traefik-helm/
+      traefik-proxy:
+        name: traefik-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/traefik-helm/
 
-        victoria-metrics-proxy:
-          name: victoria-metrics-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/vm-helm/
+      victoria-metrics-proxy:
+        name: victoria-metrics-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/vm-helm/
 
-        metrics-server-proxy:
-          name: metrics-server-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/metrics-server-helm/
+      metrics-server-proxy:
+        name: metrics-server-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/metrics-server-helm/
 
-        app-template-proxy:
-          name: app-template-proxy
-          type: helm
-          url: https://nexus.xalab.io/repository/app-template/
+      app-template-proxy:
+        name: app-template-proxy
+        type: helm
+        url: https://nexus.xalab.io/repository/app-template/
 
   controller:
     metrics:
