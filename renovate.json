@@ -14,9 +14,10 @@
     "external-dns-proxy": "https://nexus.xalab.io/repository/external-dns-helm/",
     "external-secrets-proxy": "https://nexus.xalab.io/repository/external-secrets-helm/",
     "longhorn-proxy": "https://nexus.xalab.io/repository/longhorn-helm/",
-    "metrics-server-proxy": "https://nexus.xalab.io/repository/metallb-helm/",
+    "metallb-proxy": "https://nexus.xalab.io/repository/metallb-helm/",
     "traefik-proxy": "https://nexus.xalab.io/repository/traefik-helm/",
     "victoria-metrics-proxy":"https://nexus.xalab.io/repository/vm-helm/",
+    "metrics-server-proxy": "https://nexus.xalab.io/repository/metrics-server-helm/",
     "app-template-proxy":"https://nexus.xalab.io/repository/app-template/"
   },
   "extends": [
