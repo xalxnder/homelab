@@ -3,6 +3,7 @@
   "enabledManagers": [
     "helmv3"
   ],
+
   "ignorePaths": [
     "**/values*.yaml"
   ],
@@ -32,7 +33,7 @@
         "helmv3"
       ],
       "matchUpdateTypes": [
-        "patch"
+        "major", "minor", "patch"
       ],
       "labels": [
         "patch-updates"
