@@ -46,6 +46,9 @@ victoria-metrics-k8s-stack:
       userKey: admin-user
       passwordKey: admin-password
     enabled: true
+    podSecurityContext:
+        fsGroup: 472
+        runAsUser: 472
     sidecar:
       dashboards:
         enabled: true
