@@ -22,8 +22,7 @@
     "app-template-proxy":"https://nexus.xalab.io/repository/app-template/"
   },
   "extends": [
-    "config:recommended",
-    "schedule:daily"
+    "config:recommended"
   ],
   "prBodyTemplate": "{{{table}}}{{{changelogs}}}",
   "timezone": "America/New_York",
