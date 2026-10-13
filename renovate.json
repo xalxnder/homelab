@@ -46,7 +46,7 @@
         "major",
         "minor"
       ],
-      "enabled": false
+      "enabled": true
     }
   ]
 
