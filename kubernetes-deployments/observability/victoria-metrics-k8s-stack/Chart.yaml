@@ -8,6 +8,6 @@ sources:
 version: v1.102.1
 dependencies:
   - name: victoria-metrics-k8s-stack
-    version: 0.96.0
+    version: 0.92.0
     repository: "@victoria-metrics-proxy"
     condition: victoria-metrics-k8s-stack.enabled
