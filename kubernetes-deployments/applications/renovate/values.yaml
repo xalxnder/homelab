@@ -34,7 +34,7 @@ renovate:
       }
 
   env:
-    LOG_LEVEL: info
+    LOG_LEVEL: debug
 
   resources:
     requests:
