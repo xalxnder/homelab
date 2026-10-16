@@ -6,4 +6,4 @@ dependencies:
   - name: nexus3
     alias: nexus
     repository: "oci://ghcr.io/stevehipwell/helm-charts"
-    version: 5.26.2
+    version: 5.27.0
