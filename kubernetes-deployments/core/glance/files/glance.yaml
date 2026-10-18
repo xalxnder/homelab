@@ -21,7 +21,10 @@ pages:
             feeds:
               - url: https://greatday.com/feed/dmfeed.xml
                 title: Motivation
-                limit: 4
+                limit: 2
+              - url: "${RSS-URL}"
+                title: Selfh.st
+                limit: 2
 
 
 

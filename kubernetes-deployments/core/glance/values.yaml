@@ -22,6 +22,12 @@ glance:
       strategy: RollingUpdate
       containers:
         glance:
+          env:
+            - name: SELFH_RSS_URL
+              valueFrom:
+                secretKeyRef:
+                  name: glance-secrets
+                  key: rss-url
           image: &glance-image
             repository: glanceapp/glance
             tag: v0.8.5
