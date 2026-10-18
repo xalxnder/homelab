@@ -1,0 +1,17 @@
+---
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
+metadata:
+  name: rss-url
+  namespace: glance
+spec:
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: infisical-secret-store
+  target:
+    name: rss-url
+    creationPolicy: Owner
+  data:
+    - secretKey: rss-url
+      remoteRef:
+        key: /glance/rss-url
