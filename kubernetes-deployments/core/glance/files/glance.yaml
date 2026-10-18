@@ -13,8 +13,8 @@ pages:
         widgets:
           - type: calendar
             first-day-of-week: monday
-            
-                  
+
+
 
       - size: full
         widgets:
@@ -23,7 +23,13 @@ pages:
             pull-requests-limit: 5
             issues-limit: -1
             commits-limit: 3
-            
+
+          - type: repository
+            repository: xalxnder/docker-compose
+            pull-requests-limit: 5
+            issues-limit: -1
+            commits-limit: 3
+
           - type: rss
             limit: 10
             collapse-after: 3
