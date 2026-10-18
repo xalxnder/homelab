@@ -26,7 +26,7 @@ glance:
             - name: SELFH_RSS_URL
               valueFrom:
                 secretKeyRef:
-                  name: glance-secrets
+                  name: rss-url
                   key: rss-url
           image: &glance-image
             repository: glanceapp/glance
