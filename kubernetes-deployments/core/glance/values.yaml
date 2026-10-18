@@ -23,7 +23,7 @@ glance:
       containers:
         glance:
           env:
-            - name: SELFH_RSS_URL
+            - name: RSS-URL
               valueFrom:
                 secretKeyRef:
                   name: rss-url
