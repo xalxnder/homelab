@@ -3,6 +3,7 @@
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
   "branchConcurrentLimit": 0,
+  "automerge": false,
   "enabledManagers": [
     "helmv3"
   ],
@@ -49,6 +50,20 @@
         "minor"
       ],
       "enabled": true
+    },
+    {
+      "description": "Automerge only Renovate's own Helm chart updates",
+      "matchManagers": [
+        "helmv3"
+      ],
+      "matchPackageNames": [
+        "renovate"
+      ],
+      "matchFileNames": [
+        "kubernetes-deployments/applications/renovate/Chart.yaml"
+      ],
+      "automerge": true,
+      "automergeType": "pr"
     }
   ]
 
