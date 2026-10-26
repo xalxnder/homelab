@@ -1,4 +1,3 @@
-# Xavier's Homelab
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/00d1bbd1-30f7-4ab0-a4c1-97fd6e2f75be" width="128" height="128" alt="Homelab Architecture">
