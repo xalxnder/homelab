@@ -7,11 +7,11 @@ metadata:
 spec:
   secretStoreRef:
     kind: ClusterSecretStore
-    name: infisical-secret-store
+    name: 1password
   target:
     name: rss-url
     creationPolicy: Owner
   data:
     - secretKey: rss-url
       remoteRef:
-        key: /glance/rss-url
+        key: rss-url/value
