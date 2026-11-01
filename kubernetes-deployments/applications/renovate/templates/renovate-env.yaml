@@ -10,7 +10,7 @@ spec:
 
   secretStoreRef:
     kind: ClusterSecretStore
-    name: infisical-secret-store
+    name: 1password
 
   target:
     name: renovate-secret
@@ -19,16 +19,16 @@ spec:
   data:
     - secretKey: RENOVATE_TOKEN
       remoteRef:
-        key: /renovate/RENOVATE_TOKEN
+        key: RENOVATE_TOKEN/value
 
     - secretKey: RENOVATE_PLATFORM
       remoteRef:
-        key: /renovate/RENOVATE_PLATFORM
+        key: RENOVATE_PLATFORM/value
 
     - secretKey: RENOVATE_AUTODISCOVER
       remoteRef:
-        key: /renovate/RENOVATE_AUTODISCOVER
+        key: RENOVATE_AUTODISCOVER/value
 
     - secretKey: RENOVATE_GIT_AUTHOR
       remoteRef:
-        key: /renovate/RENOVATE_GIT_AUTHOR
+        key: RENOVATE_GIT_AUTHOR/value
