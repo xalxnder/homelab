@@ -1,6 +1,29 @@
 victoria-metrics-k8s-stack:
   enabled: true
   fullnameOverride: vm-k8s-stack
+  # Preserve the UIDs already stored in Grafana's persistent database.
+  # Changing these breaks provisioning updates and existing dashboard references.
+  defaultDatasources:
+    victoriametrics:
+      datasources:
+        - name: VictoriaMetrics
+          type: prometheus
+          access: proxy
+          uid: P4169E866C3094E38
+          isDefault: true
+        - name: VictoriaMetrics (DS)
+          type: victoriametrics-metrics-datasource
+          access: proxy
+          uid: PA144FC3F5C193807
+          isDefault: false
+          plugin: true
+    alertmanager:
+      datasources:
+        - name: Alertmanager
+          access: proxy
+          uid: P7647F508D5F54FCB
+          jsonData:
+            implementation: prometheus
   defaultRules:
     create: false
   defaultDashboards:
@@ -41,6 +64,8 @@ victoria-metrics-k8s-stack:
             storage: 5Gi
 
   grafana:
+    plugins:
+      - victoriametrics-metrics-datasource
     admin:
       existingSecret: "vm-grafana-secret"
       userKey: admin-user
