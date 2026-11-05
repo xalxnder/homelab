@@ -22,7 +22,7 @@ pages:
               - url: https://greatday.com/feed/dmfeed.xml
                 title: Motivation
                 limit: 2
-              - url: "${RSS_URL}"
+              - url: https://selfh.st/rss/
                 title: Selfh.st
                 limit: 2
 
