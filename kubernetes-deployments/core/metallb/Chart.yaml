@@ -3,6 +3,6 @@ name: metallb
 version: v0.14.8
 dependencies:
   - name: metallb
-    version: 0.16.1
+    version: 0.16.2
     repository: "@metallb-proxy"
     condition: metallb.enabled
