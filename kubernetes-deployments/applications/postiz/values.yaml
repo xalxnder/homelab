@@ -186,6 +186,9 @@ postiz:
             value: "false"
           - name: DEFAULT_NAMESPACE
             value: "default"
+          # Reserve SQL visibility's Text attribute slots for Postiz.
+          - name: SKIP_ADD_CUSTOM_SEARCH_ATTRIBUTES
+            value: "true"
           resources:
             requests:
               cpu: 250m
