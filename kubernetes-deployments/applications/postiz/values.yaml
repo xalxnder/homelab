@@ -21,7 +21,7 @@ postiz:
             valueFrom:
               secretKeyRef:
                 name: redis-url
-                key: REDIS_URL
+                key: redis-url
           - name: DATABASE_URL
             valueFrom:
               secretKeyRef:
