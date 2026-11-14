@@ -92,17 +92,17 @@ postiz:
           - name: EMAIL_PORT
             value: "587" # smtp port if you choose nodemailer
           - name: EMAIL_SECURE
-            value: "false" # smtp secure if you choose nodemailer
+            value: "true" # smtp secure if you choose nodemailer
           - name: EMAIL_USER
             valueFrom:
               secretKeyRef:
                 name: email-user
-                key: EMAIL_USER
+                key: user
           - name: EMAIL_PASS
             valueFrom:
               secretKeyRef:
-                name: email-pass
-                key: EMAIL_PASS
+                name: email-password
+                key: password
 
           image:
             repository: ghcr.io/gitroomhq/postiz-app
