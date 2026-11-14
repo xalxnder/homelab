@@ -26,7 +26,7 @@ postiz:
             valueFrom:
               secretKeyRef:
                 name: database-url
-                key: DATABASE_URL
+                key: database-url
           - name: JWT_SECRET
             valueFrom:
               secretKeyRef:
