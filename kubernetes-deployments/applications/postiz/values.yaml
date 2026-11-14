@@ -17,6 +17,8 @@ postiz:
               cpu: 250m
 
           env:
+          - name: TEMPORAL_ADDRESS
+            value: "postiz-temporal:7233"
           - name: REDIS_URL
             valueFrom:
               secretKeyRef:
@@ -150,6 +152,56 @@ postiz:
           - name: PGDATA
             value: "/var/lib/postgresql/data/pgdata"
 
+    temporal:
+      type: deployment
+      replicas: 1
+      strategy: Recreate
+      containers:
+        temporal:
+          image:
+            repository: temporalio/auto-setup
+            tag: "1.28.1"
+            pullPolicy: IfNotPresent
+          env:
+          # postgres12 is Temporal's SQL driver name, not the PostgreSQL image version.
+          - name: DB
+            value: "postgres12"
+          - name: DB_PORT
+            value: "5432"
+          - name: POSTGRES_SEEDS
+            value: "postiz-postgresql"
+          - name: POSTGRES_USER
+            value: "postiz"
+          - name: POSTGRES_PWD
+            valueFrom:
+              secretKeyRef:
+                name: postgres-password
+                key: postgres-password
+          # Auto-setup creates separate databases on the existing persistent PostgreSQL server.
+          - name: DBNAME
+            value: "temporal"
+          - name: VISIBILITY_DBNAME
+            value: "temporal_visibility"
+          - name: ENABLE_ES
+            value: "false"
+          - name: DEFAULT_NAMESPACE
+            value: "default"
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              memory: 2Gi
+          probes:
+            readiness:
+              enabled: true
+              custom: true
+              spec:
+                tcpSocket:
+                  port: 7233
+                periodSeconds: 10
+                timeoutSeconds: 2
+
   persistence:
     uploads:
       enabled: true
@@ -177,6 +229,12 @@ postiz:
 
 
   service:
+    temporal:
+      controller: temporal
+      type: ClusterIP
+      ports:
+        grpc:
+          port: 7233
     postiz:
       controller: postiz
       ports:
