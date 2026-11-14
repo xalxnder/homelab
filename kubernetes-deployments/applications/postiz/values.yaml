@@ -133,7 +133,7 @@ postiz:
               valueFrom:
                 secretKeyRef:
                   name: redis-password
-                  key: REDIS_PASSWORD
+                  key: redis-password
 
     postgresql:
       type: deployment
@@ -150,7 +150,7 @@ postiz:
             valueFrom:
               secretKeyRef:
                 name: postgres-password
-                key: POSTGRES_PASSWORD
+                key: postgres-password
           - name: POSTGRES_USER
             value: "postiz"
           - name: POSTGRES_DB
