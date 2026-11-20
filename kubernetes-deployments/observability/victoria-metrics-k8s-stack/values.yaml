@@ -105,10 +105,16 @@ victoria-metrics-k8s-stack:
 
   vmsingle:
     spec:
+      retentionPeriod: "7d"
       storage:
         resources:
           requests:
             storage: 5Gi
+
+  vmagent:
+    spec:
+      # Keep monitoring coverage while storing fewer samples than the 20s default.
+      scrapeInterval: "60s"
 
   grafana:
     plugins:
