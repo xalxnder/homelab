@@ -45,11 +45,58 @@ victoria-metrics-k8s-stack:
       victoriametrics-vmalert:
         enabled: false
       victoriametrics-operator:
-        enabled: true
+        enabled: false
       # -- In ArgoCD using client-side apply this dashboard reaches annotations size limit and causes k8s issues without server side apply
       # See [this issue](https://github.com/VictoriaMetrics/helm-charts/tree/disable-node-exporter-dashboard-by-default/charts/victoria-metrics-k8s-stack#metadataannotations-too-long-must-have-at-most-262144-bytes-on-dashboards)
       node-exporter-full:
         enabled: true
+
+    # Only fetch Node Exporter Full; disable the bundled dashboard collections.
+    sources:
+      victoriatraces-cluster:
+        enabled: false
+      victoriatraces-single-node:
+        enabled: false
+      victorialogs-cluster:
+        enabled: false
+      victorialogs-single-node:
+        enabled: false
+      victorialogs-vlagent:
+        enabled: false
+      victoriametrics-single-node:
+        enabled: false
+      victoriametrics-vmagent:
+        enabled: false
+      victoriametrics-cluster:
+        enabled: false
+      victoriametrics-vmalert:
+        enabled: false
+      victoriametrics-operator:
+        enabled: false
+      victoriametrics-backupmanager:
+        enabled: false
+      kubernetes-views-global:
+        enabled: false
+      kubernetes-views-namespaces:
+        enabled: false
+      kubernetes-views-pods:
+        enabled: false
+      kubernetes-views-nodes:
+        enabled: false
+      kubernetes-system-api-server:
+        enabled: false
+      kubernetes-system-coredns:
+        enabled: false
+      node-exporter-full:
+        enabled: true
+      etcd:
+        enabled: false
+      kube-prometheus:
+        enabled: false
+
+  syncJob:
+    # Remove previously managed dashboards when their sources are disabled.
+    prune: true
 
   victoria-metrics-operator:
     enabled: true
