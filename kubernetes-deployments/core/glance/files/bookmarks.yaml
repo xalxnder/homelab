@@ -11,8 +11,8 @@
               icon: $di:inoreader.png
               url: https://inoreader.com
             - title: URL Scanner
-              icon: $di:telebugs.png
-              url: https://urlscan.io/#url
+              icon: $di:cloudflare.png
+              url: https://radar.cloudflare.com/scan
             - title: Argo
               icon: $di:argo-cd.png
               url: https://argocd.xalab.io/
