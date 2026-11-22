@@ -10,6 +10,9 @@
             - title: Inoreader
               icon: $di:inoreader.png
               url: https://inoreader.com
+            - title: URL Scanner
+              icon: $di:telebugs.png
+              url: https://urlscan.io/#url
             - title: Argo
               icon: $di:argo-cd.png
               url: https://argocd.xalab.io/
