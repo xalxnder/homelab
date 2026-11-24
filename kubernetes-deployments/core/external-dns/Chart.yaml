@@ -3,6 +3,6 @@ name: external-dns
 version: 1.15.2
 dependencies:
 - name: external-dns
-  version: 1.23.0
+  version: 1.24.0
   repository: "@external-dns-proxy"
   condition: external-dns.enabled
